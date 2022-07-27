@@ -24,7 +24,7 @@ python -m venv venv
 
 Activate Virtual Environment
 ```
-venv/scripts/activate
+venv\scripts\activate
 ```
 
 Install Dependencies
