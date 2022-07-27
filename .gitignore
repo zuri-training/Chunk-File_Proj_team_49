@@ -1,8 +1,8 @@
 #new venv
-chunkit/
-.cfg
-Scripts/
 
+chunkIt/
+Scripts/
+*.cfg
 
 
 # Byte-compiled / optimized / DLL files
