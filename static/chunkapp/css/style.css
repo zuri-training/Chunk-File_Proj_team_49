@@ -1,0 +1,174 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #372092;
+  color: white;
+  font-family: 'Manrope';
+  font-size: 1.15em;
+  margin: 0;
+  background-image: url("unsplash.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+h1,
+h2 {
+ font-family: 'Manrope';
+}
+
+p {
+ opacity: 0.6;
+}
+
+img {
+ max-width: 100%;
+}
+
+.btn {
+ border-radius: 5px;
+ background-color: #fff;
+ color: grey;
+ border: none;
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+ cursor: pointer;
+ font-size: 16px;
+ font-weight: 400;
+ padding: 10px 15px;
+ margin-left: 10px;
+}
+.head {
+ background-color: #372092;
+ color: #fff;
+ font-size: 16px;
+ width: 70%;
+}
+.container {
+ padding: 0 20px;
+ margin: 0 auto;
+ max-width: 100%;
+ width: 1000px;
+
+}
+
+.flex {
+ display: flex;
+ align-items: center;
+
+}
+
+nav ul li{
+	display: inline-block;
+	margin-top: 1px;
+}
+nav ul li a{
+	color: grey;
+	font-size: 20px;
+	font-weight: bold;
+	margin-right: 10px;
+	padding: 5px 5px;
+	text-decoration: none;
+}
+a:hover{
+	background: hsl(233deg 69% 35%);
+	color: #FFF;
+	transition: .5s;
+}
+button:hover{
+  background: white;
+  color: black;
+  border: 1px solid red;
+  transition: .3s;
+}
+
+#active{
+  background: #372092;
+  color: white;
+}
+#active:hover{
+  background: white;
+  color: black;
+  border: 1px solid red;
+  transition: .3s;
+}
+
+div h1{
+  color: black;
+}
+
+.flex > div,
+.flex > ul {
+ flex: 1;
+}
+.align-start {
+ align-items: flex-start;
+}
+
+header {
+ background-image: url('bg-hero-desktop.svg');
+ background-size: cover;
+ background-position: center center;
+ background-color: white;
+ padding: 40px 0;
+}
+
+#jsc{
+color: #F55353;
+
+}
+nav {
+ align-items: center;
+ justify-content: space-between;
+ margin-bottom: 40px;
+}
+.header-img {
+ margin-left: 20%;
+ width: 80%;
+}
+#chnk{
+  color: #113559;
+}
+
+#ser{
+  font-size: 42px;
+}
+
+.bottom {
+ display: inline-block;
+ position: relative;
+ margin-bottom: -50%;
+ z-index: 1;
+}
+div p{
+  font-size: 20px;
+  text-align: left;
+}
+div h2{
+  font-size: 26px;
+  text-align: left;
+}
+
+
+
+@media screen and (max-width: 768px) {
+ body {
+  text-align: center;
+ }
+nav.flex {
+  flex-direction: row;
+ }
+.header-img {
+  margin-top: 40px;
+  margin-left: 0;
+  width: 100%;
+ }
+.flex {
+  flex-direction: column;
+ }
+.box-reverse-mobile {
+  flex-direction: column-reverse;
+ }
+
+}
