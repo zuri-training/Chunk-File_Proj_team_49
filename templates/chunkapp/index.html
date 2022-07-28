@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -5,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chunk49</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'chunkapp/css/style.css'%}">
   </head>
   <body>
     <header>
     	<div class="container">
 	      	<nav class="flex">
-		        <img class="logo" src="Group24.png" alt="logo"  width="64px" height="64px"/>
+		        <img class="logo" src="{% static 'chunkapp/images/Group24.png'%}" alt="logo"  width="64px" height="64px"/>
 		        <h1 id="chnk">Chunk49</h1>
 		        <ul>
 		          <li><a class="soft" href="#">Software</a></li>
@@ -38,7 +39,7 @@
 	        	</div>
 
 	        	<div>
-	          		<img class="header-img" src="image.png" alt=""  style="background-color: #F3F3F3;"/>
+	          		<img class="header-img" src="{% static 'chunkapp/images/image.png'%}" alt=""  style="background-color: #F3F3F3;"/>
 	        	</div>
      		</div>
     	</div>
@@ -56,13 +57,13 @@
           </p>
         </div>
         <div>
-          <img src="amico.png" alt="" />
+          <img src="{% static 'chunkapp/images/amico.png'%}" alt="" />
         </div>
       </div>
 
       <div class="box flex box-reverse-mobile">
         <div>
-          <img src="amico-second.png" alt="" />
+          <img src="{% static 'chunkapp/images/amico-second.png'%}" alt="" />
         </div>
         <div>
           <h2>Instantly analyze large files</h2>
@@ -79,12 +80,12 @@
           </p>
         </div>
         <div>
-          <img src="amico-three.png" alt="" />
+          <img src="{% static 'chunkapp/images/amico-three.png'%}" alt="" />
         </div>
       </div>
         <div class="box flex box-reverse-mobile">
         <div>
-          <img src="amico-four.png" alt="" />
+          <img src="{% static 'chunkapp/images/amico-four.png'%}" alt="" />
         </div>
         <div>
           <h2>Free data processing</h2>
