@@ -14,11 +14,15 @@ class ChunkOrder(models.Model):
     # this field is important as it allows for quering the database 
     custom_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
     file_name = models.CharField(max_length=200, null=True, blank=True)
+    zip_file = models.FileField(null=True, blank=True)
     chunk_size = models.IntegerField()
     created = models.DateTimeField(auto_now_add=True)
+
+    # these properties like the file name saves a reference to the inital file type that was uploaded
+
     @property
     def file_type(self):
-        return self.file_name.split(".")[0]
-    @property
-    def get_chunk_order_name(self):
-        return self.file_name + self.file_type
+        return self.file_name.split(".")[1]
+    
+    def __str__(self) -> str:
+        return super().__str__()
