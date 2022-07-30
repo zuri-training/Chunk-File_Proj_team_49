@@ -23,3 +23,6 @@ class ChunkOrder(models.Model):
     @property
     def get_chunk_order_name(self):
         return self.file_name + self.file_type
+    
+    class Meta:
+        app_label = 'chunkapp'
