@@ -7,6 +7,15 @@ from . models import ChunkOrder
 # understanding of code 
 # the view functions use a camelCase convention
 
+def index(request):
+    return render(request,'chunkapp/index.html')
+
+def faq(request):
+    return render(request,'chunkapp/faq.html')
+
+
+
+
 def renderDashBoardView(request):
     # this views primary function is too render a template
     # and then pass a form as the context
