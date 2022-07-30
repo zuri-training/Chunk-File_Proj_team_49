@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>List of all users</title>
+</head>
+<body>
+    <h1>List of all users</h1>
+
+    {% for user in recent_chunks %}
+        <div class='user'> {{ user.zip_link }} </div>
+    {% endfor %}
+
+</body>
+</html>
