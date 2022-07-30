@@ -15,6 +15,7 @@ class ChunkOrder(models.Model):
     custom_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
     file_name = models.CharField(max_length=200, null=True, blank=True)
     chunk_size = models.IntegerField()
+    zip_link = models.CharField(max_length=300, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     @property
     def file_type(self):
