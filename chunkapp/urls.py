@@ -7,6 +7,7 @@ urlpatterns = [
     path('dashboard/', views.renderDashBoardView, name="dashboard"),
     path('dashboard/chunkFile', views.chunkFileView, name="chunkFile"),
     path('faq',views.faq,name='faq'),
-    path('recent/',views.listRecentChunks,name='recent')
+    path('recent/',views.listRecentChunks,name='recent'),
+    path('terms and conditions/',views.termsAndConditions,name='termsandconditions')
    
 ]
