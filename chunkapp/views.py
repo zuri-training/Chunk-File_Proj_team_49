@@ -53,3 +53,6 @@ def listRecentChunks(request):
         'recent_chunks':recent_chunks
     }          
     return render(request,'chunkapp/recent.html',context)
+
+def termsAndConditions(request):
+    return render(request ,'chunkapp/toc.html')    
