@@ -8,6 +8,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from django.forms import ValidationError
 from django.conf import settings
 import uuid
+import pandas as pd
 BASE_DIR = settings.BASE_DIR
 MEDIA_DIR = settings.MEDIA_ROOT
 # the utils file is where all the business logic of file chunking file 
@@ -78,3 +79,26 @@ def zipFunction(directory,f):
 
 def generateRandomName(file_name = ""):
     return str(uuid.uuid4()) + file_name
+
+                              
+# rows_per_chunk: is the number of rows the user wants per chunk file
+# file_line_number: Total number of lines in the file 
+# batch_no: number we will use to increment the file name of each chunk 
+# csvfilepath: csv file path
+
+def split_csv(csvfilepath, rows_per_chunk):
+    file_line_number = len(pd.read_csv(csvfilepath))                           
+    batch_no = 1                                               
+    # if the number of rows specified per chunk by the user is greater than total number of lines in the file
+    if (rows_per_chunk > file_line_number):
+        print('Number of rows in a chunk cannot be greater than total number of lines in the file')
+
+    elif (rows_per_chunk < 1):      
+        print('Number of rows in a chunk cannot be less than 1')
+    else:
+        for chunk in pd.read_csv(csvfilepath, chunksize= rows_per_chunk ):
+            chunk.to_csv('chunk' + str(batch_no) + '.csv',  index=False)
+            batch_no += 1
+
+
+
