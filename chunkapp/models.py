@@ -16,6 +16,7 @@ class ChunkOrder(models.Model):
     file_name = models.CharField(max_length=200, null=True, blank=True)
     zip_file = models.FileField(null=True, blank=True)
     chunk_size = models.IntegerField()
+    zip_link = models.CharField(max_length=300, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
     # these properties like the file name saves a reference to the inital file type that was uploaded
