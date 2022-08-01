@@ -1,6 +1,7 @@
 
 body{
-    background-image: url("images/login_page_high_fi.png");
+    background-image: url(../images/login_page_high_fi.png);
+    background-size: cover;
     padding-top: 15px;
 }
               /* styling the container */
