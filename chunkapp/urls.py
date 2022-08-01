@@ -10,6 +10,6 @@ urlpatterns = [
     path('faq',views.faq,name='faq'),
     path('recent/',views.listRecentChunks,name='recent'),
     path('terms and conditions/',views.termsAndConditions,name='termsandconditions'),
-    path('how_to_use',views.howToUse,name='howtouse'),
+    path('how_to_use',views.howTouse,name='howtouse'),
    
 ]
