@@ -1,6 +1,6 @@
+
 const form = document.getElementById('form')
-const username = document.getElementById('username');
-const email = document.getElementById('email');
+const currentPassword = document.getElementById('current-password');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
@@ -27,29 +27,20 @@ function validForm() {
 
 function checkInputs() {
 	// trim to remove the whitespaces
-	const usernameValue = username.value.trim();
-	const emailValue = email.value.trim();
+	const currentPsswordValue = currentPassword.value.trim();
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
 	
 	
-	if(usernameValue === '') {
-		setErrorFor(username, 'Full Name cannot be blank');
-	}else if(usernameValue.length < 7){
-		setErrorFor(username, 'Full Name must be more than 6 letters');
-	}else if(usernameValue.length > 20){
-		setErrorFor(username, 'Full name must be less than 15');
+	if(currentPsswordValue === '') {
+		setErrorFor(currentPassword, 'Full Name cannot be blank');
+	}else if(currentPsswordValue.length < 7){
+		setErrorFor(currentPassword, 'Full Name must be more than 6 letters');
+	}else if(currentPsswordValue.length > 20){
+		setErrorFor(currentPassword, 'Full name must be less than 15');
 	}
 	 else {
-		setSuccessFor(username);
-	}
-	
-	if(emailValue === '') {
-		setErrorFor(email, 'Email cannot be blank');
-	} else if (!isEmail(emailValue)) {
-		setErrorFor(email, 'Not a valid email');
-	} else {
-		setSuccessFor(email);
+		setSuccessFor(currentPassword);
 	}
 	
 	if(passwordValue === '') {
@@ -92,28 +83,7 @@ function isEmail(email) {
 
 }
 
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
-
   function relocate_home()
 {
-     location.href = "login.html";
+     location.href = "dashboard.html";
 } 
