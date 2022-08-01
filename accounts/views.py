@@ -16,12 +16,22 @@ def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST) 
         if form.is_valid():
-            form.save()  
-            print('valid form')
+            user = form.save()
+            # user.refresh_from_db()
+            user.save() 
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=user.email, password=raw_password)
+            login(request, user)
+            return redirect('dashboard')
     form = SignUpForm() 
-    print('invalid form')
     context = { 
             'form': form 
         } 
 
     return render(request, 'accounts/register.html', context)
+
+
+def login(request):
+    return render(request, 'accounts/login.html')
+
+
