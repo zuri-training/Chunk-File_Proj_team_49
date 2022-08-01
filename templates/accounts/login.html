@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,7 @@
 <body>
     <div class="container">
         <div class="circle">
-            <img src="images/Group 26.png" />
+            <img src="{% static 'accounts/images/Group 26.png' %}" />
         </div>
         <div class="content">
             <h3>Welcome Back!</h3>
@@ -43,9 +44,9 @@
                 <div class="flex-child-edge"></div>
               </div>
               <div class="icons">
-                <img src="images/image 4.png" />
-                <img src="images/image 1.png" />
-                <img src="images/image 2.png" />
+                <img src="{% static 'accounts/images/image 4.png' %}"  />
+                <img src="{% static 'accounts/images/image 1.png' %}"  />
+                <img src="{% static 'accounts/images/image 2.png' %}"  />
               </div>
         </div>
     </div>

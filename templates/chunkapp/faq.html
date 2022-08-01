@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,7 +13,7 @@
     />
     <script src="https://kit.fontawesome.com/96498e0f73.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <link rel="stylesheet" href="../../static/chunkapp/css/faq.css" />
+    <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
     <title>FAQ</title>
   </head>
   <body>
@@ -20,7 +21,7 @@
       <header>
         <nav id="navbar">
           <a href="#"
-            ><img src="../../static/chunkapp/faq-images/Group 26.png" class="logo" alt="chunk it"
+            ><img src="{% static 'chunkapp/faq-images/Group 26.png' %}" class="logo" alt="chunk it"
           /></a>
           <div class="navigation">
           <div class="nav-link">
@@ -50,7 +51,7 @@
       </header>
       <main>
         <div class="title">
-          <img src="../../static/chunkapp/faq-images/bg-img.png" alt="background-image" />
+          <img src="{% static 'chunkapp/faq-images/bg-img.png' %}" alt="background-image" />
           <div class="title-item">
             <h2>FREQUENTLY ASKED QUESTIONS [FAQ'S]</h2>
             <hr />
@@ -85,7 +86,7 @@
         <div class="section">
             <div class="first-section">
           <div class="img">
-            <img src="../../static/chunkapp/faq-images/Group 37.png" alt="chunk it" />
+            <img src="{% static 'chunkapp/faq-images/Group 37.png' %}" alt="chunk it" />
           </div>
           <div class="footer-list">
             <a href="#">How to Use</a>
@@ -123,6 +124,6 @@
 
       </div>
     </footer>
-    <script src="../../static/accounts/js/faq.js"></script>
+    <script src="{% static 'chunkapp/js/faq.js' %}"></script>
   </body>
 </html>
