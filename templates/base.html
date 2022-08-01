@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Change</title>
+    <link rel="stylesheet" href="{%static 'css/passwordChange.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"> <img src="{% static 'images/header-logo.svg' %}" alt="logo" class="w-75"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link"href="#">How to use</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Resource</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">APIs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+    </header>
+    <main class=" container">
+        {% Block content%}
+        {% endBlock %}
+    </main>
+    <footer>
+      <div class="container footer-wrap">
+    
+          <div class="row">
+            <div class="col-lg-3">
+              <a  href="#"> <img src="{% static 'images/footer-logo.svg' %}" alt="logo" class="w-40"></a>
+            </div>
+          
+            <div class="col-lg-2 my-3 mx-2">
+              <h5>Resources</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="footer-links" href="#">Blog</a></li>
+                <li><a class="footer-links" href="#">Video tutorials</a></li>
+                
+              </ul>
+            </div>
+    
+            <div class="col-lg-2 my-3 mx-2">
+              <h5>Support</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="footer-links" href="#">FAQs</a></li>
+                <li><a class="footer-links" href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-2 my-3 mx-2">
+              <h5>About us</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="footer-links" href="#">Jobs</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-2 my-3 mx-2">
+              <h5>Software</h5>
+              <li><a class="footer-links" href="#">APIs</a></li>
+            </div>
+          </div>
+        
+          <div class="row mt-4 py-2" >
+            <div class=" col-lg-6 input-newsletter">
+            <form class="newsletter mt-4">
+               <input type="text" placeholder="Subcribe to Newsletter"> 
+                                                            <button class="newsletter_submit_btn" type="submit">Subscribe</button>  
+            </form>
+            </div>
+            <div class="col-lg-6 d-flex justify-content-lg-end justify-content-start">
+              <div>
+                <p class="text-center pt-2 mb-0 follow-us">Follow us</p>
+                <div>
+                  <div class="standard_social_links">
+                    <div>
+                  <li class="round-btn btn-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li class="round-btn btn-github"><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="round-btn btn-linkedin"><a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                  </li>
+                  <li class="round-btn btn-twitter"><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        
+                </div>
+              </div>  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-100 hr"></div>
+        <div class="d-flex justify-content-lg-between justify-content-center align-items-center flex-wrap copyright pb-3">
+          <div class=" d-flex gap-2 copyright-link">
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Terms of Use</a>
+          </div>
+          <div> <small>&copy 2022chunk49,INC PATENT PENDING</small>  </div>
+        </div>
+      </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+        <script src="{% static 'js/passwordChange.js' %}"></script>
+        <script src="https://kit.fontawesome.com/eca1febd0d.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
