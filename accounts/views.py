@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import SignUpForm,LoginForm,PasswordChangeForm,PasswordResetForm,PasswordResetConfirm
+from .forms import SignUpForm,PasswordChangeForm,PasswordResetForm,PasswordResetConfirm,LoginForm
 from django.contrib.auth import login, authenticate 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
@@ -11,13 +11,13 @@ from django.contrib.auth import views as auth_views
 #register view with custom form
 def register(request):
     if request.user.is_authenticated:
-        return redirect('dashboard')
+        return redirect('/')
     if request.method == 'POST':
         form = SignUpForm(request.POST) 
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('dashboard')
+            return redirect('/')
     form = SignUpForm() 
     context = { 
                 'form': form 
