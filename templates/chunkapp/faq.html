@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/96498e0f73.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
+    <title>FAQ</title>
+  </head>
+  <body>
+    <div class="section">
+      <header>
+        <nav id="navbar">
+          <a href="#"
+            ><img src="{% static 'chunkapp/faq-images/Group 26.png' %}" class="logo" alt="chunk it"
+          /></a>
+          <div class="navigation">
+          <div class="nav-link">
+            <a href="#">How to Use</a>
+            <a href="#">Resources</a>
+            <a href="#">Support</a>
+            <a href="#">APIs</a>
+            <a href="#">About Us</a>
+          </div>
+          <div class="nav-btn">
+            <button class="btn1"><a href="#">LOGIN</a></button>
+            <button class="btn2"><a href="#">SIGN UP</a></button>
+          </div>
+          </div>
+          <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
+          <button class="close-btn"><i class="fa-solid fa-x"></i></button>
+        </nav>
+        <h1 class="help">What Can We Help You With?</h1>
+        <div class="search">
+          <input type="text" name="search" />
+          <a href="#"
+            ><button class="search-btn">
+              Search<span class="iconify" data-icon="fa:search"></span>
+            </button>
+          </a>
+        </div>
+      </header>
+      <main>
+        <div class="title">
+          <img src="{% static 'chunkapp/faq-images/bg-img.png' %}" alt="background-image" />
+          <div class="title-item">
+            <h2>FREQUENTLY ASKED QUESTIONS [FAQ'S]</h2>
+            <hr />
+          </div>
+        </div>
+        <div class="content-container">
+          <div class="main-content">
+            <h1 class="content-title"></h1>
+            <p class="content-description"></p>
+          </div>
+          <div class="main-content">
+            <h1 class="content-title"></h1>
+            <p class="content-description"></p>
+          </div>
+          <div class="main-content">
+            <h1 class="content-title"></h1>
+            <p class="content-description"></p>
+          </div>
+          <div class="main-content">
+            <h1 class="content-title"></h1>
+            <p class="content-description"></p>
+          </div>
+          <div class="main-content">
+            <h1 class="content-title"></h1>
+            <p class="content-description"></p>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <div class="footer">
+        <div class="section">
+            <div class="first-section">
+          <div class="img">
+            <img src="{% static 'chunkapp/faq-images/Group 37.png' %}" alt="chunk it" />
+          </div>
+          <div class="footer-list">
+            <a href="#">How to Use</a>
+            <a href="#">Resources</a>
+            <a href="#">Support</a>
+            <a href="#">APIs</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+          </div>
+          </div>
+          <div class="second-section">
+        <div class="subscribe">
+          <input type="text" placeholder="Subscribe to Newsletter" />
+          <button>Subscribe</button>
+        </div>
+        <div class="social-icons">
+          <p style="margin-bottom: 0.5rem;">Follow Us</p>
+          <a href="#"><span class="iconify" data-icon="akar-icons:facebook-fill"></span></a>
+          <a href="#"><span class="iconify" data-icon="akar-icons:github-fill"></span></a>
+          <a href="#"><span class="iconify" data-icon="entypo-social:linkedin-with-circle"></span></a>
+          <a href="#"><span class="iconify" data-icon="ant-design:twitter-circle-filled"></span></a>
+        </div>
+        </div>
+        <hr>
+<div class="third-section">
+<div class="third-list">
+  <a href="#">Privacy</a>
+  <a href="#">Security</a>
+  <a href="#">Terms of Use</a>
+</div>
+<div>
+  <p>&copy; 2022 Chunk49, INC. PATENT PENDING</p>
+</div>
+</div>
+
+      </div>
+    </footer>
+    <script src="{% static 'chunkapp/js/faq.js' %}"></script>
+  </body>
+</html>

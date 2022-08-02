@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>This is the dashboard view. It is working !!!</h1>
+    <form action="{% url 'chunkFile' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Chunk It">
+    </form>
 </body>
 </html>
