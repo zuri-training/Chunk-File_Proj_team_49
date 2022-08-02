@@ -1,7 +1,8 @@
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UserCreationForm
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm, UserCreationForm,AuthenticationForm,PasswordChangeForm,PasswordResetForm,SetPasswordForm
 from .models import CustomUser
 from django import forms 
 from django.contrib.auth.models import User 
+
 
 
 class CustomUserCreationForm(UserCreationForm):
@@ -15,7 +16,7 @@ class CustomUserChangeForm(UserChangeForm):
         model = CustomUser
         fields = '__all__'
 
-
+#sign up custom form
 class SignUpForm(UserCreationForm): 
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs) 
@@ -43,3 +44,22 @@ class SignUpForm(UserCreationForm):
         model = CustomUser
         fields = ('email','fullname', 'password1', 'password2')
 
+        
+#login custom form
+class LoginForm(AuthenticationForm):
+    pass      
+
+
+#password change custom form
+class PasswordChangeForm(PasswordChangeForm):
+    pass
+
+
+#password reset form custom form
+class PasswordResetForm(PasswordResetForm):
+    pass
+
+
+#password reset confirm custom form , the email being sent
+class PasswordResetConfirm(SetPasswordForm):
+    pass
