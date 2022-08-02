@@ -5,50 +5,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chunk_It</title>
-    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+    <title>Chunk it login page</title>
     <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap" rel="stylesheet">
-    
-
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="circle">
-            <img src="{% static 'accounts/images/Group 26.png' %}" />
-        </div>
-        <div class="content">
-            <h3>Welcome Back!</h3>
-            <p>We are glad you are here, let's help you <br>break down your Csv and Json files into <br>smaller chunks.</p>
-              <div class="form">
-                <div class="form-div">
-                    <input type="text" class="form-input" placeholder=" ">
-                    <label for="" class="form-label">Email Address</label>
-                </div>
-                <div class="form-div">
-                    <input type="text" class="form-input" placeholder=" ">
-                    <label for="" class="form-label">Password</label>
-                </div>
-              <p>Forget Password?</p>
-              <button>Log In</button>
-              <p class="p-two">Don't Have an Account? <span>Sign Up Here!</span></p>
+    <main>
+        <section class="card">
+            <div class="textclass">
+                <img src="{% static 'accounts/images/logo.png' %}" alt="Logo" height="40px" width="auto">
+                <h1>Welcome Back!</h1>
+                <p>We are glad you are here, let’s help you break down your Csv and Json files into smaller chunks.
+                </p>
             </div>
-              
-            <div class="flex-parent">
-                <div class="flex-child-edge"></div>
-                <div class="flex-child-text">OR Sign Up With</div>
-                <div class="flex-child-edge"></div>
-              </div>
-              <div class="icons">
-                <img src="{% static 'accounts/images/image 4.png' %}"  />
-                <img src="{% static 'accounts/images/image 1.png' %}"  />
-                <img src="{% static 'accounts/images/image 2.png' %}"  />
-              </div>
-        </div>
-    </div>
+            <form class="form__div" id="form__div" action="." method="POST">
+                {% csrf_token %}
+                <div class="form">
+                    {{form.username}}
+                    <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
+                    <label for="email" class="form__label">Email address</label>
+                    <small>Error message</small>
+                </div>
+                <div class="form">
+                    {{form.password}}
+                    <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
+                    <label for="password" class="form__label">Password</label>
+                    <small>Error message</small>
+                </div>
+                <input type="submit" value="Log In" class="btn_submit">               
+            </form>
+
+            <p class="accountreg">Don’t Have an Account? <span id="link"><a href="{% url 'register' %}">Sign Up Here!</a></span></p>
+            <div class="divider">
+                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
+                <p id="or">OR Sign Up Here</p>
+                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
+            </div>
+               
+            <div class="flexicon">
+                <img src="{% static 'accounts/images/microsoft.png' %}">
+                <img src="{% static 'accounts/images/google.png' %}" alt="google">
+                <img src="{% static 'accounts/images/github.png' %}">
+            </div>
+
+        </section>
+    </main>
+    <script src="{% static 'accounts/js/login.js' %}"></script>
 </body>
 </html>

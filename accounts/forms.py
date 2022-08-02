@@ -47,7 +47,27 @@ class SignUpForm(UserCreationForm):
         
 #login custom form
 class LoginForm(AuthenticationForm):
-    pass      
+    #customizing auth form
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({ 
+             'name':'username',
+             'id':'email',
+             'type':'text',
+             'placeholder': '  ', 
+             'class': 'form__input',
+            
+             }) 
+        self.fields['password'].widget.attrs.update({ 
+            'name':'password', 
+            'id':'password', 
+            'type':'password',
+            'class': 'form__input', 
+            'placeholder': ' ', 
+            }) 
+    class Meta: 
+        model = CustomUser
+        fields = ('username', 'password')    
 
 
 #password change custom form
