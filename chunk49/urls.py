@@ -17,18 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-<<<<<<< HEAD
-    path('admin', admin.site.urls),
-=======
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls')),
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 3e01832424c2b4aec878019e241735303ecd4a2d
-=======
->>>>>>> 3e01832424c2b4aec878019e241735303ecd4a2d
-=======
->>>>>>> 3e01832424c2b4aec878019e241735303ecd4a2d
     path( '', include('chunkapp.urls') ),
 ]
 

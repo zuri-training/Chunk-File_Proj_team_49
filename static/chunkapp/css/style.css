@@ -1,25 +1,24 @@
+
 *{
   box-sizing: border-box;
 }
-
+#heaDer{
+  padding-bottom: 6px;
+}
 body{
-  background-color: #372092;
   color: white;
   font-family: 'Manrope';
-  font-size: 1.15em;
   margin: 0;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
-
 h1,
 h2 {
  font-family: 'Manrope';
 }
 
 p {
- opacity: 0.6;
+ opacity: 100;
 }
 
 img {
@@ -33,8 +32,8 @@ img {
  border: none;
  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
  cursor: pointer;
- font-size: 16px;
- font-weight: 400;
+ width: 141px;
+ height: 41px;
  padding: 10px 15px;
  margin-left: 10px;
 }
@@ -42,13 +41,18 @@ img {
  background-color: #372092;
  color: #fff;
  font-size: 16px;
- width: 70%;
+ width: 306px;
+ height: 51px; 
+ padding: 16px;
+ border-radius: 8px;
+ box-shadow: 0px 12px 20px;
+
 }
 .container {
  padding: 0 20px;
  margin: 0 auto;
  max-width: 100%;
- width: 1000px;
+ width: 1090px;
 
 }
 
@@ -63,7 +67,7 @@ nav ul li{
 	margin-top: 1px;
 }
 nav ul li a{
-	color: grey;
+	color: #353534;
 	font-size: 20px;
 	font-weight: bold;
 	margin-right: 10px;
@@ -75,10 +79,15 @@ a:hover{
 	color: #FFF;
 	transition: .5s;
 }
-button:hover{
+#seconBtn {
   background: white;
   color: black;
-  border: 1px solid red;
+  border: 2px solid #FCC6C6;
+  transition: .3s;
+}
+#seconBtn:hover {
+  border: 2px solid #FCC6C6;
+  filter: drop-shadow(0px 12px 20px #372092);
   transition: .3s;
 }
 
@@ -87,9 +96,9 @@ button:hover{
   color: white;
 }
 #active:hover{
-  background: white;
-  color: black;
-  border: 1px solid red;
+  background: #5845A4;
+  color: white;
+  border: 1px solid #151515;
   transition: .3s;
 }
 
@@ -110,7 +119,16 @@ header {
  background-color: white;
  padding: 40px 0;
 }
-
+#wordText {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 57.37px;
+  color: #353534;
+}
+#secBtn:hover {
+  border: 2px solid #FCC6C6;
+  filter: drop-shadow(0px 12px 20px #372092);
+}
 #jsc{
 color: #F55353;
 
@@ -125,16 +143,21 @@ nav {
  width: 80%;
 }
 #chnk{
-  color: #113559;
+  color: #353534;
 }
-
+#ser-div{
+  padding: 10px;
+  gap: 10px;
+  
+}
 #ser{
   font-size: 42px;
-}
-.ser{
-  background-image: url("services-section.png"); 
-}
+  font-weight: 700;
+  line-height: 57px;
+  font-style: normal;
+  line-height: 57.37px;
 
+}
 .bottom {
  display: inline-block;
  position: relative;
@@ -144,25 +167,36 @@ nav {
 div p{
   font-size: 20px;
   text-align: left;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 40px;
 }
 div h2{
   font-size: 26px;
   text-align: left;
 }
 #weDo {
-  background-color: #FFFF;
+  background-color: #white;
   color: black;
+}
+.tiTle {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 36px;
 }
 
 #conver{
   text-align: center;
+  justify-content: center;
   font-size: 42px;
   margin: 0;
-  padding: 25px 0 3px;
+  padding: 10px;
+  gap: 10px;
+
 }
 .soon{
-  background-color: grey;
-  color: red;
+  background-color: #6e728d47;
+  color: #F55353;
   text-align-last: center;
 }
 .soon div h3{
@@ -170,39 +204,67 @@ div h2{
   margin-top: 0;
   font-size: 32px;
 }
+.konvet {
+  margin-top: 10px;
+}
+.konvet img{
+  margin-top: 10px;
+}
 .cjex{
-  background-color: grey;
-  border-radius: 15px;
-  margin: 5px 15px 0;
+  background-color: #D7D2E9;
+  color: #372092;
+  border: 1px solid #353534;
+  border-radius: 20px;
+  margin: 8px 15px 15px;
   text-align-last: center;
 }
 .cjex h4 {
   font-size: 26px;
-  margin-bottom: 0;
+  line-height: 36px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+
 }
 #howTo {
   margin-bottom: 10px;
-  background-image: url("Frame 209.png");
+  background-size: cover;
   padding-top: 10px;
+  color: black;
 }
 #howTo h3 {
   font-size: 32px;
+  color: #353534;
+  font-weight: 700;
   text-align: left;
 }
 #howTo p {
   font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #474745;
   text-align: left;
 }
 .learnBtn{
  text-align: end;
- margin-right: 30px;
- font-size: 16px; 
+ margin-right: 30px; 
 }
 .learnBtn button{
+  color: #372092;
   cursor: pointer; 
-  border-radius: 5px;
-  border: none;
-  padding: 10px 40px 10px;
+  border-radius: 8px;
+  top: 64px;
+  left: 874px;
+  border: 2px solid #372092;
+  gap: 10px;
+  padding: 16px;
+  background-size: cover;
+  background-color: #f4a5a5;
+  width: 184px;
+  height: 56px;
+}
+.learnBtn button:hover {
+  border: 2px solid #FCC6C6;
+  filter: drop-shadow(0px 12px 20px #372092);
 }
 footer{
   background-color: #372092;
@@ -214,15 +276,20 @@ footer ul {
 footer a {
  text-decoration: none;
  color: #fff;
+ font-size: 20px;
 }
 .footerImage{
   display: flex;
   margin-right: 3em;
   
 }
+.info{
+  font-weight: 700;
+}
 .footerImage h6{
   margin-top: 20px;
   font-size: 20px;
+  line-height: 27px;
 }
 .aboutUs{
   align-items: self-start;
@@ -230,30 +297,38 @@ footer a {
 .aboutUs ul li {
   margin-bottom: 15px;
 }
-#imgGroup{
-  padding-top: 10px;
-  background-color: white;
-}
-
 .social{
-  margin-bottom: 0;
+  align-items: end;
 }
 .social ul {
   margin-bottom: 0;
 }
 .subScribe{
-  padding: 10px 20px 10px;
+  padding: 8px 16px 8px 20px;
+  gap: 10px;
+  width: 340px;
+  height: 48px;
+  left: 120px;
+  top: 362px;
+  border: 1px solid #FFFFFF;
+  border-radius: 4px;
 }
 .btnSubscribe{
-  padding: 11px 12px 11px;
-  border-radius: 3px;
-  border: none;
-  background-color: pink;
+  padding: 16px;
+  gap: 10px;
+  border-radius: 8px;
+  top: 360px;
+  left: 434px;
+  width: 140px;
+  height: 51px;
+  background-color: #FCC6C6;
+  box-shadow: 0px 12px 20px;
   cursor: pointer;
 }
 .follow-Us{
   text-align: right;
   padding-right: 70px;
+  list-style-type: none;
 }
 .contact {
 	display: flex;
@@ -267,6 +342,8 @@ footer a {
  padding-left: 1px;
  margin-top: 0;
  font-size: 16px;
+ font-weight: 500;
+ line-height: 32px;
  text-align: left;
  gap: 30px;
 }
@@ -295,5 +372,5 @@ nav.flex {
 .box-reverse-mobile {
   flex-direction: column-reverse;
  }
-
+ 
 }
