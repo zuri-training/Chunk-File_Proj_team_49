@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     #third party apps 
     'django_extensions',
     'crispy_forms',
+    'formtools',
 
 
     #created apps
