@@ -57,6 +57,9 @@ class PasswordChange(auth_views.PasswordChangeView):
     template_name='accounts/password_change_form.html'
     form_class=PasswordChangeForm
 
+class PasswordChangeDone(auth_views.PasswordChangeDoneView):
+    template_name='accounts/password_change_done.html'
+
 class PasswordReset(auth_views.PasswordResetView):
     template_name='accounts/password_reset_form.html'  
     form_class=PasswordResetForm

@@ -69,7 +69,7 @@ class LoginForm(AuthenticationForm):
     email = forms.EmailField(max_length=100)
     class Meta: 
         model = CustomUser
-        fields = ('username', 'password')    
+        fields = ('email', 'password')    
 
 
 #password change custom form
