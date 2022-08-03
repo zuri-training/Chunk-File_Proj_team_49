@@ -108,5 +108,5 @@ def termsAndConditions(request):
     return render(request ,'chunkapp/toc.html')    
 #how to use view
 def howTouse(request):
-    return(request,'chunkapp/howtouse.html')
+    return render (request,'chunkapp/howtouse.html')
 

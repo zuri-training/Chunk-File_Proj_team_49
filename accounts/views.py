@@ -7,6 +7,8 @@ from django.contrib.auth import  authenticate ,logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth import login as auth_login
+from django.urls import reverse_lazy
+
 
 
 # Create your views here.
@@ -19,7 +21,9 @@ def register(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)
-            return redirect('chunkapp:dashboard')
+            return redirect('chunkapp:dashboard') 
+        else:
+            print('user already exists')              
     form = SignUpForm() 
     context = { 
                 'form': form 
@@ -52,8 +56,10 @@ def signout(request):
 
 
 class PasswordChange(auth_views.PasswordChangeView):
+    success_url=reverse_lazy('accounts:password_change_done')
     template_name='accounts/password_change_form.html'
     form_class=PasswordChangeForm
+    
 
 class PasswordChangeDone(auth_views.PasswordChangeDoneView):
     template_name='accounts/password_change_done.html'

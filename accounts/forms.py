@@ -74,7 +74,23 @@ class LoginForm(AuthenticationForm):
 
 #password change custom form
 class PasswordChangeForm(PasswordChangeForm):
-    pass
+     def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['old_password'].widget.attrs.update({ 
+            'name':'password', 
+            'id':'current-password', 
+            'type':'password',  
+            })
+        self.fields['new_password1'].widget.attrs.update({ 
+            'name':'password1', 
+            'id':'password', 
+            'type':'password',  
+            }) 
+        self.fields['new_password2'].widget.attrs.update({ 
+            'name':'password2', 
+            'id':'password2', 
+            'type':'password',
+            }) 
 
 
 #password reset form custom form
