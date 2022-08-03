@@ -33,11 +33,11 @@ function checkInputs() {
 	
 	
 	if(currentPsswordValue === '') {
-		setErrorFor(currentPassword, 'Full Name cannot be blank');
+		setErrorFor(currentPassword, 'Current password cannot be blank');
 	}else if(currentPsswordValue.length < 7){
-		setErrorFor(currentPassword, 'Full Name must be more than 6 letters');
+		setErrorFor(currentPassword, 'Current  password must be more than 6 letters');
 	}else if(currentPsswordValue.length > 20){
-		setErrorFor(currentPassword, 'Full name must be less than 15');
+		setErrorFor(currentPassword, 'Current password must be less than 15');
 	}
 	 else {
 		setSuccessFor(currentPassword);
