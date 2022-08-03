@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+body{
+    max-width: 100%;
+    overflow: hidden;
+}
+.container-fluid{
+    min-height: 100vh;
+}
+h2.title{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+}
+a.links{
+    color: #ffffff;
+    text-decoration: none;
+    font-style: 500;
+    font-size: 18px;
+}
+nav {
+    height: 100vh;
+}
+li{
+    list-style-type: none;
+}
+.wrapper{
+    background: #372092;
+    height: 100vh;
+    position: fixed;
+    width: 20%;
+}
+main {
+    margin-left: 20%;
+}
+ul{
+    padding-left: 0!important;
+}
+li:active{
+    background: #F55353;
+    border-radius: 2px;
+}
+a:hover{
+    color: #ffffff!important;
+}

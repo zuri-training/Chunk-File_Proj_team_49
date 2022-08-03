@@ -34,9 +34,11 @@ function checkInputs() {
 	
 	
 	if(usernameValue === '') {
-		setErrorFor(username, 'Username cannot be blank');
+		setErrorFor(username, 'Full Name cannot be blank');
+	}else if(usernameValue.length < 7){
+		setErrorFor(username, 'Full Name must be more than 6 letters');
 	}else if(usernameValue.length > 20){
-		setErrorFor(username, 'Username must be less than 15');
+		setErrorFor(username, 'Full name must be less than 15');
 	}
 	 else {
 		setSuccessFor(username);
@@ -52,14 +54,19 @@ function checkInputs() {
 	
 	if(passwordValue === '') {
 		setErrorFor(password, 'Password cannot be blank');
-	} else {
+	}else if(passwordValue.length < 8){
+		setErrorFor(password, 'password can not be less than 8');
+	}
+	 else {
 		setSuccessFor(password);
 	}
 	
 	if(password2Value === '') {
 		setErrorFor(password2, 'Confirm password cannot be blank');
-	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Passwords does not match');
+	}else if(password2Value.length < 8){
+		setErrorFor(password2, 'password can not be less than 8');
+	}else if(passwordValue !== password2Value) {
+		setErrorFor(password2, 'Passwords do not match');
 	} else{
 		setSuccessFor(password2);
 	}
@@ -105,3 +112,8 @@ function isEmail(email) {
         }, false)
       })
   })()
+
+  function relocate_home()
+{
+     location.href = "login.html";
+} 

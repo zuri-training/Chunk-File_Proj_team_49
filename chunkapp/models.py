@@ -14,8 +14,9 @@ class ChunkOrder(models.Model):
     # this field is important as it allows for quering the database 
     custom_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
     file_name = models.CharField(max_length=200, null=True, blank=True)
-    zip_file = models.FileField(null=True, blank=True)
-    chunk_size = models.IntegerField()
+    file = models.FileField(null=True, blank=True,upload_to='largefile/')
+    chunk_size = models.IntegerField(null=True,blank=True)
+    zip_file=models.FileField(null=True, blank=True,upload_to='zips/')
     zip_link = models.CharField(max_length=300, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
