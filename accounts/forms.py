@@ -50,8 +50,9 @@ class LoginForm(AuthenticationForm):
     #customizing auth form
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({ 
-             'name':'username',
+        self.fields.pop('username')
+        self.fields['email'].widget.attrs.update({ 
+             'name':'email',
              'id':'email',
              'type':'text',
              'placeholder': '  ', 
@@ -65,6 +66,7 @@ class LoginForm(AuthenticationForm):
             'class': 'form__input', 
             'placeholder': ' ', 
             }) 
+    email = forms.EmailField(max_length=100)
     class Meta: 
         model = CustomUser
         fields = ('username', 'password')    

@@ -1,5 +1,6 @@
+import re
 from django.shortcuts import HttpResponse, render, redirect,HttpResponseRedirect
-from . utils import BASE_DIR, handleUploadedFile, chunkJson ,zipFunction
+from . utils import BASE_DIR, handleUploadedFile, chunkJson ,zipFunction,chunkCsv
 from . forms import FileUploadForm,ChunkSizeForm
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
@@ -21,14 +22,16 @@ def index(request):
 def faq(request):
     return render(request,'chunkapp/faq.html')
 #dashboard view
-def renderDashBoardView(request):
-    # this views primary function is too render a template
-    # and then pass a form as the context
-    # form= FileUploadForm()
-    # context = {"form": form}
-    return (request)
+# def dashBoard(request):
+#     # this views primary function is too render a template
+#     # and then pass a form as the context
+#     # form= FileUploadForm()
+#     # context = {"form": form}
+#     return render(request,'chunkapp/dashboard.html')
+
+#dashboard upload wizard
 class UploadWizard(SessionWizardView):
-    template_name='chunkapp/new.html'
+    template_name='chunkapp/dashboard.html'
     form_list = [FileUploadForm, ChunkSizeForm]
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
@@ -40,10 +43,11 @@ def process_form(form_list):
     file=form_data[0]['file'].name
     chunk_size=form_data[1]['chunk_size']
     path =pathlib.Path(MEDIA_DIR + "/largefile/" + file)
-    # file = form_dict['file']
-    # chunk_size = form_dict['chunk_size']
-    
-    return chunkJson(path, chunk_size)
+    if file.endswith('.json'):
+        dir=chunkJson(path, chunk_size)
+    elif file.endswith('.csv'):
+        dir= chunkCsv(path,chunk_size)    
+    return zipFunction(dir)
 
 
 

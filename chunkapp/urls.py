@@ -5,7 +5,7 @@ app_name= "chunkapp"
 
 urlpatterns = [
     path('',views.index,name='index'),
-    path('dashboard/', views.renderDashBoardView, name="dashboard"),
+    path('dashboard/', views.UploadWizard.as_view(), name="dashboard"),
     # path('dashboard/uploadfile', views.uploadFile, name="uploadFile"),
     path('faq',views.faq,name='faq'),
     path('recent/',views.listRecentChunks,name='recent'),

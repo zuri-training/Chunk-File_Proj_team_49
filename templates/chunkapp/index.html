@@ -25,12 +25,13 @@
               <li><a class="soft" href="#">About us</a></li>
 		        </ul>
 
-		        <button class="btn" id="seconBtn">
-		          LOGIN
+		        <button class="btn" id="seconBtn" >
+              <a href="{% url 'accounts:login' %}">LOGIN</a>
 		        </button>
 
 		        <button class="btn" id="active">
-		          SIGN UP
+              <a href="{% url 'accounts:register' %}">SIGN UP</a>
+		          
 		        </button>
 	      	</nav>
           <!--Navigation bar ended here-->

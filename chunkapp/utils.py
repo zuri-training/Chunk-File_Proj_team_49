@@ -58,10 +58,10 @@ def chunkJson(file_path, obj_count):
             json.dump(chunk, out_json_file, indent=4)
 
     directory=pathlib.Path(MEDIA_DIR + "/" + file_location + "/")    
-    return directory, file  
+    return directory 
 
 
-def zipFunction(directory,f):
+def zipFunction(directory):
           # # the first parameter in zipfile.Zipfile is the location where the zip file is saved
           #zip location
           zip_file_name = generateRandomName() + ".zip"
@@ -71,10 +71,10 @@ def zipFunction(directory,f):
               archive.write(file_path, arcname=file_path.name)
             archive.close()
           shutil.rmtree(directory)
-          # this code is responsible for deleting the initial uploaded file
-          dir_path = Path(__file__).resolve().parent / "media"
-          file_path = dir_path / f.name
-          file_path.unlink() # remove file
+        #   # this code is responsible for deleting the initial uploaded file
+        #   dir_path = Path(__file__).resolve().parent / "media"
+        #   file_path = dir_path / f.name
+        #   file_path.unlink() # remove file
           return "/media/" + zip_file_name
 
 def generateRandomName(file_name = ""):
@@ -86,19 +86,39 @@ def generateRandomName(file_name = ""):
 # batch_no: number we will use to increment the file name of each chunk 
 # csvfilepath: csv file path
 
-def split_csv(csvfilepath, rows_per_chunk):
-    file_line_number = len(pd.read_csv(csvfilepath))                           
-    batch_no = 1                                               
-    # if the number of rows specified per chunk by the user is greater than total number of lines in the file
-    if (rows_per_chunk > file_line_number):
-        print('Number of rows in a chunk cannot be greater than total number of lines in the file')
+def chunkCsv(csv_file, no_of_rows):
+    line_number = sum(1 for row in (open(csv_file)))
+    file_name = csv_file.name.strip(".")[0]
+    file_location = generateRandomName(file_name)
+    os.makedirs(MEDIA_DIR + "/" + file_location)
+    for i in range(0, line_number, no_of_rows):
+        df = pd.read_csv(csv_file, header=None, nrows=no_of_rows, skiprows=i)
+        newfile = MEDIA_DIR + "/" + file_location +'/'+ str(i) + '.csv'
+        df.to_csv(newfile,
+                  index=False,
+                  header=True,
+                  mode='a',
+                  chunksize=no_of_rows)
+    dir=pathlib.Path(MEDIA_DIR + "/" + file_location + "/")                  
+    return dir
 
-    elif (rows_per_chunk < 1):      
-        print('Number of rows in a chunk cannot be less than 1')
-    else:
-        for chunk in pd.read_csv(csvfilepath, chunksize= rows_per_chunk ):
-            chunk.to_csv('chunk' + str(batch_no) + '.csv',  index=False)
-            batch_no += 1
+
+
+
+
+# def split_csv(csvfilepath, rows_per_chunk):
+#     file_line_number = len(pd.read_csv(csvfilepath))                           
+#     batch_no = 1                                               
+#     # if the number of rows specified per chunk by the user is greater than total number of lines in the file
+#     if (rows_per_chunk > file_line_number):
+#         print('Number of rows in a chunk cannot be greater than total number of lines in the file')
+
+#     elif (rows_per_chunk < 1):      
+#         print('Number of rows in a chunk cannot be less than 1')
+#     else:
+#         for chunk in pd.read_csv(csvfilepath, chunksize= rows_per_chunk ):
+#             chunk.to_csv('chunk' + str(batch_no) + '.csv',  index=False)
+#             batch_no += 1
 
 
 

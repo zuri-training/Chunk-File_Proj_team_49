@@ -15,13 +15,13 @@
             <div class="textclass">
                 <img src="{% static 'accounts/images/logo.png' %}" alt="Logo" height="40px" width="auto">
                 <h1>Welcome Back!</h1>
-                <p>We are glad you are here, let’s help you break down your Csv and Json files into smaller chunks.
+                <p>We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
                 </p>
             </div>
-            <form class="form__div" id="form__div" action="." method="POST">
+            <form class="form__div" id="form" action="." method="POST">
                 {% csrf_token %}
                 <div class="form">
-                    {{form.username}}
+                    {{form.email}}
                     <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
                     <label for="email" class="form__label">Email address</label>
                     <small>Error message</small>
@@ -32,7 +32,7 @@
                     <label for="password" class="form__label">Password</label>
                     <small>Error message</small>
                 </div>
-                <input type="submit" value="Log In" class="btn_submit">               
+                <button class="btn_submit" id="submit" type="submit">log in</button>              
             </form>
 
             <p class="accountreg">Don’t Have an Account? <span id="link"><a href="{% url 'register' %}">Sign Up Here!</a></span></p>
