@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .forms import SignUpForm,PasswordChangeForm,PasswordResetForm,PasswordResetConfirm,LoginForm
-from django.contrib.auth import  authenticate 
+from django.contrib.auth import  authenticate ,logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
 from django.contrib.auth import login as auth_login
@@ -46,11 +46,9 @@ def login(request):
         return render(request, 'accounts/login.html', {'form': form})
 
 
-
-#class based views extending django defaults and customising
-# class LoginView(auth_views.LoginView):
-#     template_name='accounts/login.html'
-#     authentication_form=LoginForm
+def signout(request):
+    logout(request)
+    return redirect ('accounts:login')
 
 
 class PasswordChange(auth_views.PasswordChangeView):
@@ -68,8 +66,14 @@ class PasswordReset(auth_views.PasswordResetView):
     #to be added
     subject_template_name="accounts/password_reset_subject.txt"
 
+class PasswordResetDone(auth_views.PasswordResetDoneView):
+    template_name='accounts/password_reset_done.html'
+
 class PasswordResetConfirm(auth_views.PasswordResetConfirmView):
     template_name='accounts/password_reset_confirm.html'
-    form_class=PasswordResetConfirm    
+    form_class=PasswordResetConfirm 
+
+class PasswordResetComplete(auth_views.PasswordResetCompleteView):
+    template_name='accounts/password_reset_complete.html'
     
 
