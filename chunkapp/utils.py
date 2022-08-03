@@ -14,19 +14,11 @@ MEDIA_DIR = settings.MEDIA_ROOT
 # the utils file is where all the business logic of file chunking file 
 # validation and other technical operations and functions exist
 
+
 def validateFile(UploadedFile):
     # this serves as validation for the Upload file form in django
     if UploadedFile.name.endswith('.csv') or UploadedFile.name.endswith(".json"):
         return UploadedFile
-
-def handleUploadedFile(f):
-    # this function allows us to read a large file
-    # and download the file unto the server in an efficient manner
-    with open('media/' + f.name, 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-    return destination
-
 
 def chunkJson(file_path, obj_count):
   #opens uploaded file
@@ -106,6 +98,12 @@ def chunkCsv(csv_file, no_of_rows):
 
 
 
+
+
+
+
+
+
 # def split_csv(csvfilepath, rows_per_chunk):
 #     file_line_number = len(pd.read_csv(csvfilepath))                           
 #     batch_no = 1                                               
@@ -122,3 +120,13 @@ def chunkCsv(csv_file, no_of_rows):
 
 
 
+
+
+
+# def handleUploadedFile(f):
+#     # this function allows us to read a large file
+#     # and download the file unto the server in an efficient manner
+#     with open('media/' + f.name, 'wb+') as destination:
+#         for chunk in f.chunks():
+#             destination.write(chunk)
+#     return destination

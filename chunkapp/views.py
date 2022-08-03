@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import HttpResponse, render, redirect,HttpResponseRedirect
-from . utils import BASE_DIR, handleUploadedFile, chunkJson ,zipFunction,chunkCsv
+from . utils import BASE_DIR, chunkJson ,zipFunction,chunkCsv
 from . forms import FileUploadForm,ChunkSizeForm
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
