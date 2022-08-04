@@ -14,44 +14,31 @@
   </head>
   <body>
     <main>
-      <section class="card">
-        <div class="textclass">
-          <img
-            src="{% static 'accounts/images/logo.png' %}"
-            alt="Logo"
-            height="40px"
-            width="auto"
-          />
-          <h1>Welcome Back!</h1>
-          <p>
-            We are glad you are here, let's help you break down your Csv and
-            Json files into smaller chunks.
-          </p>
-        </div>
-        <form class="form__div" id="form" action="." method="POST">
-          {% csrf_token %}
-          <div class="form">
-            {{form.email}}
-            <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
-            <label for="email" class="form__label">Email address</label>
-            <small>Error message</small>
-          </div>
-          {% if messages %}
-          <ul class="messages">
-            {% for message in messages %}
-            <li class="{{ message.tags }}">{{ message }}</li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-          <div class="form">
-            {{form.password}}
-            <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
-            <label for="password" class="form__label">Password</label>
-            <small>Error message</small>
-          </div>
-          <div id="forgotPass">
-            <a href="{% url 'accounts:password_reset' %}">Forget Password?</a>
-          </div>
+        <section class="card">
+            <div class="textclass">
+                <a href="{% url 'chunkapp:index' %}"><img src="{% static 'accounts/images/logo.png' %}" alt="Logo" height="40px" width="auto"></a>
+                <h1>Welcome Back!</h1>
+                <p>We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
+                </p>
+            </div>
+            <form class="form__div" id="form" action="." method="POST">
+                {% csrf_token %}
+                <div class="form">
+                    {{form.email}}
+                    <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
+                    <label for="email" class="form__label">Email address</label>
+                    <small>Error message</small>
+                </div>
+                <div class="form">
+                    {{form.password}}
+                    <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
+                    <label for="password" class="form__label">Password</label>
+                    <small>Error message</small>
+                </div>
+                <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forget Password?</a></div>
+                
+                <button class="btn_submit" id="submit" type="submit">log in</button>              
+            </form>
 
           <button class="btn_submit" id="submit" type="submit">log in</button>
         </form>

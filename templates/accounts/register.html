@@ -27,18 +27,11 @@
             download, with Chunk49.
           </p>
         </div>
-      </div>
-      <div
-        class="d-flex reg-form align-items-center justify-content-center h-100 col-lg-6"
-      >
-        <div class="w-50">
-          <div class="logo d-flex justify-content-center">
-            <img
-              src="{% static 'accounts/images/logo.svg' %}"
-              alt="logo"
-              class="w-25 my-4"
-            />
-          </div>
+                <div class="d-flex reg-form align-items-center justify-content-center h-100 col-lg-6" >
+                    <div class="w-50" >
+                        <a href="{% url 'chunkapp:index' %}"><div class="logo d-flex justify-content-center">
+                            <img src="{% static 'accounts/images/logo.svg' %}" alt="logo" class="w-25 my-5">
+                        </div></a>
 
           <form
             id="form"

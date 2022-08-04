@@ -1,8 +1,8 @@
-const form = document.getElementById('form__div')
+const form = document.getElementById('form')
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 
-form__div.addEventListener('submit', e => {
+form.addEventListener('submit', e => {
 	e.preventDefault();
 	
 	checkInputs();

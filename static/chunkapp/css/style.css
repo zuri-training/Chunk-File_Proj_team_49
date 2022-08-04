@@ -30,7 +30,7 @@ img {
  background-color: #fff;
  color: grey;
  border: none;
- box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+ /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); */
  cursor: pointer;
  width: 141px;
  height: 41px;
@@ -74,11 +74,19 @@ nav ul li a{
 	padding: 5px 5px;
 	text-decoration: none;
 }
-a:hover{
-	background: hsl(233deg 69% 35%);
-	color: #FFF;
-	transition: .5s;
+
+nav ul li a:hover{
+  font-size: 32px;
 }
+
+a:hover{
+	/* background: hsl(233deg 69% 35%); */
+	/* color: rgb(0, 30, 255); */
+  /* text-decoration: underline; */
+  /* font-size: 22px;
+	transition: .5s; */
+}
+
 #seconBtn {
   background: white;
   color: black;
@@ -87,7 +95,7 @@ a:hover{
 }
 #seconBtn:hover {
   border: 2px solid #FCC6C6;
-  filter: drop-shadow(0px 12px 20px #372092);
+  /* filter: drop-shadow(0px 12px 20px #cecece); */
   transition: .3s;
 }
 
@@ -96,7 +104,7 @@ a:hover{
   color: white;
 }
 #active:hover{
-  background: #5845A4;
+  background: #2807AE;
   color: white;
   border: 1px solid #151515;
   transition: .3s;
@@ -127,7 +135,7 @@ header {
 }
 #secBtn:hover {
   border: 2px solid #FCC6C6;
-  filter: drop-shadow(0px 12px 20px #372092);
+  /* filter: drop-shadow(0px 12px 20px #372092); */
 }
 #jsc{
 color: #F55353;
@@ -176,7 +184,7 @@ div h2{
   text-align: left;
 }
 #weDo {
-  background-color: #white;
+  background-color: white;
   color: black;
 }
 .tiTle {
@@ -264,7 +272,7 @@ div h2{
 }
 .learnBtn button:hover {
   border: 2px solid #FCC6C6;
-  filter: drop-shadow(0px 12px 20px #372092);
+  /* filter: drop-shadow(0px 12px 20px #372092); */
 }
 footer{
   background-color: #372092;
