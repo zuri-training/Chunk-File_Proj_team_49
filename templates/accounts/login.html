@@ -29,6 +29,13 @@
                     <label for="email" class="form__label">Email address</label>
                     <small>Error message</small>
                 </div>
+                {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
                 <div class="form">
                     {{form.password}}
                     <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
@@ -39,9 +46,6 @@
                 
                 <button class="btn_submit" id="submit" type="submit">log in</button>              
             </form>
-
-          <button class="btn_submit" id="submit" type="submit">log in</button>
-        </form>
 
         <p class="accountreg">
           Don’t Have an Account?
