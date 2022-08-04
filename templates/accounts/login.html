@@ -32,6 +32,8 @@
                     <label for="password" class="form__label">Password</label>
                     <small>Error message</small>
                 </div>
+                <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forget Password?</a></div>
+                
                 <button class="btn_submit" id="submit" type="submit">log in</button>              
             </form>
 
@@ -43,9 +45,9 @@
             </div>
                
             <div class="flexicon">
-                <img src="{% static 'accounts/images/microsoft.png' %}">
-                <img src="{% static 'accounts/images/google.png' %}" alt="google">
-                <img src="{% static 'accounts/images/github.png' %}">
+                <img src="{% static 'accounts/images/microsoft.png' %}" height="24px" width="auto">
+                <img src="{% static 'accounts/images/google.png' %}" alt="google" height="24px" width="auto">
+                <img src="{% static 'accounts/images/github.png' %}" height="24px" width="auto">
             </div>
 
         </section>

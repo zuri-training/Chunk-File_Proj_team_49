@@ -50,7 +50,6 @@ def signout(request):
     logout(request)
     return redirect ('accounts:login')
 
-
 class PasswordChange(auth_views.PasswordChangeView):
     template_name='accounts/password_change_form.html'
     form_class=PasswordChangeForm
