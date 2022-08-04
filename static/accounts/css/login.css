@@ -137,6 +137,19 @@ form:hover {
     color: #fff;
     }
 
+#forgotPass {
+    display: grid;
+    justify-content: right;
+    margin-top: -12px;
+    margin-bottom: 12px;
+    /* align-self: right; */
+}
+
+#forgotPass a {
+    font-size: 14px;
+    color: var(--color-text);
+}
+
 /*  End Forms */
 
 .btn_submit{

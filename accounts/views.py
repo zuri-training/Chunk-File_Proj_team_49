@@ -60,7 +60,6 @@ def logout(request):
     auth_logout(request)
     return redirect ('accounts:login')
 
-
 class PasswordChange(auth_views.PasswordChangeView):
     success_url=reverse_lazy('accounts:password_change_done')
     template_name='accounts/password_change_form.html'
