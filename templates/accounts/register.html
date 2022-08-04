@@ -81,7 +81,7 @@
                             <button class="btn btn-primary signup-btn" id="submit" type="submit">Sign Up</button>
                           </div>
                     </form>
-                   <span class="d-flex align-items-center gap-2 mb-3 have-account">Already have an account? <button type="button" class="btn  login-btn " onclick=" relocate_home()">Log in</button></span>
+                   <span class="d-flex align-items-center gap-2 mb-3 have-account">Already have an account? <button type="button" class="btn  login-btn " onclick="window.location.href='{% url 'accounts:login' %}';">Log in</button></span>
             </div>
         </div>
     </main>
