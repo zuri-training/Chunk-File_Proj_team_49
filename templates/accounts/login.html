@@ -1,15 +1,18 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chunk it login page</title>
-    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <main>
         <section class="card">
             <div class="textclass">
@@ -37,21 +40,55 @@
                 <button class="btn_submit" id="submit" type="submit">log in</button>              
             </form>
 
-            <p class="accountreg">Don’t Have an Account? <span id="link"><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span></p>
-            <div class="divider">
-                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
-                <p id="or">OR Sign Up Here</p>
-                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
-            </div>
-               
-            <div class="flexicon">
-                <img src="{% static 'accounts/images/microsoft.png' %}" height="24px" width="auto">
-                <img src="{% static 'accounts/images/google.png' %}" alt="google" height="24px" width="auto">
-                <img src="{% static 'accounts/images/github.png' %}" height="24px" width="auto">
-            </div>
+          <button class="btn_submit" id="submit" type="submit">log in</button>
+        </form>
 
-        </section>
+        <p class="accountreg">
+          Don’t Have an Account?
+          <span id="link"
+            ><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span
+          >
+        </p>
+        <div class="divider">
+          <img
+            src="{% static 'accounts/images/line.png' %}"
+            alt=""
+            height="1px"
+          />
+          <p id="or">OR Sign Up Here</p>
+          <img
+            src="{% static 'accounts/images/line.png' %}"
+            alt=""
+            height="1px"
+          />
+        </div>
+
+        <div class="flexicon">
+          <img
+            src="{% static 'accounts/images/microsoft.png' %}"
+            height="24px"
+            width="auto"
+          />
+          <img
+            src="{% static 'accounts/images/google.png' %}"
+            alt="google"
+            height="24px"
+            width="auto"
+          />
+          <img
+            src="{% static 'accounts/images/github.png' %}"
+            height="24px"
+            width="auto"
+          />
+        </div>
+
+        <!-- <div class="flexicon">
+          <img src="{% static 'accounts/images/microsoft.png' %}" />
+          <img src="{% static 'accounts/images/google.png' %}" alt="google" />
+          <img src="{% static 'accounts/images/github.png' %}" />
+        </div> -->
+      </section>
     </main>
     <script src="{% static 'accounts/js/login.js' %}"></script>
-</body>
+  </body>
 </html>

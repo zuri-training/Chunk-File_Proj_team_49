@@ -9,10 +9,18 @@ from django.forms import ValidationError
 from django.conf import settings
 import uuid
 import pandas as pd
+from .forms import FileUploadForm,ChunkSizeForm
 BASE_DIR = settings.BASE_DIR
 MEDIA_DIR = settings.MEDIA_ROOT
 # the utils file is where all the business logic of file chunking file 
 # validation and other technical operations and functions exist
+
+#form wizard templates
+TEMPLATES = {"fileupload": "chunkapp/dashboard.html",
+             "chunksize": "chunkapp/chunksize.html",}
+
+FORMS = [("fileupload", FileUploadForm),
+         ("chunksize", ChunkSizeForm),]
 
 
 def validateFile(UploadedFile):

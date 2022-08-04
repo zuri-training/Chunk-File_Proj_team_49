@@ -149,3 +149,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL=''
 LOGIN_REDIRECT_URL='dashboard/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'chunk49team@gmail.com'
+# EMAIL_HOST_PASSWORD ='qvzuznubfvrxlwgv'
+# DEFAULT_FROM_EMAIL='chunk49team@gmail.com'
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '0553b9cb46ebf9'
+EMAIL_HOST_PASSWORD = '7a2f47cb330d97'
+EMAIL_PORT = '2525'
