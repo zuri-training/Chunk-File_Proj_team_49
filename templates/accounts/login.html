@@ -14,50 +14,92 @@
   </head>
   <body>
     <main>
-        <section class="card">
-            <div class="textclass">
-                <img src="{% static 'accounts/images/logo.png' %}" alt="Logo" height="40px" width="auto">
-                <h1>Welcome Back!</h1>
-                <p>We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
-                </p>
-            </div>
-            <form class="form__div" id="form" action="." method="POST">
-                {% csrf_token %}
-                <div class="form">
-                    {{form.email}}
-                    <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
-                    <label for="email" class="form__label">Email address</label>
-                    <small>Error message</small>
-                </div>
-                <div class="form">
-                    {{form.password}}
-                    <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
-                    <label for="password" class="form__label">Password</label>
-                    <small>Error message</small>
-                </div>
-                <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forget Password?</a></div>
-                
-                <button class="btn_submit" id="submit" type="submit">log in</button>              
-            </form>
+      <section class="card">
+        <div class="textclass">
+          <img
+            src="{% static 'accounts/images/logo.png' %}"
+            alt="Logo"
+            height="40px"
+            width="auto"
+          />
+          <h1>Welcome Back!</h1>
+          <p>
+            We are glad you are here, let's help you break down your Csv and
+            Json files into smaller chunks.
+          </p>
+        </div>
+        <form class="form__div" id="form" action="." method="POST">
+          {% csrf_token %}
+          <div class="form">
+            {{form.email}}
+            <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
+            <label for="email" class="form__label">Email address</label>
+            <small>Error message</small>
+          </div>
+          {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <div class="form">
+            {{form.password}}
+            <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
+            <label for="password" class="form__label">Password</label>
+            <small>Error message</small>
+          </div>
+          <div id="forgotPass">
+            <a href="{% url 'accounts:password_reset' %}">Forget Password?</a>
+          </div>
 
-            <p class="accountreg">Don’t Have an Account? <span id="link"><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span></p>
-            <div class="divider">
-                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
-                <p id="or">OR Sign Up Here</p>
-                <img src="{% static 'accounts/images/line.png' %}" alt="" height="1px">
-            </div>
-               
-            <div class="flexicon">
-                <img src="{% static 'accounts/images/microsoft.png' %}" height="24px" width="auto">
-                <img src="{% static 'accounts/images/google.png' %}" alt="google" height="24px" width="auto">
-                <img src="{% static 'accounts/images/github.png' %}" height="24px" width="auto">
-            </div>
+          <button class="btn_submit" id="submit" type="submit">log in</button>
+        </form>
+
+        <p class="accountreg">
+          Don’t Have an Account?
+          <span id="link"
+            ><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span
+          >
+        </p>
+        <div class="divider">
+          <img
+            src="{% static 'accounts/images/line.png' %}"
+            alt=""
+            height="1px"
+          />
+          <p id="or">OR Sign Up Here</p>
+          <img
+            src="{% static 'accounts/images/line.png' %}"
+            alt=""
+            height="1px"
+          />
+        </div>
 
         <div class="flexicon">
+          <img
+            src="{% static 'accounts/images/microsoft.png' %}"
+            height="24px"
+            width="auto"
+          />
+          <img
+            src="{% static 'accounts/images/google.png' %}"
+            alt="google"
+            height="24px"
+            width="auto"
+          />
+          <img
+            src="{% static 'accounts/images/github.png' %}"
+            height="24px"
+            width="auto"
+          />
+        </div>
+
+        <!-- <div class="flexicon">
           <img src="{% static 'accounts/images/microsoft.png' %}" />
           <img src="{% static 'accounts/images/google.png' %}" alt="google" />
           <img src="{% static 'accounts/images/github.png' %}" />
-        </div>
+        </div> -->
       </section>
     </main>
     <script src="{% static 'accounts/js/login.js' %}"></script>
