@@ -95,9 +95,16 @@ class PasswordChangeForm(PasswordChangeForm):
 
 #password reset form custom form
 class PasswordResetForm(PasswordResetForm):
-    pass
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['email'].widget.attrs.update({ 
+            'name':'email', 
+            'id':'email-address', 
+            'type':'email', 
+            'class':"input-field"  
+            })
 
 
 #password reset confirm custom form , the email being sent
-class PasswordResetConfirm(SetPasswordForm):
+class setPasswordForm(SetPasswordForm):
     pass

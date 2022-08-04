@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
-from .forms import SignUpForm,PasswordChangeForm,PasswordResetForm,PasswordResetConfirm,LoginForm
+from .forms import SignUpForm,PasswordChangeForm,PasswordResetForm,SetPasswordForm,LoginForm, setPasswordForm
 from django.contrib.auth import  authenticate ,logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import views as auth_views
@@ -67,17 +67,17 @@ class PasswordChangeDone(auth_views.PasswordChangeDoneView):
 class PasswordReset(auth_views.PasswordResetView):
     template_name='accounts/password_reset_form.html'  
     form_class=PasswordResetForm
-    #to be added
     email_template_name='accounts/password_reset_email.html' 
-    #to be added
     subject_template_name="accounts/password_reset_subject.txt"
+    success_url=reverse_lazy('accounts:password_reset_done')
 
 class PasswordResetDone(auth_views.PasswordResetDoneView):
     template_name='accounts/password_reset_done.html'
 
 class PasswordResetConfirm(auth_views.PasswordResetConfirmView):
     template_name='accounts/password_reset_confirm.html'
-    form_class=PasswordResetConfirm 
+    form_class=setPasswordForm
+    success_url=reverse_lazy('accounts:password_reset_complete')
 
 class PasswordResetComplete(auth_views.PasswordResetCompleteView):
     template_name='accounts/password_reset_complete.html'
