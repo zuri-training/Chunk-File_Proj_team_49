@@ -19,11 +19,12 @@ def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST) 
         if form.is_valid():
+            print('valid form')
             user = form.save()
             auth_login(request, user)
             return redirect('chunkapp:dashboard') 
         else:
-            return HttpResponse('user with this email already exists', status=401 )            
+            form = SignUpForm() 
     form = SignUpForm() 
     context = { 
                 'form': form 
@@ -37,17 +38,18 @@ def login(request):
     if request.method == "POST":
         form = LoginForm(data=request.POST)
         if form.is_valid():
-            email = form.cleaned_data.get('email')
+            email = form.cleaned_data.get('email').lower()
             password = form.cleaned_data.get('password')
             user = authenticate(request,email=email, password=password)
             if user is not None:
                 auth_login(request,user)
                 return redirect('chunkapp:dashboard')
             else:
-                return HttpResponse('Invalid Credientials', status=401 )             
+                form = LoginForm(request.POST)
+                messages.error(request, 'user with this email does not exist.') 
+                return render(request, 'accounts/login.html', {'form': form})         
         else:
             form = LoginForm(request.POST)
-            print('error message') 
             return render(request, 'accounts/login.html', {'form': form})
     else:
         form = LoginForm()
