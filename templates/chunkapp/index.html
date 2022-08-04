@@ -15,7 +15,7 @@
 
           <!--Navigation bar started here-->
 	      	<nav class="flex">
-		        <img class="logo" src="{% static 'chunkapp/images/Group25.png'%}" alt="logo"  width="64px" height="64px"/>
+            <a href="{% url 'chunkapp:index' %}"><img class="logo" src="{% static 'chunkapp/images/Group25.png'%}" alt="logo"  width="64px" height="64px"/></a>
 		        <h1 id="chnk">Chunk49</h1>
 		        <ul>
               <li><a class="soft" href="#">How to use</a></li>
@@ -25,13 +25,10 @@
               <li><a class="soft" href="#">About us</a></li>
 		        </ul>
 
-		        <button class="btn" id="seconBtn" >
-              <a href="{% url 'accounts:login' %}">LOGIN</a>
+		        <button type="button" class="btn" id="seconBtn" onclick="window.location.href='{% url 'accounts:login' %}';">LOGIN
 		        </button>
 
-		        <button class="btn" id="active">
-              <a href="{% url 'accounts:register' %}">SIGN UP</a>
-		          
+		        <button class="btn" id="active" onclick="window.location.href='{% url 'accounts:register' %}';">SIGN UP		          
 		        </button>
 	      	</nav>
           <!--Navigation bar ended here-->
