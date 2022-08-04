@@ -1,6 +1,6 @@
 import re
 from django.shortcuts import HttpResponse, render, redirect,HttpResponseRedirect
-from . utils import BASE_DIR, chunkJson ,zipFunction,chunkCsv
+from . utils import BASE_DIR, chunkJson ,zipFunction,chunkCsv,TEMPLATES,FORMS
 from . forms import FileUploadForm,ChunkSizeForm
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
@@ -31,8 +31,10 @@ def faq(request):
 
 #dashboard upload wizard
 class UploadWizard(SessionWizardView):
-    template_name='chunkapp/dashboard.html'
-    form_list = [FileUploadForm, ChunkSizeForm]
+    def get_template_names(self):
+        return [TEMPLATES[self.steps.current]]
+    # template_name='chunkapp/dashboard.html'
+    form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
          form_data=process_form(form_list)
@@ -108,5 +110,5 @@ def termsAndConditions(request):
     return render(request ,'chunkapp/toc.html')    
 #how to use view
 def howTouse(request):
-    return(request,'chunkapp/howtouse.html')
+    return render (request,'chunkapp/howtouse.html')
 

@@ -1,6 +1,6 @@
 from dataclasses import fields
 from django import forms
-from . utils import validateFile
+#from . utils import validateFile
 from . models import ChunkOrder
 from django.forms import ModelForm
 
@@ -15,11 +15,25 @@ from django.forms import ModelForm
 #     chunk_size = forms.IntegerField()
 
 class FileUploadForm(ModelForm):
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['file'].widget.attrs.update({ 
+            'name':'email', 
+            'id':'email', 
+            'type':'email',  
+            })
     class Meta:
         model=ChunkOrder
         fields=['file']
 
 class ChunkSizeForm(ModelForm):
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['chunk_size'].widget.attrs.update({ 
+            'name':'email', 
+            'id':'email', 
+            'type':'email',  
+            })
     class Meta:
         model=ChunkOrder
         fields=['chunk_size']
