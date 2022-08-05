@@ -1,7 +1,4 @@
 from django.db import models
-from django.contrib.auth import get_user_model
-from numpy import delete
-from pathlib import Path
 from django.conf import settings
 
 # Create your models here.
