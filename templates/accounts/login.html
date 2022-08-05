@@ -43,8 +43,10 @@
                     <small>Error message</small>
                 </div>
                 <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forget Password?</a></div>
-                
-                <button class="btn_submit" id="submit" type="submit">log in</button>              
+                <div class="form">
+                  <button class="btn_submit" id="submit" type="submit">log in</button>
+                </div>
+                              
             </form>
 
         <p class="accountreg">
@@ -93,6 +95,5 @@
         </div> -->
       </section>
     </main>
-    <script src="{% static 'accounts/js/login.js' %}"></script>
   </body>
 </html>

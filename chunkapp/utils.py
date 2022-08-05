@@ -18,7 +18,7 @@ MEDIA_DIR = settings.MEDIA_ROOT
 #form wizard templates
 TEMPLATES = {"fileupload": "chunkapp/dashboard.html",
              "chunksize": "chunkapp/chunksize.html",}
-
+#form wizard forms
 FORMS = [("fileupload", FileUploadForm),
          ("chunksize", ChunkSizeForm),]
 
@@ -81,10 +81,7 @@ def generateRandomName(file_name = ""):
     return str(uuid.uuid4()) + file_name
 
                               
-# rows_per_chunk: is the number of rows the user wants per chunk file
-# file_line_number: Total number of lines in the file 
-# batch_no: number we will use to increment the file name of each chunk 
-# csvfilepath: csv file path
+
 
 def chunkCsv(csv_file, no_of_rows):
     line_number = sum(1 for row in (open(csv_file)))
@@ -125,7 +122,10 @@ def chunkCsv(csv_file, no_of_rows):
 #             chunk.to_csv('chunk' + str(batch_no) + '.csv',  index=False)
 #             batch_no += 1
 
-
+# rows_per_chunk: is the number of rows the user wants per chunk file
+# file_line_number: Total number of lines in the file 
+# batch_no: number we will use to increment the file name of each chunk 
+# csvfilepath: csv file path
 
 
 
