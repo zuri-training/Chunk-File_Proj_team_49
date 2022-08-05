@@ -39,6 +39,12 @@
               class="w-25 my-4"
             />
           </div>
+          {% if messages %}
+          {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
 
           <form
             id="form"
@@ -64,13 +70,8 @@
               <i class="fas fa-check-circle"></i>
               <i class="fas fa-exclamation-circle"></i>
               <small>Error message</small>
-              {% if messages %}
+              
               <ul class="messages">
-                {% for message in messages %}
-                <li class="{{ message.tags }}">{{ message }}</li>
-                {% endfor %}
-              </ul>
-              {% endif %}
             </div>
             <div class="input-control">
               <label class="label">Password</label>
