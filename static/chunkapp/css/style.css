@@ -76,15 +76,13 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-  font-size: 32px;
+  color: #F55353;
 }
 
 a:hover{
 	/* background: hsl(233deg 69% 35%); */
 	/* color: rgb(0, 30, 255); */
   /* text-decoration: underline; */
-  /* font-size: 22px;
-	transition: .5s; */
 }
 
 #seconBtn {
