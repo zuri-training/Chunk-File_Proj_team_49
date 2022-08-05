@@ -18,16 +18,26 @@ MEDIA_DIR = settings.MEDIA_ROOT
 #landing page view
 def index(request):
     return render(request,'chunkapp/index.html')
+
 #frequently asked questions view
 def faq(request):
     return render(request,'chunkapp/faq.html')
-#dashboard view
-# def dashBoard(request):
-#     # this views primary function is too render a template
-#     # and then pass a form as the context
-#     # form= FileUploadForm()
-#     # context = {"form": form}
-#     return render(request,'chunkapp/dashboard.html')
+
+#recent chunks page view
+def listRecentChunks(request):
+    recent_chunks=ChunkOrder.objects.all()
+    context={
+        'recent_chunks':recent_chunks
+    }          
+    return render(request,'chunkapp/recent.html',context)
+
+#terms an conditions view
+def termsAndConditions(request):
+    return render(request ,'chunkapp/toc.html')
+
+#how to use view
+def howTouse(request):
+    return render (request,'chunkapp/howtouse.html')
 
 #dashboard upload wizard
 class UploadWizard(SessionWizardView):
@@ -40,6 +50,7 @@ class UploadWizard(SessionWizardView):
          form_data=process_form(form_list)
          return render(self.request, 'chunkapp/done.html', {'form_data':form_data})
 
+
 def process_form(form_list):
     form_data =[form.cleaned_data for form in form_list]
     file=form_data[0]['file'].name
@@ -50,6 +61,8 @@ def process_form(form_list):
     elif file.endswith('.csv'):
         dir= chunkCsv(path,chunk_size)    
     return zipFunction(dir)
+
+
 
 
 
@@ -98,17 +111,12 @@ def process_form(form_list):
 #             # this else case shows that chunk order request was invalid
 #             # it then redirects the user back to the dashboard
 #             redirect("dashboard")
-#list recent chunks view
-def listRecentChunks(request):
-    recent_chunks=ChunkOrder.objects.all()
-    context={
-        'recent_chunks':recent_chunks
-    }          
-    return render(request,'chunkapp/recent.html',context)
-#terms an conditions view
-def termsAndConditions(request):
-    return render(request ,'chunkapp/toc.html')    
-#how to use view
-def howTouse(request):
-    return render (request,'chunkapp/howtouse.html')
+#list recent chunks view    
 
+#dashboard view
+# def dashBoard(request):
+#     # this views primary function is too render a template
+#     # and then pass a form as the context
+#     # form= FileUploadForm()
+#     # context = {"form": form}
+#     return render(request,'chunkapp/dashboard.html')
