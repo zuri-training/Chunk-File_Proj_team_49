@@ -1,6 +1,3 @@
-from dataclasses import fields
-from django import forms
-#from . utils import validateFile
 from . models import ChunkOrder
 from django.forms import ModelForm
 

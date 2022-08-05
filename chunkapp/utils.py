@@ -5,7 +5,6 @@ import pathlib
 from pathlib import Path
 import shutil
 from zipfile import ZipFile, ZIP_DEFLATED
-from django.forms import ValidationError
 from django.conf import settings
 import uuid
 import pandas as pd

@@ -1,6 +1,5 @@
-from distutils import dir_util
+
 import os
-from django.conf import settings
 from pathlib import Path
 
 
