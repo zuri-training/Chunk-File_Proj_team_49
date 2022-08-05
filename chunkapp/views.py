@@ -1,13 +1,11 @@
-import re
-from django.shortcuts import HttpResponse, render, redirect,HttpResponseRedirect
-from . utils import BASE_DIR, chunkJson ,zipFunction,chunkCsv,TEMPLATES,FORMS
-from . forms import FileUploadForm,ChunkSizeForm
+from django.shortcuts import render, redirect
+from . utils import zipFunction,chunkCsv,TEMPLATES,FORMS, chunkJson
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.files.storage import FileSystemStorage
 import os
 from django.conf import settings
-from pathlib import Path
 import pathlib
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
@@ -30,15 +28,18 @@ def faq(request):
 #     return render(request,'chunkapp/dashboard.html')
 
 #dashboard upload wizard
-class UploadWizard(SessionWizardView):
+class UploadWizard(LoginRequiredMixin,SessionWizardView):
+    login_url = "accounts:login"
     def get_template_names(self):
         return [TEMPLATES[self.steps.current]]
     # template_name='chunkapp/dashboard.html'
     form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
-         form_data=process_form(form_list)
-         return render(self.request, 'chunkapp/done.html', {'form_data':form_data})
+         form_data, file, chunk_size =process_form(form_list)
+         chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+         chunkOrder.save()
+         return render(self.request, 'chunkapp/done.html', {'form_data':form_data, 'download': chunkOrder.zip_link})
 
 def process_form(form_list):
     form_data =[form.cleaned_data for form in form_list]
@@ -49,9 +50,7 @@ def process_form(form_list):
         dir=chunkJson(path, chunk_size)
     elif file.endswith('.csv'):
         dir= chunkCsv(path,chunk_size)    
-    return zipFunction(dir)
-
-
+    return zipFunction(dir), file, chunk_size
 
 # def uploadFile(request):
 #     if request.method == 'POST':

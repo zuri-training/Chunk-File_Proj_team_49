@@ -111,7 +111,6 @@ def chunkCsv(csv_file, no_of_rows):
 
 
 
-
 # def split_csv(csvfilepath, rows_per_chunk):
 #     file_line_number = len(pd.read_csv(csvfilepath))                           
 #     batch_no = 1                                               
