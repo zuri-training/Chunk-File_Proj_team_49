@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/96498e0f73.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'chunkapp/css/acc.css' %}" />
+    <title>Account Settings</title>
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="nav-item1">
+          <img
+            src="{% static 'chunkapp/acc-images/Group-acc.png' %}"
+            alt="chunk-it"
+          />
+        </div>
+        <div class="navigation">
+          <div class="nav-item2">
+            <button class="btn">
+              <img
+                src="{% static 'chunkapp/acc-images/element-3.png'%}"
+              />Dashboard
+            </button>
+            <button class="btn">
+              <img
+                src="{% static 'chunkapp/acc-images/folder-cloud.png'%}"
+              />Saved Files
+            </button>
+            <button class="btn">
+              <img
+                src="{% static 'chunkapp/acc-images/message-question.png'%}"
+              />Help
+            </button>
+          </div>
+          <div class="nav-item3">
+            <button class="btn active">
+              <img
+                src="{% static 'chunkapp/acc-images/setting-2.png'%}"
+              />Settings
+            </button>
+            <button class="btn">
+              <img src="{% static 'chunkapp/acc-images/logout.png'%}" />Logout
+            </button>
+          </div>
+        </div>
+        <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
+        <button class="close-btn"><i class="fa-solid fa-x"></i></button>
+      </nav>
+    </section>
+
+    <main class="acc">
+      <h1>Account Settings</h1>
+      <form class="acc-form">
+        <label for="name">Name:</label><br />
+        <input type="text" name="name" placeholder="Team49 Chunk_file" /><br />
+        <label for="email">Email:</label><br />
+        <input type="email" name="email" placeholder="johndoe@gmail.com" />
+        <p style="margin-top: 2rem"><a href="#">Change Password</a></p>
+        <div class="acc-btn">
+          <button class="btn1">Cancel</button>
+          <button class="btn2">Save</button>
+        </div>
+      </form>
+    </main>
+    <script src="{% static 'chunkapp/js/acc.js'%}"></script>
+  </body>
+</html>
