@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+.container-fluid{
+    min-height: 100vh;
+}
+h2.title{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+}
+a.links{
+    color: #ffffff;
+    text-decoration: none;
+    font-style: 500;
+    font-size: 18px;
+}
+a.links:hover{
+    font-size: 20px!important;
+}
+nav {
+    height: 100vh;
+}
+li{
+    list-style-type: none;
+}
+.wrapper{
+    background: #372092;
+    height: 100vh;
+    width: 20%;
+}
+main {
+    width: 80%;
+    height: 100vh;
+}
+h3{
+color: #353534;
+font-size: 32px;
+font-weight: 700;
+line-height: 44px;
+}
+.content{
+    height: 525px;
+    width: 620px;
+    border: 1px solid #372092 ;
+    border-radius: 25px;
+    margin-top: 100px;
+    /* padding: 25% 30%; */
+}
+.upload-container{
+    height: 80vh;
+}
+.custom-input{
+    position: relative;
+}
+input[type=number] {
+    border: 3px solid #372092;
+    border-radius: 7.38px;
+    width: 191px;
+    height: 59px;
+    background-color: #ffffff;
+    outline: none;
+}
+input[type=number]:hover{
+    border: 3px solid #372092;
+}
+.arrow-up{
+    position: absolute;
+    right:60px;
+    top: 53px; 
+    
+}
+.arrow-down{
+    position: absolute;
+    right: 60px ;
+    top: 78px;
+}
+
+p#no-of-lines{
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 74px;
+    color: #353534;
+
+
+}
+ul{
+    padding-left: 0!important;
+}
+
+li:active{
+    background: #F55353;
+    border-radius: 2px;
+}
+a:hover{
+    color: #ffffff!important;
+}
+
+.image{
+    width: 188px;
+    height: 188px;
+}
+
+#p1{
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #353534;
+}
+#p2{
+font-size: 16px;
+font-weight: 500;
+line-height: 32px;
+text-align: center;
+color: #6a6a67;
+}
+.p3{
+font-size: 20px;
+font-weight: 500;
+line-height: 40px;
+color: #353534;
+
+}
+
+.btn{
+    padding: 8px auto!important;
+    font-size: 12px!important;
+    display: flex!important;
+    align-items: center;
+    gap: 2px;
+    text-align: center;
+   }
+   .savefile-btn{
+       outline: none;
+       border: 2px solid #fcc6c6!important;
+       white-space: nowrap;
+   }
+   .download-btn{
+       border: 2px solid #372092!important;
+       background-color: #372092!important;
+       color: #ffffff!important;
+   }
+   .savefile-btn, .download-btn {
+       width: 100%;
+   }

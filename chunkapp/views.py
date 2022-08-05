@@ -1,14 +1,15 @@
-import re
-from django.shortcuts import HttpResponse, render, redirect,HttpResponseRedirect
-from . utils import BASE_DIR, chunkJson ,zipFunction,chunkCsv,TEMPLATES,FORMS
-from . forms import FileUploadForm,ChunkSizeForm
+from turtle import down
+from django.shortcuts import render, redirect
+from . utils import zipFunction,chunkCsv,TEMPLATES,FORMS, chunkJson
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.files.storage import FileSystemStorage
 import os
 from django.conf import settings
-from pathlib import Path
 import pathlib
+import threading
+
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
 # and view appended to the name, this is for simplicity and easy
@@ -30,15 +31,20 @@ def faq(request):
 #     return render(request,'chunkapp/dashboard.html')
 
 #dashboard upload wizard
-class UploadWizard(SessionWizardView):
+class UploadWizard(LoginRequiredMixin,SessionWizardView):
+    login_url = "accounts:login"
     def get_template_names(self):
         return [TEMPLATES[self.steps.current]]
     # template_name='chunkapp/dashboard.html'
     form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
-         form_data=process_form(form_list)
-         return render(self.request, 'chunkapp/done.html', {'form_data':form_data})
+         form_data, file, chunk_size =process_form(form_list)
+         chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+         chunkOrder.save()
+         identifier = str(chunkOrder.zip_link).split("/")[2]
+         print(identifier)
+         return render(self.request, 'chunkapp/done.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
 
 def process_form(form_list):
     form_data =[form.cleaned_data for form in form_list]
@@ -49,9 +55,21 @@ def process_form(form_list):
         dir=chunkJson(path, chunk_size)
     elif file.endswith('.csv'):
         dir= chunkCsv(path,chunk_size)    
-    return zipFunction(dir)
+    return zipFunction(dir), file, chunk_size
 
 
+
+def download_zip(request, link):
+    # this view will download the file and delete the file from the database
+    download = '/media/' +link
+    chunk_order = ChunkOrder.objects.filter(custom_user = request.user).get(zip_link = download)
+    def delete():
+        chunk_order.delete()
+    if chunk_order != None:
+        delay = 90
+        delete_thread = threading.Timer(delay, delete)
+        delete_thread.start()
+    return redirect("chunkapp:recent")
 
 # def uploadFile(request):
 #     if request.method == 'POST':
@@ -100,7 +118,7 @@ def process_form(form_list):
 #             redirect("dashboard")
 #list recent chunks view
 def listRecentChunks(request):
-    recent_chunks=ChunkOrder.objects.all()
+    recent_chunks=ChunkOrder.objects.filter(custom_user = request.user)
     context={
         'recent_chunks':recent_chunks
     }          

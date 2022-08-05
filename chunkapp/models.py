@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from numpy import delete
+from pathlib import Path
+from django.conf import settings
 
 # Create your models here.
 
@@ -12,11 +15,11 @@ class ChunkOrder(models.Model):
 
     # the created field will log the time that a successful order for chunking occured
     # this field is important as it allows for quering the database 
-    custom_user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
+    custom_user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     file_name = models.CharField(max_length=200, null=True, blank=True)
     file = models.FileField(null=True, blank=True,upload_to='largefile/')
     chunk_size = models.IntegerField(null=True,blank=True)
-    zip_file=models.FileField(null=True, blank=True,upload_to='zips/')
+    #zip_file=models.FileField(null=True, blank=True,upload_to='zips/')
     zip_link = models.CharField(max_length=300, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -28,6 +31,6 @@ class ChunkOrder(models.Model):
     @property
     def get_chunk_order_name(self):
         return self.file_name + self.file_type
-    
+
     class Meta:
         app_label = 'chunkapp'
