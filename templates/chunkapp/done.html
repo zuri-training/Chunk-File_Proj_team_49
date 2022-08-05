@@ -1,6 +1,26 @@
-<h1>
-    it's working
-    {% for form in form_data %}
-       {{form}}
-    {% endfor %}   
-</h1>
+<h1> Ziping Completed </h1>
+
+    <button onClick ="process();">Download zip</button>
+
+<p>{{id}}</p>
+<a href="{% url 'chunkapp:recent' %}">Save</a>
+
+
+<!-- <script>
+    window.onload = function(e){ 
+    window.location.href = '{{ download }}';
+    }
+</script> -->
+
+<script>
+    function process(){
+        download();
+        setTimeout(redirect,2000);
+    }
+    function download(){
+        window.location.href = '{{ download }}';
+    }
+    function redirect(){
+        window.location.href = '{% url "chunkapp:download" id %}';
+    }
+</script>

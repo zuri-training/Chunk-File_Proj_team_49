@@ -34,6 +34,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     #created apps
+    'accounts.apps.AccountsConfig',
+    'chunkapp.apps.ChunkappConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,9 +51,7 @@ INSTALLED_APPS = [
     'formtools',
 
 
-    #created apps
-    'accounts',
-    'chunkapp',
+   
 ]
 
 MIDDLEWARE = [
@@ -163,3 +165,5 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '0553b9cb46ebf9'
 EMAIL_HOST_PASSWORD = '7a2f47cb330d97'
 EMAIL_PORT = '2525'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
