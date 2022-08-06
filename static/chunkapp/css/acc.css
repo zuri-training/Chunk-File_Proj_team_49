@@ -54,7 +54,7 @@ nav button{
     display: none;
 }
 .acc{
-    width: 50%;
+    width: 40%;
     margin: auto;
     border: 1px solid #372092;
     border-radius: 25px;
@@ -75,44 +75,17 @@ nav button{
     border-radius: 10px;
     outline: none;
     text-indent:0.5rem;
-    border:0.5px solid gray;
+    border:none;
 }
 .acc-form a{
     color: #372092;
     text-decoration: none;
 }
-.acc-btn{
-width:80%;
-display: flex;
-gap: 32px;
-margin: auto;
-margin-top: 3rem;
-justify-content: center;
 
-}
-.acc-btn .btn1{
-    width: 200px;
-    padding: 0.8rem 2rem;
-    color: #F55353;
-    background-color: inherit;
-    border:1px solid #F55353;
-    border-radius: 10px;
-
-}
-.acc-btn .btn2{
-    width: 200px;
-    padding: 0.8rem 2rem;
-    color: #fff;
-    background-color: #372092;
-    border:1px solid #372092;
-    border-radius: 10px;
-}
 .active{
     background-color: #F55353;
 }
-.inac{
-    background-color: inherit;
-}
+
 @media (max-width:800px) {
     body{
         flex-direction: column;
