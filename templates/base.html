@@ -37,7 +37,13 @@
                 </ul>
               </div>
             </div>
+            {% if user.is_authenticated %}
+          <p>return to dashboard</p>
+          {% else %}
+            <p>login/signup buttons</p>
+          {% endif %}
           </nav>
+
 
     </header>
     <main class=" container">
