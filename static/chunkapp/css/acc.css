@@ -1,0 +1,136 @@
+*{
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    display: flex;
+}
+nav{
+    width: 239px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #372092;
+    padding: 1rem;
+}
+.navigation{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav-item1{
+    margin-top: 1rem;
+}
+.nav-item2, .nav-item3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.nav-item3{
+    padding-bottom: 2rem;
+    
+    
+}
+nav button{
+    font-size: 22px;
+    color: #fff;
+    background-color: inherit;
+    border: none;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+}
+.ham-btn, .close-btn{
+    display: none;
+}
+.acc{
+    width: 40%;
+    margin: auto;
+    border: 1px solid #372092;
+    border-radius: 25px;
+    padding: 3rem 5rem;
+    text-align: center;
+    font-size: 22px;
+}
+.acc-form{
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+   margin-top: 1.5rem;
+}
+.acc-form input[type=text], .acc-form input[type=email]{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    text-indent:0.5rem;
+    border:none;
+}
+.acc-form a{
+    color: #372092;
+    text-decoration: none;
+}
+
+.active{
+    background-color: #F55353;
+}
+
+@media (max-width:800px) {
+    body{
+        flex-direction: column;
+        height: 100%;
+    }
+    nav{
+        height: 20vh;
+        width: 100%;
+        margin: 0;
+        font-size: 16px;
+
+    }
+    nav button{
+        font-size: 16px;
+    }
+    .navigation{
+        display: none;
+        background-color: #372092;
+        z-index: 1;
+        padding: 10px;
+    }
+    .ham-btn{
+        display: block;
+        font-size: 30px;
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+    }
+    .acc{
+        width: 90%;
+        height: 100%;
+        padding: 2rem;
+        font-size: 18px;
+        margin-top: 1rem;
+
+    }
+    .acc h1{
+        font-size: 25px;
+    }
+    .nav-item3{
+        margin-top: 2rem;
+        
+    }
+    
+}
