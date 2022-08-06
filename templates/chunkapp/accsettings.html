@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,36 +15,48 @@
       src="https://kit.fontawesome.com/96498e0f73.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./acc.css" />
+    <link rel="stylesheet" href="{% static 'chunkapp/css/acc.css'%}" />
     <title>Account Settings</title>
   </head>
   <body>
     <section>
       <nav>
         <div class="nav-item1">
-          <img src="../images/Group-acc.png" alt="chunk-it" />
+          <img
+            src="{% static 'chunkapp/acc-images/Group-acc.png' %}"
+            alt="chunk-it"
+          />
         </div>
         <div class="navigation">
           <div class="nav-item2">
             <button class="btn">
-              <img src="images/element-3.png" />Dashboard
+              <img
+                src="{% static 'chunkapp/acc-images/element-3.png'%}"
+              />Dashboard
             </button>
             <button class="btn">
-              <img src="images/folder-cloud.png" />Saved Files
+              <img
+                src="{% static 'chunkapp/acc-images/folder-cloud.png'%}"
+              />Saved Files
             </button>
             <button class="btn">
-              <img src="images/message-question.png" />Help
+              <img
+                src="{% static 'chunkapp/acc-images/message-question.png'%}"
+              />Help
             </button>
           </div>
           <div class="nav-item3">
             <button class="btn active">
-              <img src="images/setting-2.png" />Settings
+              <img
+                src="{% static 'chunkapp/acc-images/setting-2.png'%}"
+              />Settings
             </button>
-            <button class="btn"><img src="images/logout.png" />Logout</button>
+            <button class="btn">
+              <img src="{% static 'chunkapp/acc-images/logout.png'%}" />Logout
+            </button>
           </div>
         </div>
         <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
-        <button class="close-btn"><i class="fa-solid fa-x"></i></button>
       </nav>
     </section>
 
@@ -57,6 +70,6 @@
         <p style="margin-top: 2rem"><a href="#">Change Password</a></p>
       </form>
     </main>
-    <script src="./acc.js"></script>
+    <script src="{% static 'chunkapp/js/acc.js'%}"></script>
   </body>
 </html>
