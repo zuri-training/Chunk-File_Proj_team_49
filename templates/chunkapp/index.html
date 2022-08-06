@@ -1,257 +1,138 @@
+
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chunk49</title>
-    <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
-    <link rel="stylesheet" href="{% static 'chunkapp/css/style.css'%}">
-  </head>
-  <body style="background-color: white;">
-    <header id="heaDer">
-    	<div class="container">
+{% block title %}
+  Chunk49
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'chunkapp/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
 
-          <!--Navigation bar started here-->
-	      	<nav class="flex">
-            <a href="{% url 'chunkapp:index' %}"><img class="logo" src="{% static 'chunkapp/images/Group25.png'%}" alt="logo"  width="64px" height="64px"/></a>
-		        <h1 id="chnk">Chunk49</h1>
-		        <ul>
-              <li><a class="soft" href="#">How to use</a></li>
-		          <li><a class="res" href="#">Resource</a></li>
-		          <li><a class="sup" href="#">Support</a></li>
-		          <li><a class="abt" href="#">APIs</a></li>
-              <li><a class="soft" href="#">About us</a></li>
-		        </ul>
+<div  class="container">
+    <div class="two__columns" id="hero">
+       <div class="text__column" id="hero__div">
+          <h1>An online tool that helps you split your <span class="accent">Json</span>,<span class="accent">csv</span> and other files into smaller bits.
+          </h1>
+          <a href="#contact" class="btn2 btn-primary2">Get Started</a>
+      </div>
 
-		        <button type="button" class="btn" id="seconBtn" onclick="window.location.href='{% url 'accounts:login' %}';">LOGIN
-		        </button>
+      <div class="img__column">
+          <div class="hero__right-image" id="heroimg">
+              <img src="{% static 'chunkapp/images/hero_image.png' %}" alt="right image" height="380px" width="auto">
+          </div>  
+      </div>
+    </div>
 
-		        <button class="btn" id="active" onclick="window.location.href='{% url 'accounts:register' %}';">SIGN UP		          
-		        </button>
-	      	</nav>
-          <!--Navigation bar ended here-->
+</div>
 
-          <!--Below is a brief header intro-->
-	      	<div class="flex">
-		        <div>
-			        <h2 id="wordText">An online tool that helps you split your <bold id="jsc">Json, csv</bold> and other files into smaller bits.
-			        </h2>
-			        <button class="btn head" id="secBtn">
-			            Get Started
-			        </button>
-	        	</div>
 
-	        	<div>
-	          		<img class="header-img" src="{% static 'chunkapp/images/Group54.png'%}"/>
-	        	</div>
-     		</div>
-    	</div>
-  	</header>
-
-    <!--Main body code below-->
-  	<main>
-        <!--container class holds "Services we offer" and related codes-->
-      <section style="background-image: url({% static 'chunkapp/images/services-section.png'%});">
-        <div class="container">
-          <div id="ser-div">
-            <h2><center id="ser">Services we offer</center></h2>
+ <!-- Services section start -->
+ <section class="services">
+    <h2 class="section_heading">Services we offer</h2>
+ 
+    <div class="container">
+       <div class="two__flexrev">
+          <div class="text__column">
+             <h2>Super fast computer power</h2>
+             <p>Let our servers go to work for you;  Most files will be processed in under a minute all in an  automate process.</p>
           </div>
-          <div class="box flex">
-            <div>
-              <p class="tiTle">Super fast computer power</p>
-              <p>
-                Let our services go to work for you. Most files will be processed in under a minute all in an automated process.
-              </p>
-            </div>
-            <div>
-              <img src="{% static 'chunkapp/images/amico.png'%}" alt="" />
-            </div>
+          <div class="img__column">
+             <img src="{% static 'chunkapp/images/firstimg.png' %}" alt="illustration" height="300px" width="auto">
           </div>
-
-          <div class="box flex">
-            <div>
-              <img src="{% static 'chunkapp/images/amico-second.png'%}" alt="" />
-            </div>
-            <div>
-              <p class="tiTle">Instantly analyze large files</p>
-              <p>
-                No installation, database, or configuration required. Chunk49 gives you access to extraordinary big data insight in minutes, not hours.
-              </p>
-            </div>
+       </div>
+    </div>
+ 
+    <div class="container">
+       <div class="two__flex">
+          <div class="img__column">
+             <img src="{% static 'chunkapp/images/image2.png' %}" alt="illustration" height="300px" width="auto">
           </div>
-          <div class="box flex">
-            <div>
-              <p class="tiTle">Cloud storage</p>
-              <p>
-                We let you store your files for 24hours after splitting, before deleting from our servers.
-              </p>
-            </div>
-            <div>
-              <img src="{% static 'chunkapp/images/amico-three.png'%}" alt="" />
-            </div>
+ 
+          <div class="text__column">
+             <h2>Instantly analyze large files</h2>
+             <p> No installation, database, or configuration required. Chunk49 gives you access to extraordinary big data insights in minutes, not hours.</p>
           </div>
-            <div class="box flex">
-            <div>
-              <img src="{% static 'chunkapp/images/amico-four.png'%}" alt="" />
-            </div>
-            <div>
-              <h2>Free data processing</h2>
-              <p>
-                We make it easy to triage your server, firewall, and network logs.
-                  It's easy to search, pivot, and filter to quickly get a high-level
-                  overview of your IT environment all for free.
-              </p>
-            </div>
+       </div>
+    </div>
+ 
+    <div class="container">
+       <div class="two__flexrev">
+          <div class="text__column">
+             <h2>Cloud storage</h2>
+             <p>We let you store your files for 24 hours after splitting before deleting them from our servers.</p>
           </div>
-        </div>
-      </section>
-        <!--Section tag containing our list of converters below-->
-      <section id="weDo">
-        <div class= "container">
-            <h2 id="conver">Converters</h2>
-            <div class="soon flex">
-              <div>
-                <marquee scrollamount="15"><h3>Coming soon</h3></marquee>
-              </div>
-            </div>
-
-            <div class="konvet flex">
-              <div class="cjex">
-                <img src="{% static 'chunkapp/images/document-copy.png'%}">
-                <h4>Pdf to CVS</h4>
-              </div>
-
-              <div class="cjex">
-                <img src="{% static 'chunkapp/images/document-copy.png'%}">
-                <h4>CVS to JSON</h4>
-              </div>
-
-              <div class="cjex">
-                <img src="{% static 'chunkapp/images/document-copy.png'%}">
-                <h4>CVS to Excel</h4>
-              </div>
-
-              <div class="cjex">
-                <img src="{% static 'chunkapp/images/document-copy.png'%}">
-                <h4>JSON to XLM</h4>
-              </div>
-            </div>
-        </div>
-      </section>
-        <!--Section below gives a guide on how to use our product-->
-      <section id="howTo" style="background-image: url({% static 'chunkapp/images/Frame209.png'%});">
-          <div class="info container">
-             <div class="learn flex">
-                <div>
-                  <h3>How to use Chunk49</h3>
-                  <p>
-                  Are you confused and do not know how to use this platform? Click on "learn" and make your file splitting easier
+          <div class="img__column">
+             <img src="{% static 'chunkapp/images/image3.png' %}" alt="illustration" height="300px" width="auto">
+          </div>
+       </div>
+    </div>
+ 
+    <div class="container">
+       <div class="two__flex">
+          <div class="img__column">
+             <img src="{% static 'chunkapp/images/image4.png' %}" alt="illustration" height="300px" width="auto">
+          </div>
+ 
+          <div class="text__column">
+             <h2>Free data processing</h2>
+             <p> We make it easy to triage your server, firewall, and network logs. It's easy to search, pivot, and filter to quickly get a high-level overview of your IT environment alll for free.</p>
+          </div>
+       </div>
+    </div>
+ 
+  </section>
+ 
+   <!-- Services section end -->
+ 
+     <!-- Converters section start -->
+    <section>
+       <div class="container">
+          <h2 class="section_heading">Converters</h2>
+          <div class="scroll">
+             <a class="iso-marquee-linkwrap" href="">
+                <div class="iso-marquee--long iso-marquee" style="--tw:38ch; --ad:9s;">
+                   <span>coming soon                                 </span>
                 </div>
-
-                <div class="learnBtn">
-                  
-                <button id="thirdBtn" style="background-image: url({% static 'chunkapp/images/Frame209.png'%});">Learn</button>
-                
+             </a>
+          </div>
+          <div class="converters">
+             <div class="card">
+                <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="">
+                <p>Pdf to CVS</p>
+             </div>
+             <div class="card">
+                <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="">
+                <p>CVS to JSON</p>
+             </div>
+             <div class="card">
+                <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="">
+                <p>CVS to Excel</p>
+             </div>
+             <div class="card">
+                <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="">
+                <p>JSON to XLM</p>
+             </div>
+          </div>
+ 
+       </div>
+    </section>
+ 
+    <!-- Services section end -->
+    <section>
+       <div class="howto__use">
+          <div class="container">
+             <div class="two__columns">
+                <div class="text__column">
+                   <h2>How to use Chunk49</h2>
+                   <p>Are you confused and do not know how to use this platform? Click on “learn” and make your file splitting easier.</p>
+                </div>
+ 
+                <div class="text__column">
+                   <button class="secondary__btn" id="howBtn">Learn</button>
                 </div>
              </div>
           </div>
-      </section>
+       </div>
+    </section>
 
-      <!--main tag ends here-->
-    </main>
-
-    <!--Footer tag and related code begins here-->
-    <footer>
-      <div class="container foot">
-        <!--Below div holds links to official company info-->
-        <div class="flex aboutUs">
-          <!--Below div holds company logo-->
-          <div class="footerImage">
-            <img src="{% static 'chunkapp/images/Group 25.png'%}" width="50px" height="50px" /><h6>Chunk49</h6>
-          </div>
-
-          <!--links to official company info starts here-->
-          <ul>
-            <li><a class="info" href="#">About Us</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-          <ul>
-            <li><a class="info" href="#">Resource</a></li>
-            <li><a href="#">Blog</a></li>
-            <li style="width: 140px"><a href="#">Video tutorials</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-          <ul>
-            <li>
-              <a class="info" href="#">Support</a>
-            </li>
-          </ul>
-          <ul>
-            <li><a  class="info" href="#">About us</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Contact us</a></li>
-          </ul>
-          <ul>
-          <li>
-            <a class="info" href="#">APIs</a>
-          </li>
-        </ul>
-          <ul>
-            <li>
-              <a class="info" href="#">Software</a>
-            </li>
-          </ul>
-          <!--links to official company info ends here-->
-        </div>
-
-        <!--Below div contains means to contact us-->
-        <div class="flex social">
-
-          <div>
-            <input id="newsLetter" class="subScribe" type="text" placeholder="Enter Your Email" autocomplete="off"><button disabled id="subScribe" class="btnSubscribe">Subscribe</button>
-          </div>
-          <div>
-            <li class="follow-Us">Follow us</li>
-            <ul class="contact">
-              <li>
-                <img src="{% static 'chunkapp/images/Group 31.png'%}">
-              </li>
-              <li>
-                <img src="{% static 'chunkapp/images/Group 32.png'%}">
-              </li>
-              <li>
-                <img src="{% static 'chunkapp/images/Vector.png'%}">
-              </li>
-              <li>
-                <img src="{% static 'chunkapp/images/Group 30.png'%}">
-              </li>
-            </ul>
-          </div>
-
-        </div>
-        <hr>
-
-        <!--Below div holds Privacy, Security and terms of use-->
-        <div class="flex last">
-          <div>
-            <ul class="priVacy flex">
-              <li>Privacy</li>
-              <li>Security</li>
-              <li>Terms of Use</li>
-            </ul>
-          </div>
-
-          <div id="paTent">
-              © 2022 Chunk49, INC. PATENT PENDING
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
-    <script src="{% static 'chunkapp/js/script.js'%}"></script>
-  </body>
-</html>
+{% endblock %} 
