@@ -44,7 +44,7 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
          chunkOrder.save()
          identifier = str(chunkOrder.zip_link).split("/")[2]
          print(identifier)
-         return render(self.request, 'chunkapp/done.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
+         return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
 
 def process_form(form_list):
     form_data =[form.cleaned_data for form in form_list]
@@ -52,7 +52,7 @@ def process_form(form_list):
     chunk_size=form_data[1]['chunk_size']
     path =pathlib.Path(MEDIA_DIR + "/largefile/" + file)
     if file.endswith('.json'):
-        dir=chunkJson(path, chunk_size)
+        dir=chunkJson(path, chunk_size)  
     elif file.endswith('.csv'):
         dir= chunkCsv(path,chunk_size)    
     return zipFunction(dir), file, chunk_size
