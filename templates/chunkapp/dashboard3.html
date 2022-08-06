@@ -1,3 +1,8 @@
+{% load i18n %}
+
+{% block head %}
+{{ wizard.form.media }}
+{% endblock %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -78,11 +83,25 @@
                     <div class="d-flex justify-content-center align-items-center upload-container">
                         <div class="w-50 mx-auto">
                             <div class="content mb-5 py-5 d-flex align-items-center justify-content-center">
-                                <form id="form" class="form" action="#" method="post">
+                                <form id="form" class="form" action="#" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
                                 <div>
                                     <p id="no-of-lines">Number of lines per split</p>
                                     <div class="d-flex justify-content-center py-5 custom-input">
-                                        <input type="number"  id="number" placeholder="01" name="number" min="1" max="5000" class="ps-4 pe-3">
+                                        {{ wizard.management_form }}
+                                        {% if wizard.form.forms %}
+                                            {{ wizard.form.management_form }}
+                                            {% for form in wizard.form.forms %}
+                                                {{ form}}
+                                            {% endfor %}
+                                        {% else %}
+                                            {% for field in wizard.form %}
+                                            <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
+                                            {{ field }}
+                                            <span class="message">{{ field.errors }}</span>
+                                            {%endfor%}
+                                            {% endif %}
+                                        <!-- <input type="number"  id="number" placeholder="01" name="number" min="1" max="5000" class="ps-4 pe-3"> -->
                                         <div onclick="inc()" id="btn"> <img src="/images/arrow-up.svg" alt="" class="arrow-up"></div>
                                         <div onclick="dec()"><img src="/images/arrow-down.svg" alt="" class="arrow-down"></div>
                                     </div>

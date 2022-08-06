@@ -16,8 +16,8 @@ MEDIA_DIR = settings.MEDIA_ROOT
 # validation and other technical operations and functions exist
 
 #form wizard templates
-TEMPLATES = {"fileupload": "chunkapp/dashboard.html",
-             "chunksize": "chunkapp/chunksize.html",}
+TEMPLATES = {"fileupload": "chunkapp/dashboard1.html",
+             "chunksize": "chunkapp/dashboard3.html",}
 #form wizard forms
 FORMS = [("fileupload", FileUploadForm),
          ("chunksize", ChunkSizeForm),]

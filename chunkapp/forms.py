@@ -18,9 +18,8 @@ class FileUploadForm(ModelForm):
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs) 
         self.fields['file'].widget.attrs.update({ 
-            'name':'email', 
-            'id':'email', 
-            'type':'email',  
+            'id':'file', 
+            'type':'file',  
             })
     class Meta:
         model=ChunkOrder
@@ -30,9 +29,11 @@ class ChunkSizeForm(ModelForm):
     def __init__(self, *args, **kwargs): 
         super().__init__(*args, **kwargs) 
         self.fields['chunk_size'].widget.attrs.update({ 
-            'name':'email', 
-            'id':'email', 
-            'type':'email',  
+            'name':'number', 
+            'id':'number', 
+            'type':'number',  
+            "class":"ps-4 pe-3",
+             "placeholder":"01",
             })
     class Meta:
         model=ChunkOrder
