@@ -87,11 +87,11 @@
                                         <p id="file-size" class="p3">Size: 56 mb</p>
                                     </div>
                                     <div class="d-flex justify-content-between text-center gap-4 w-100 pb-5">
-                                        <button type="button" class="btn savefile-btn">
+                                        <button type="button" class="btn savefile-btn" onclick="window.location.href='{% url 'chunkapp:recent' %}'">
                                             <span>Save file on server</span>
                                             <img src="{% static 'accounts/images/save-file.svg' %}" alt="" class="file-image"> 
                                         </button>
-                                        <button class="btn download-btn">Download File
+                                        <button class="btn download-btn"  onClick ="process();">Download File
                                             <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                                         </button>
                                       </div>
@@ -107,5 +107,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="{% static 'accounts/js/dashboard.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/eca1febd0d.js" crossorigin="anonymous"></script>
+    <script>
+        function process(){
+            download();
+            setTimeout(redirect,2000);
+        }
+        function download(){
+            window.location.href = '{{ download }}';
+        }
+        function redirect(){
+            window.location.href = '{% url "chunkapp:download" id %}';
+        }
+    </script>
 </body>
 </html>

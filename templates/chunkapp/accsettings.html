@@ -15,7 +15,7 @@
       src="https://kit.fontawesome.com/96498e0f73.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="{% static 'chunkapp/css/acc.css' %}" />
+    <link rel="stylesheet" href="{% static 'chunkapp/css/acc.css'%}" />
     <title>Account Settings</title>
   </head>
   <body>
@@ -57,22 +57,17 @@
           </div>
         </div>
         <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
-        <button class="close-btn"><i class="fa-solid fa-x"></i></button>
       </nav>
     </section>
 
     <main class="acc">
-      <h1>Account Settings</h1>
+      <h2>Account Settings</h2>
       <form class="acc-form">
         <label for="name">Name:</label><br />
         <input type="text" name="name" placeholder="Team49 Chunk_file" /><br />
         <label for="email">Email:</label><br />
         <input type="email" name="email" placeholder="johndoe@gmail.com" />
         <p style="margin-top: 2rem"><a href="#">Change Password</a></p>
-        <div class="acc-btn">
-          <button class="btn1">Cancel</button>
-          <button class="btn2">Save</button>
-        </div>
       </form>
     </main>
     <script src="{% static 'chunkapp/js/acc.js'%}"></script>
