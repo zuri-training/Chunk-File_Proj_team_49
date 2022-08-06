@@ -1,0 +1,132 @@
+*{
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+nav .active{
+    color: #F55353;
+    text-decoration: underline 5px;
+    text-underline-offset: 10px;
+}
+.navigation{
+    width: 80%;
+}
+.nav-link{
+    margin: auto;
+}
+.nav-link a{
+    padding-left: 25px;
+}
+main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.first-main{
+    width: 40%;
+    margin: auto;
+}
+.main-content{
+    width: 50%;
+    padding: 3rem;
+    
+}
+.main-content h3{
+    color: #372092;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+.main-content p{
+    line-height: 30px;
+    color:#6A6A67;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+form input[type=email]{
+    width: 100%;
+    text-indent: 15px;
+    height: 25px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+legend{
+    margin: 15px;
+}
+fieldset{
+    border-radius: 10px;
+    
+}
+textarea{
+    text-indent: 15px;
+    font-size: 18px;
+    outline: none;
+    padding-top: 1rem;
+}
+.email-path{
+    display: flex;
+    align-items: center;
+    color: #372092;
+    font-weight: 700;
+    fill: #372092;
+    gap:10px;
+    font-size: 22px;
+}
+.form-btn{
+    width: 200px;
+    padding: 1rem 3rem;
+    text-align: center;
+    font-size: 18px;
+    background-color: #372092;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    align-self: flex-end;
+}
+.form-btn a{
+    color: inherit;
+    text-decoration: none;
+}
+.footer-list{
+    width:60%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:  120px;
+    row-gap: 40px;
+}
+@media (max-width:600px) {
+    .footer-list{
+        width: 250px;
+        column-gap:  20px;
+    row-gap: 30px;
+    font-size: 14px;
+    }
+    main{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .first-main{
+        width: 80%;
+        margin: auto;
+        margin-top: 1rem;
+    }
+    .main-content{
+        width: 90%;
+        padding: 2rem;
+    }
+}
