@@ -1,59 +1,137 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
 }
-body{
+
+body {
     max-width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
-.container-fluid{
+
+.container-fluid {
     min-height: 100vh;
 }
-h2.title{
+
+h2.title {
     color: #ffffff;
     font-size: 20px;
     font-weight: 700;
     line-height: 27px;
 }
-a.links{
+
+a.links {
     color: #ffffff;
-    text-decoration: none;
-    font-style: 500;
+    text-decoration: none !important;
+    font-weight: 500;
     font-size: 18px;
 }
-nav {
-    height: 100vh;
-}
-li{
-    list-style-type: none;
-}
-.wrapper{
-    background: #372092;
-    height: 100vh;
-    width: 20%;
-}
-main {
-    width: 80%;
-    height: 100vh;
+
+a.links:hover {
+    font-size: 20px!important;
 }
 
-ul{
+a:hover {
+    color: #fff !important;
+}
+
+li {
+    list-style-type: none;
+}
+
+.active,
+li a.list:visited,
+li a.list:active {
+    background: #F55353;
+    border-radius: 2px;
+    font-size: 18px!important;
+    text-decoration: none!important;
+    color: #ffffff;
+}
+
+ul {
     padding-left: 0!important;
 }
-li:active{
+
+li:active {
     background: #F55353;
     border-radius: 2px;
 }
-a:hover{
+
+a:hover {
     color: #ffffff!important;
 }
 
+@keyframes sidebarAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100;
+    }
+}
 
+aside {
+    height: 100vh;
+}
 
+.wrapper {
+    background: #372092;
+    height: 100vh;
+    width: 18%;
+    z-index: 7;
+}
 
+main {
+    width: 100%;
+    height: 100vh;
+}
 
+.sidebar-toggler {
+    padding: 10px 22px;
+    border-radius: 5px;
+    background-color: #dedede;
+    border: none;
+    color: #474745;
+}
 
+.main-container {
+    width: 75%;
+}
 
+@media screen and (max-width: 992px) {
+    .wrapper {
+        position: fixed;
+        width: 25%;
+        animation-name: sidebarAnimation;
+        animation-duration: .3s;
+        animation-timing-function: ease-in-out;
+    }
+}
 
+@media screen and (max-width: 610px) {
+    .wrapper {
+        position: fixed;
+        width: 35%;
+    }
+}
 
+@media screen and (max-width: 460px) {
+    .wrapper {
+        position: fixed;
+        width: 40%;
+    }
+    .form-container {
+        width: 75%;
+    }
+    label {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .wrapper {
+        position: fixed;
+        width: 50%;
+    }
+}
