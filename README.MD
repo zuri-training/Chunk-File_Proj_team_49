@@ -10,16 +10,18 @@ Chunk49 is a platform that accepts large json and csv files and splits them into
 ​
 ## Appendix
 ​
-Any additional information goes here:
-​ 
-
 Quick Links;
 
 www.chunk49.com/landing-page
+
 www.chunk49.com/signup
+
 www.chunk49.com/login
+
 www.chunk49.com/about-us
+
 www.chunk49.com/contact-us
+
 www.chunk49.com/history
 ## Authors
 
