@@ -1,8 +1,7 @@
 # Chunk49
 ​
 Chunk49 is a platform that accepts large json and csv files and splits them into smaller bits.
-​
-Our team, though, there are various chunking platforms, provides users with high quality output files with less the size of the original file in a zipped format. With our well-designed platform which affords all users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
+​ Our team, though, there are various chunking platforms, provides users with high quality output files with less the size of the original file in a zipped format. Our well-designed platform also affords users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
 ​
 ​
 ## Acknowledgements
@@ -12,9 +11,11 @@ Our team, though, there are various chunking platforms, provides users with high
 ​
 ## Appendix
 ​
-Any additional information goes here
-​
-Quick Links
+Any additional information goes here:
+​ 
+
+Quick Links;
+
 www.chunk49.com/landing-page
 www.chunk49.com/signup
 www.chunk49.com/login
@@ -28,8 +29,10 @@ www.chunk49.com/history
 ​
 ## Documentation
 Access our documentations on:
-[Documentation](https://docs.google.com/document/d/1-j1eAx3WyY-UOxUvCAcACpjoT5xDkgQYWECG1wvqivw/edit)
-[DOCUMENTATION.MD](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/DOCUMENTATION.MD)
+
+* [Documentation](https://docs.google.com/document/d/1-j1eAx3WyY-UOxUvCAcACpjoT5xDkgQYWECG1wvqivw/edit)
+
+* [DOCUMENTATION.MD](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/DOCUMENTATION.MD)
 ​
 ​
 ## FAQ
@@ -55,7 +58,7 @@ This depends on a number of factors such as the file size and your network speed
 Aside from uploading, all processess involved in chunking your files are carried out from our system and no action is required from your end.
 ​
 #### I tried chunking a file on your platform  but it didnt work, why?
-We currently accept files in csv and json format any other formats apart from these specified will be rejected. 
+We currently accept files in csv and json formats, any other format apart from these specified will be rejected. 
 ​
 ​
 ​
@@ -69,9 +72,10 @@ You can find out more about us on our website's "About us" page.
 ​
 ## Run locally.
 ​
-If you want to run locally,then you can use the following command to run locally on your machine:
+If you want to run locally, then you can use the following commands on your machine:
 ​
 ​
+
 Clone the project
 ```
   git clone git@github.com:zuri-training/Chunk-File_Proj_team_49.git
@@ -132,7 +136,7 @@ python manage.py runserver
 ​
 ## Support
 ​
-For support, reach us on chunk49@yahoo.com or send us a message on Chunk_it "Contact us" page.
+For support, you can reach us on chunk49@yahoo.com or send us a message on Chunk49 "Contact us" page.
 ​
 ​
 ## Tech Stack
@@ -146,17 +150,25 @@ This site was built using the following tools:
 ## Usage/Examples
 ​
 Landing page Navigation:
+
 At the top-right bar of the landing page, you'll find the signup and login button which you can use to either signup or login from. Or you can make use of the "get started" button which automatically takes you to the sign-up page. Need information on the product? Then easily get it from this page.
 ​
  
 USING THE DASHBOARD:
+
 On the dashboard you can:
+
 ●	Upload your files
+
 ●	Select the size of the file
+
 ●	View your chunking history
+
 ●	Change settings selections
+
 ●	Logout
 ​
+
 ❖	Upload your files;
 Click on the arrow icon and select your desired chunking file, this will automatically upload it for chunking.
  
@@ -166,24 +178,32 @@ Select desired chunked file size. Do this using the top-down arrow selector. Aft
 ❖   View your chunking history;
 At the left side of your dashboard, you'll find a link to your chunking history.
 ​
+
 ❖	Change settings selection;
 At the bottom of the left side navigation is the settings. Make your desired changes from this section.
 ​
+
 ❖	Logout;
 Done with chunking? Then use the logout button. 
 ​
+
 ❖	Login;
 When returning to our platform to perform another chunking, use the login button to gain access into your dashboard
  
 ​
 CHUNKING A FILE:
+
 Only upload your large CSV or Json files for chunking, other formats are currently not available.
+
 ●   Download or 
 ​
+
 ●   Save for later
 ​
+
 ❖  Download button;
 When selected will download your chunked file directly into your downloads folder
+
 ●	Save for later;
 Save your chunked file on or server for up to 24hours to before downloading
 ​
@@ -193,8 +213,7 @@ Save your chunked file on or server for up to 24hours to before downloading
   
 ​
 ## Badges
-​
-Add badges from somewhere like: [shields.io](https://shields.io/)
+
 ​
 [![Github Issues](https://img.shields.io/github/issues/zuri-training/Chunk-File_Proj_team_49)]
 [![Github Stars](https://img.shields.io/github/stars/zuri-training/Chunk-File_Proj_team_49)]
@@ -203,9 +222,11 @@ Add badges from somewhere like: [shields.io](https://shields.io/)
 ​
 ## �� Links
 Product link @:
+
 ​
 [[Github](https://github.com/zuri-training/Chunk-File_Proj_team_49)]
 ​
+
 [[HeroKuapp](https://chunk-it.herokuapp.com/)]
 ​
 ​
@@ -215,7 +236,7 @@ Product link @:
 - Free access to product for signed-up users
 - Acces to product information for visiting users
 - Chunking of Json files
-- Chunking of Csv files
+- Chunking of CSV files
 - Accepts large files
 - Accepts upload from file manager
 - Displays selected file name
