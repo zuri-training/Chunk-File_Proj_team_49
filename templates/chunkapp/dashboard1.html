@@ -87,11 +87,28 @@
                         <form id="form" class="form" action="#" method="post" enctype="multipart/form-data">
                             <div class="content mb-4 d-flex align-items-center justify-content-center">
                                 <div>
-                                    {% csrf_token %} {{ wizard.management_form }} {% if wizard.form.forms %} {{ wizard.form.management_form }} {% for form in wizard.form.forms %} {{ form}} {% endfor %} {% else %} {% for field in wizard.form %}
-                                    <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
-                                    {{ field }}
-                                    <span class="message">{{ field.errors }}</span> {% endfor %} {% endif %}
-                                    <input type="file" id="file" onchange="validateUploadedFile(event)">
+                                    {% csrf_token %}
+                                    {{ wizard.management_form }}
+                                    {% if wizard.form.forms %}
+                                        {{ wizard.form.management_form }}
+                                        {% for form in wizard.form.forms %}
+                                            {{ form}}
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for field in wizard.form %}
+                                        <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
+                                        {{ field }}
+                                        <span class="message">{{ field.errors }}</span>
+                                    {% endfor %}
+                                    {% endif %}
+                                    {% if messages %}
+                                    <ul class="messages">
+                                      {% for message in messages %}
+                                        <li class="{{ message.tags }}">{{ message }}</li>
+                                      {% endfor %}
+                                    </ul>
+                                  {% endif %}
+                                    <!-- <input type="file"  id="file" onchange="validateUploadedFile(event)"> -->
                                     <label for="file" class="d-block">
 
                                             <img src="{% static 'accounts/images/upload.svg' %}" alt="" class="browse-upload"><br>
