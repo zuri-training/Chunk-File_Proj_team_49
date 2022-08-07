@@ -10,6 +10,9 @@ from django.conf import settings
 import pathlib
 import threading
 from django.contrib.auth.decorators import login_required
+import json
+from django.http import HttpResponse
+from django.contrib import messages
 
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
@@ -58,12 +61,17 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
     form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
-         form_data, file, chunk_size =process_form(form_list)
-         chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
-         chunkOrder.save()
-         identifier = str(chunkOrder.zip_link).split("/")[2]
-         print(identifier)
-         return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
+         try:
+             form_data, file, chunk_size =process_form(form_list)
+         except:
+            messages.error(self.request, 'error:your file seems to be unstructured.') 
+            return redirect('chunkapp:dashboard')   
+         else:   
+            chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+            chunkOrder.save()
+            identifier = str(chunkOrder.zip_link).split("/")[2]
+            print(identifier)
+            return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
 
 def process_form(form_list):
     """
