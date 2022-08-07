@@ -5,8 +5,7 @@ Chunk49 is a platform that accepts large json and csv files and splits them into
 ​
 ​
 ## Acknowledgements
-​
- - Zuri Team
+​- Zuri Team
 ​
 ​
 ## Appendix
@@ -23,7 +22,7 @@ www.chunk49.com/about-us
 www.chunk49.com/contact-us
 www.chunk49.com/history
 ## Authors
-​
+
 - [@Eruanga](https://www.github.com/Eruanga)
 - [@Eva-Jacobs](https://www.github.com/Eva-jacobs)
 ​
@@ -36,41 +35,48 @@ Access our documentations on:
 ​
 ​
 ## FAQ
-​
+
 #### What is chunking and why should i chunk my file
 ​
  A chunked file is one reduced to smaller bits or chunks  thereby canceling repetition in the file.
+
 ​
 #### What are the chunking options 
 ​
 We currently provide two options which are csv and json, with possibility of additing more options in future.
+
 ​
 #### Is there a chunking limit 
 There is no limit to how much you can chunk.
+
 ​
 #### Is there a fee for chunking my files
 chunk49 is a free web platform that doesn't require you to pay before chunking. However, you must register to gain access into the chunking dashboard. 
+
 ​
 #### How long is the chunking process 
 This depends on a number of factors such as the file size and your network speed.
+
 ​
 #### Do i need special skills to use Chunk49 
 Aside from uploading, all processess involved in chunking your files are carried out from our system and no action is required from your end.
+
 ​
 #### I tried chunking a file on your platform  but it didnt work, why?
 We currently accept files in csv and json formats, any other format apart from these specified will be rejected. 
 ​
 ​
 ​
-## �� About Us
+## About Us
 We're a fast growing team of designers and developers who's aim is providing top-notch service that's second to none.
 You can find out more about us on our website's "About us" page.
 ​
+
 ​
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 ​
 ​
-## Run locally.
+## Run locally
 ​
 If you want to run locally, then you can use the following commands on your machine:
 ​
@@ -131,9 +137,6 @@ Finally, Start The Server.
 python manage.py runserver
 ```
 ​
-​
-​
-​
 ## Support
 ​
 For support, you can reach us on chunk49@yahoo.com or send us a message on Chunk49 "Contact us" page.
@@ -149,12 +152,12 @@ This site was built using the following tools:
 ​
 ## Usage/Examples
 ​
-Landing page Navigation:
+**Landing page Navigation:**
 
 At the top-right bar of the landing page, you'll find the signup and login button which you can use to either signup or login from. Or you can make use of the "get started" button which automatically takes you to the sign-up page. Need information on the product? Then easily get it from this page.
 ​
  
-USING THE DASHBOARD:
+**USING THE DASHBOARD:**
 
 On the dashboard you can:
 
@@ -191,7 +194,7 @@ Done with chunking? Then use the logout button.
 When returning to our platform to perform another chunking, use the login button to gain access into your dashboard
  
 ​
-CHUNKING A FILE:
+**CHUNKING A FILE:**
 
 Only upload your large CSV or Json files for chunking, other formats are currently not available.
 
@@ -216,23 +219,26 @@ Save your chunked file on or server for up to 24hours to before downloading
 
 ​
 [![Github Issues](https://img.shields.io/github/issues/zuri-training/Chunk-File_Proj_team_49)]
+
 [![Github Stars](https://img.shields.io/github/stars/zuri-training/Chunk-File_Proj_team_49)]
+
 [![Github Forks](https://img.shields.io/github/forks/zuri-training/Chunk-File_Proj_team_49?color=green)]
+
 ​
 ​
-## �� Links
+## Links
 Product link @:
 
 ​
-[[Github](https://github.com/zuri-training/Chunk-File_Proj_team_49)]
+[Github](https://github.com/zuri-training/Chunk-File_Proj_team_49)
 ​
 
-[[HeroKuapp](https://chunk-it.herokuapp.com/)]
+[HeroKuapp](https://chunk-it.herokuapp.com/)
 ​
 ​
 ​
 ## Features
-​
+
 - Free access to product for signed-up users
 - Acces to product information for visiting users
 - Chunking of Json files
@@ -268,4 +274,4 @@ If you have a contribution that will help improve chunk49, simply contact us wit
 ​
 ## Screenshots
 ​
-![Website Screenshot](https://docs.google.com/document/d/1UtIpIDsbtg44I-vVW80Y-rLInIWVnnPzY2JPnSCOCP0/edit?usp=sharing)
+[Website Screenshots](https://docs.google.com/document/d/1UtIpIDsbtg44I-vVW80Y-rLInIWVnnPzY2JPnSCOCP0/edit?usp=sharing)
