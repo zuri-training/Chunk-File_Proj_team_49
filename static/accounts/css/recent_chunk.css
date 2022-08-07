@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
+
+@keyframes sidebarAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100;
+    }
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    min-height: 100vh;
+}
+
+h2.title {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+a.links {
+    color: #ffffff;
+    text-decoration: none;
+    font-style: 500;
+    font-size: 18px;
+}
+
+aside {
+    height: 100vh;
+}
+
+li {
+    list-style-type: none;
+}
+
+.wrapper {
+    background: #372092;
+    height: 100vh;
+    width: 18%;
+}
+
+main {
+    width: 82%;
+    height: 100vh;
+}
+
+.sidebar-toggler {
+    padding: 10px 22px;
+    border-radius: 5px;
+    background-color: #dedede;
+    border: none;
+    color: #474745;
+}
+
+.main-container {
+    width: 75%;
+}
+
+.h3 {
+    color: #353534;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+.chunked-files-container {
+    border: 1px solid #CDCDCC;
+    border-left: 8px solid #1c9f49;
+    padding: 3% 5%;
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.05);
+}
+
+.chunked-files {
+    width: 80%;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #474745;
+}
+
+span {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #838380;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    background: #372092!important;
+    border: 1px solid #372092!important;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #191666!important;
+    border: 1px solid #191666!important;
+    color: #fff;
+}
+
+ul {
+    padding-left: 0!important;
+}
+
+.active,
+.list:active {
+    background: #F55353;
+    border-radius: 2px;
+}
+
+a.links {
+    color: #ffffff;
+    text-decoration: none !important;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+a.links:hover {
+    font-size: 20px!important;
+}
+
+a:hover {
+    color: #ffffff!important;
+}
+
+.white-text {
+    color: #fff !important;
+}
+
+.pagination {
+    margin-right: 2%;
+    margin-top: 5%;
+}
+
+.pagination button {
+    padding: 10px 16px;
+    border-radius: 99999px;
+    border: none;
+    background-color: #e5e5e5;
+}
+
+.pagination button:hover {
+    background-color: #aca7a7;
+}
+
+.pagination div {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+    p {
+        font-size: 14px;
+    }
+    .chunked-files-container {
+        padding: 3%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main {
+        width: 100%;
+    }
+    .main-container {
+        width: 75%;
+    }
+    p {
+        font-size: 13px;
+    }
+    span {
+        font-size: 13px;
+    }
+    .wrapper {
+        position: fixed;
+        width: 25%;
+        animation-name: sidebarAnimation;
+        animation-duration: .3s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .wrapper {
+        width: 30%;
+    }
+    .main-container {
+        width: 80%;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main-container {
+        width: 90%;
+    }
+    p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 40%;
+    }
+    .chunked-files-container {
+        padding: 3%;
+    }
+    .file-name {
+        width: 70%;
+        display: block;
+    }
+    .file-type {
+        width: 25%;
+    }
+    p {
+        font-size: 13px;
+    }
+    .file-name p {
+        word-wrap: break-word
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .chunked-files {
+        width: 85%;
+    }
+    p {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .wrapper {
+        position: fixed;
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .wrapper {
+        position: fixed;
+        width: 50%;
+    }
+}
