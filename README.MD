@@ -18,7 +18,7 @@
 >- Authors
 
 
-# Chunk49
+## Chunk49
 
 >Chunk49 is a platform that accepts large json and csv files and splits them into smaller bits.
 ​ Our team, though, there are various chunking platforms, provides users with high quality output files with less the size of the original file in a zipped format. Our well-designed platform also affords users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
@@ -248,8 +248,8 @@ Save your chunked file on or server for up to 24hours to before downloading
 ​
 
 
-​
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+##Logo
+![Logo](https://i.im.ge/2022/08/09/FKfg0C.Group25.png)
 ​
 
 ## Support
