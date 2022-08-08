@@ -326,7 +326,7 @@ a{
 }
 
 .text__column p {
-	width: 376px;
+	max-width: 376px;
 }
 
 
@@ -637,6 +637,12 @@ a{
 
 /* ========== End responsive header section  ============= */
 
+@media screen and (max-width: 480px) {
+	/* .converters {
+		grid-template-columns: 1fr;
+		gap: 10px;
+	} */
+}
 
 @media(max-width: 991px){
 	.converters {
@@ -649,7 +655,7 @@ a{
 @media(max-width: 600px){
 	.hero__container {
 		display: grid;
-		grid-template-columns: 50%;
+		grid-template-columns: 1fr;
 		gap: 5rem;
 	}
 
@@ -695,7 +701,7 @@ a{
 	}
 
 	.converters {
-		grid-template-columns: 45% 45%;
+		grid-template-columns: 1fr;
 		gap: 10px;
 	}
 
@@ -737,7 +743,7 @@ a{
     }
 
 	.converters {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		gap: 24px;
 	}
 
