@@ -35,8 +35,8 @@ class ChunkSizeForm(ModelForm):
             'type':'number',  
             "class":"ps-4 pe-3",
              "placeholder":"01",
-             "min":"1" ,
-             "max":"5000", 
+             "min":"500" ,
+             "max":"500000", 
              "onchange":"validateInputNumber()",
             })
     class Meta:

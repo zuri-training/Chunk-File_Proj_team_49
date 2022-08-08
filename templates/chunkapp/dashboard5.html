@@ -79,8 +79,8 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
             </nav>
-            <div class="main-container mx-auto">
-                <div class="content py-5 d-flex align-items-center justify-content-center">
+            <div class="main-container mx-auto mb-4">
+                <div class="content py-5 d-flex align-items-center justify-content-center ">
 
                     <div class="mt-1">
                         <div class="d-flex justify-content-center "><img src="{% static 'accounts/images/tick-circle.svg' %}" alt="" class="image"></div>
@@ -126,7 +126,7 @@
         }
 
         function saveFile() {
-            window.location.href = '{% url "chunkapp:recent" id %}';
+            window.location.href = '{% url "chunkapp:recent" %}';
         }
     </script>
 </body>
