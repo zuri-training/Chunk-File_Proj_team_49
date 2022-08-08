@@ -1,20 +1,14 @@
+{% extends 'base.html' %}
 {%load static%}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Terms Of Conditions</title>
-    <link rel="stylesheet" href="{%static 'chunkapp/css/toc.css'%}" />
+{% block title %}
+  T and C's
+{% endblock %}
+{% block content%}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="{%static 'accounts/css/password_change_form.css'%}">
+    <link rel="stylesheet" href="{%static 'chunkapp/css/tnc.css'%}">
+  <main>
     <h2>Terms and Conditions</h2>
     <p>
       Thank you for using Chunk49! we are glad that you’re here. Please read our
@@ -163,5 +157,5 @@
         </p>
       </strong>
     </h5>
-  </body>
-</html>
+  </main>
+{%endblock%}

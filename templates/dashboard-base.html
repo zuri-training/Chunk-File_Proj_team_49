@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +27,7 @@
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/element-3.svg' %}" alt="" width="30" height="30">
-                                        <a href="#" class="links">Dashboard</a>
+                                        <a href="{% url 'chunkapp:dashboard' %}" class="links">Dashboard</a>
                                     </div>
                                 </div>
                             </li>
@@ -36,7 +35,7 @@
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/folder-cloud.svg' %}" alt="" width="30" height="30">
-                                        <a href="#" class="links">Saved files</a>
+                                        <a href="{% url 'chunkapp:recent' %}" class="links">Saved files</a>
                                     </div>
                                 </div>
                             </li>
@@ -44,7 +43,7 @@
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/message-question.svg' %}" alt="" width="30" height="30">
-                                        <a href="#" class="links">Help</a>
+                                        <a href="{% url 'chunkapp:contact_us' %}" class="links">Help</a>
                                     </div>
                                 </div>
                             </li>
@@ -56,7 +55,7 @@
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2 ">
                                         <img src="{% static 'accounts/images/setting-2.svg' %}" alt="" width="30" height="30">
-                                        <a href="#" class="links">Settings</a>
+                                        <a href="{% url 'chunkapp:account_settings' %}" class="links">Settings</a>
                                     </div>
                                 </div>
                             </li>
@@ -64,7 +63,7 @@
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2 ">
                                         <img src="{% static 'accounts/images/logout.svg' %}" alt="" width="30" height="30">
-                                        <a href="#" class="links">Log out</a>
+                                        <a href="{% url 'accounts:logout' %}" class="links">Log out</a>
                                     </div>
                                 </div>
                             </li>
@@ -79,9 +78,8 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
             </nav>
-            <div class="main-container mx-auto">
-                {% dashboard Content %} {% enddashboard %}
-            </div>
+                {% block content %} 
+                {% endblock %}
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
