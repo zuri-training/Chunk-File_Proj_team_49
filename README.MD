@@ -1,6 +1,6 @@
 ## Appendix
-
-> - Chunk49 
+>- Logo
+>- Chunk49 
 >- About Us
 >- Features
 >- Run Locally
@@ -16,10 +16,11 @@
 >- Badges
 >- Contribution
 >- Authors
-
+##Logo
+![Logo](https://i.im.ge/2022/08/09/FKfg0C.Group25.png)
+​
 
 ## Chunk49
-
 >Chunk49 is a platform that accepts large json and csv files and splits them into smaller bits.
 ​ Our team, though, there are various chunking platforms, provides users with high quality output files with less the size of the original file in a zipped format. Our well-designed platform also affords users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
 
@@ -245,11 +246,6 @@ Save your chunked file on or server for up to 24hours to before downloading
 #### I tried chunking a file on your platform  but it didnt work, why?
 >We currently accept files in csv and json formats, any other format apart from these specified will be rejected. 
 ​
-​
-
-
-##Logo
-![Logo](https://i.im.ge/2022/08/09/FKfg0C.Group25.png)
 ​
 
 ## Support
