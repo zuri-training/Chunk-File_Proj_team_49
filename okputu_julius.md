@@ -6,7 +6,7 @@ create function that zip files
 
 implement custom django forms/add template tags 
 
-add database schema
+add ERD
 
 add customized auth views
 
