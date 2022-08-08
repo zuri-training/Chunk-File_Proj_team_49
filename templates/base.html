@@ -38,12 +38,12 @@
                         </li>
                         {% if user.is_authenticated %}
                         <div class="d-flex align-items-center">
-                            <a class="return" href="#">Return to dashboard</a>
+                            <a class="return" href="{% url 'chunkapp:dashboard' %}">Return to dashboard</a>
                         </div>
                         {% else %}
                         <div class="d-flex justify-content-between gap-4 text-center">
-                            <a href="" type="button" class="bttn login-btn">Login</a>
-                            <a href="" type="button" class="bttn register-btn">Register</a>
+                            <a href="{% url 'accounts:login' %}" type="button" class="bttn login-btn">Login</a>
+                            <a href="{% url 'accounts:register' %}" type="button" class="bttn register-btn">Register</a>
                         </div>
                         {% endif %}
                     </ul>
