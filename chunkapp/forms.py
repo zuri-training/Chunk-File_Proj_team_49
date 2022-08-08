@@ -20,6 +20,7 @@ class FileUploadForm(ModelForm):
         self.fields['file'].widget.attrs.update({ 
             'id':'file', 
             'type':'file',  
+            "onchange":"validateUploadedFile(event)"
             })
     class Meta:
         model=ChunkOrder
