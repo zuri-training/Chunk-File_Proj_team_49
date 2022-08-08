@@ -1,6 +1,6 @@
 <svg width="53" height="24" viewBox="0 0 53 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.5">
-<rect opacity="0.4" x="52.5" y="24" width="52" height="24" rx="4" transform="rotate(-180 52.5 24)" fill="#372092"/>
+<g opacity="1">
+<rect x="52.5" y="24" width="52" height="24" rx="4" transform="rotate(-180 52.5 24)" fill="#372092"/>
 <path d="M37.5 7L26.5 18L15.5 7" fill="white"/>
 </g>
 </svg>

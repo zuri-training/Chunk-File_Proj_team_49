@@ -13,116 +13,30 @@ body {
     min-height: 100vh;
 }
 
-h2.title {
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 27px;
-}
-
-a.links {
-    color: #ffffff;
-    text-decoration: none;
-    font-style: 500;
-    font-size: 18px;
-}
-
-a.links:hover {
-    font-size: 20px!important;
-}
-
-.active,
-li a.list:visited,
-li a.list:active {
-    background: #F55353;
-    border-radius: 2px;
-    font-size: 18px!important;
-    text-decoration: none!important;
-    color: #ffffff;
-}
-
-li {
-    list-style-type: none;
-}
-
 .form-container {
-    width: 85%;
+    width: 75%;
 }
 
 .content {
-    height: 80vh;
+    height: 75vh;
     border: 1px solid #372092;
     border-radius: 25px;
-    margin-top: 100px;
-}
-
-.upload-container {
-    height: 80vh;
-}
-
-.custom-input {
-    position: relative;
-}
-
-input[type=number] {
-    border: 3px solid #372092;
-    border-radius: 7.38px;
-    width: 191px;
-    height: 59px;
-    background-color: #ffffff;
-    outline: none;
-}
-
-input[type=number]:hover {
-    border: 3px solid #372092;
-}
-
-.arrow-up {
-    position: absolute;
-    right: 60px;
-    top: 53px;
-}
-
-.arrow-down {
-    position: absolute;
-    right: 60px;
-    top: 78px;
-}
-
-p#no-of-lines {
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 74px;
-    color: #353534;
-}
-
-ul {
-    padding-left: 0!important;
-}
-
-li:active {
-    background: #F55353;
-    border-radius: 2px;
-}
-
-a:hover {
-    color: #ffffff!important;
 }
 
 .image {
-    width: 45%;
-    height: 45%;
+    width: 40%;
+    height: 40%;
 }
 
 #p1 {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 44px;
     color: #353534
 }
 
 #p2 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 32px;
     text-align: center;
@@ -130,11 +44,10 @@ a:hover {
 }
 
 .p3 {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 40px;
     color: #353534;
-    word-wrap: break-word;
 }
 
 .btn {
@@ -156,6 +69,10 @@ a:hover {
     border: 2px solid #372092!important;
     background-color: #372092!important;
     color: #ffffff!important;
+}
+
+.download-btn:hover {
+    background-color: #5d32bc!important;
 }
 
 .savefile-btn,
@@ -237,7 +154,6 @@ main {
 
 @media screen and (max-width: 610px) {
     .wrapper {
-        position: fixed;
         width: 35%;
     }
 }
@@ -248,18 +164,6 @@ main {
     }
     #p1 {
         font-size: 25px;
-    }
-    p#no-of-lines {
-        font-size: 20px;
-    }
-    #p1 {
-        font-size: 26px;
-    }
-    #p2 {
-        font-size: 13px;
-    }
-    #p3 {
-        font-size: 12px;
     }
     .savefile-btn,
     .download-btn {
@@ -287,12 +191,10 @@ main {
     .download-btn {
         width: 35%;
     }
-    .content {
-        height: 75vh;
-    }
+}
 
 @media screen and (max-width: 390px) {
     .wrapper {
         width: 50%;
     }
-}}
+}

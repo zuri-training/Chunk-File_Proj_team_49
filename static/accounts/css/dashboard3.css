@@ -104,6 +104,12 @@ button.btn {
     text-decoration: none;
 }
 
+button.btn:hover {
+    background-color: #5d32bc!important;
+    color: #ffffff!important;
+    outline: none;
+}
+
 p#no-of-lines {
     font-size: 26px;
     font-weight: 500;
