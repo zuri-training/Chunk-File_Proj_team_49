@@ -251,10 +251,6 @@ main {
     p#no-of-lines {
         font-size: 20px;
     }
-    .image {
-        width: 144px;
-        height: 144px;
-    }
     #p1 {
         font-size: 26px;
     }
@@ -278,7 +274,6 @@ main {
         width: 88%;
     }
     .wrapper {
-        position: fixed;
         width: 40%;
     }
 }
@@ -294,10 +289,9 @@ main {
     .content {
         height: 75vh;
     }
-}
 
 @media screen and (max-width: 390px) {
     .wrapper {
         width: 50%;
     }
-}
+}}
