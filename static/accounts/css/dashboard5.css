@@ -258,7 +258,7 @@ main {
         font-size: 13px;
     }
     #p3 {
-        font-size: 14px;
+        font-size: 13px;
     }
     .savefile-btn,
     .download-btn {
@@ -286,10 +286,12 @@ main {
     .download-btn {
         width: 35%;
     }
-}
+    .content {
+        height: 75vh;
+    }
 
 @media screen and (max-width: 390px) {
     .wrapper {
         width: 50%;
     }
-}
+}}

@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container-fluid d-flex justify-content align-items-stretch px-0">
+    <div class="container-fluid d-flex align-items-center px-0">
         <div id="sidebar" class="wrapper d-none d-lg-block">
             <header>
                 <aside class="d-flex flex-column justify-content-between">
@@ -91,11 +91,11 @@
                             <p id="file-size" class="p3">Size: {{id.size}}</p>
                         </div>
                         <div class="d-flex justify-content-between text-center gap-4 w-100 pb-5">
-                            <button type="button" class="btn savefile-btn" onclick= "window.location.href = '{% url 'chunkapp:recent' %}'"; ">
+                            <button type="button" class="btn savefile-btn" onclick="saveFile()">
                                             <span class="white-text d-none d-md-block">Save file on server</span>
                                             <img src="{% static 'accounts/images/save-file.svg' %}" alt="" class="file-image"> 
                                         </button>
-                            <button class="btn download-btn"  onClick ="process();">
+                            <button class="btn download-btn" onClick="process();">
                                             <span class="white-text d-none d-md-block">Download File</span>
                                             <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                                         </button>
@@ -123,6 +123,10 @@
 
         function redirect() {
             window.location.href = '{% url "chunkapp:download" id %}';
+        }
+
+        function saveFile() {
+            window.location.href = '{% url "chunkapp:recent" id %}';
         }
     </script>
 </body>
