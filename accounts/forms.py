@@ -99,9 +99,8 @@ class PasswordResetForm(PasswordResetForm):
         super().__init__(*args, **kwargs) 
         self.fields['email'].widget.attrs.update({ 
             'name':'email', 
-            'id':'email-address', 
-            'type':'email', 
-            'class':"input-field"  
+            'id':'email', 
+            'type':'email',  
             })
 
 
