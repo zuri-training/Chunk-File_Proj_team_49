@@ -46,7 +46,7 @@ li {
 }
 
 .form-container {
-    width: 65%;
+    width: 75%;
 }
 
 .content {
@@ -110,8 +110,8 @@ a:hover {
 }
 
 .image {
-    width: 166px;
-    height: 166px;
+    width: 45%;
+    height: 45%;
 }
 
 #p1 {
@@ -122,7 +122,7 @@ a:hover {
 }
 
 #p2 {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 32px;
     text-align: center;
@@ -130,7 +130,7 @@ a:hover {
 }
 
 .p3 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 40px;
     color: #353534;
@@ -251,10 +251,6 @@ main {
     p#no-of-lines {
         font-size: 20px;
     }
-    .image {
-        width: 144px;
-        height: 144px;
-    }
     #p1 {
         font-size: 26px;
     }
@@ -277,12 +273,7 @@ main {
     .form-container {
         width: 88%;
     }
-    .image {
-        width: 133px;
-        height: 133px;
-    }
     .wrapper {
-        position: fixed;
         width: 40%;
     }
 }
@@ -295,18 +286,10 @@ main {
     .download-btn {
         width: 35%;
     }
-    .image {
-        width: 122px;
-        height: 122px;
-    }
-    .content {
-        height: 75vh;
-    }
 }
 
 @media screen and (max-width: 390px) {
     .wrapper {
-        position: fixed;
         width: 50%;
     }
 }
