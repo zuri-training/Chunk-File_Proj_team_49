@@ -46,7 +46,7 @@ li {
 }
 
 .form-container {
-    width: 65%;
+    width: 75%;
 }
 
 .content {
@@ -306,7 +306,6 @@ main {
 
 @media screen and (max-width: 390px) {
     .wrapper {
-        position: fixed;
         width: 50%;
     }
 }
