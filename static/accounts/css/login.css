@@ -26,6 +26,9 @@ body {
   background-image: url(../images/backgroundlog.png);
   background-size: cover;
 }
+main{
+    margin: auto;
+}
 
 .textclass, .form__div{
     justify-content: center;
@@ -217,4 +220,5 @@ form:hover {
 .flexicon img:nth-child(1), .flexicon img:nth-child(2){
     margin-right: 40px;
 }
+
 
