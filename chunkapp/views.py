@@ -45,6 +45,7 @@ def contactUs(request):
     return render(request,'chunkapp/contact.html')    
 
 #list recent chunks view
+@login_required(login_url='accounts:login')
 def listRecentChunks(request):
     recent_chunks=ChunkOrder.objects.filter(custom_user = request.user)
     context={
@@ -100,7 +101,7 @@ def download_zip(request, link):
     def delete():
         chunk_order.delete()
     if chunk_order != None:
-        delay = 90
+        delay = 86400
         delete_thread = threading.Timer(delay, delete)
         delete_thread.start()
     return redirect("chunkapp:recent")
