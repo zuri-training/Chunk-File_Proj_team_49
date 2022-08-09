@@ -1,51 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/96498e0f73.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+{% block title %}
+  Chunk49
+{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
     <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
     <link rel="stylesheet" href="{% static 'chunkapp/css/howtouse.css'%}" />
-    <title>How To Use</title>
-  </head>
-  <body>
-    <div class="section">
-      <header>
-        <nav id="navbar">
-          <a href="#"
-            ><img
-              src="{% static 'chunkapp/htu-images/faq-images/Group 26.png'%}"
-              class="logo"
-              alt="chunk it"
-          /></a>
-          <div class="navigation">
-            <div class="nav-link">
-              <a href="#">How to Use</a>
-              <a href="#">APIs</a>
-              <a href="#">About Us</a>
-            </div>
-            <div class="nav-btn">
-              <button class="btn1"><a href="#">LOGIN</a></button>
-              <button class="btn2"><a href="#">SIGN UP</a></button>
-            </div>
-          </div>
-          <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
-          <button class="close-btn"><i class="fa-solid fa-x"></i></button>
-        </nav>
-      </header>
-    </div>
+  
 
     <main class="section">
         <h1>How to use Chunk 49</h1>
@@ -54,9 +16,9 @@
                 <h3>Browse Your File to upload</h3>
                 <p>Click on the arrow icon and choose a JSON or CSV(Other file format options are currently unavailable) file from your device to be automatically uploaded and chunked.</p>
             </div>
-            <img src="{% static 'chunkapp/htu-images/htu-images/Screenshot (34) 2.png'%}" class="b" />
+            <img src="{% static 'chunkapp/htu-images/Screenshot (34) 2.png'%}" class="b" />
 
-            <img src="{% static 'chunkapp/htu-images/htu-images/Screenshot (33) 1.png'%}" class="c" />
+            <img src="{% static 'chunkapp/htu-images/Screenshot (33) 1.png'%}" class="c" />
             <div class="d">
                 <h3>Select split procedures for your file</h3>
                 <p>Choose number of lines you want per split for your CSV files and number of objects per split for your JSON files by clicking on the top-down arrow selector. After successful selection, click on “Chunk file” to begin the chunking process.</p>
@@ -67,59 +29,15 @@
                 <p>Yeah! easy peasy.
                     Now proceed to saving or downloading your chunked files.Undownloaded files are available on our server for 24 hours before they are deleted automatically.</p>
             </div>
-            <img src="{% static 'chunkapp/htu-images/htu-images/Screenshot (27) 1.png'%}" class="f" />
+            <img src="{% static 'chunkapp/htu-images/Screenshot (27) 1.png'%}" class="f" />
 
-            <img src="{% static 'chunkapp/htu-images/htu-images/Screenshot (28) 1.png'%}" class="g" />
+            <img src="{% static 'chunkapp/htu-images/Screenshot (28) 1.png'%}" class="g" />
             <div class="h">
                 <h3>View history</h3>
                 <p>You get to see old and new saved files on your dashboard</p>
             </div>
         </div>
-        <button class="chunk-btn"><a href="#">Start Chunking</a></button>
+        <button class="chunk-btn"><a href="{%url 'accounts:register'%}">Start Chunking</a></button>
     </main>
-
-    <footer>
-        <div class="footer">
-          <div class="section">
-              <div class="first-section">
-            <div class="img">
-              <img src="{% static 'chunkapp/htu-images/faq-images/Group 37.png'%}" alt="chunk it" />
-            </div>
-            <div class="footer-list">
-                <a href="#">About Us</a>
-                <a href="#">FAQs</a>
-                <a href="#">APIs</a>
-                <a href="#">Contact Us</a>
-
-            </div>
-            </div>
-            <div class="second-section">
-          <div class="subscribe">
-            <input type="text" placeholder="Subscribe to Newsletter" />
-            <button>Subscribe</button>
-          </div>
-          <div class="social-icons">
-            <p style="margin-bottom: 0.5rem;">Follow Us</p>
-            <a href="#"><box-icon type='logo' name='facebook-circle'></box-icon></a>
-            <a href="#"><box-icon type='logo' name='github'></box-icon></a>
-            <a href="#"><box-icon name='linkedin' type='logo' ></box-icon></a>
-            <a href="#"><box-icon type='logo' name='twitter'></box-icon></a>
-          </div>
-          </div>
-          <hr>
-  <div class="third-section">
-  <div class="third-list">
-    <a href="#">Privacy</a>
-    <a href="#">Security</a>
-    <a href="#">Terms of Use</a>
-  </div>
-  <div>
-    <p>&copy; 2022 Chunk49, INC. PATENT PENDING</p>
-  </div>
-  </div>
-  
-        </div>
-      </footer>
     <script src="{% static 'chunkapp/js/contact.js'%}"></script>
-  </body>
-</html>
+    {% endblock %} 
