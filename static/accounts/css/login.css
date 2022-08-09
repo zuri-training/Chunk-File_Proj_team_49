@@ -226,6 +226,7 @@ form:hover {
 
 @media screen and (max-width: 480px) {
 
+
 }
 
 
@@ -233,6 +234,6 @@ form:hover {
 
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
 
 }
