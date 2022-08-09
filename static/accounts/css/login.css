@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+html {
+    overflow-y: hidden;
+}
+
+
 :root {
     --color-primary: #372092;
     --color-link: #2D5C7F;
@@ -16,18 +21,20 @@
 }
 
 body {
-  font-family: "Convergence", sans-serif;
-  height: 100vh;
+  font-family: "Manrope", sans-serif;
+  height: auto; 
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   font-size: 1.2rem;
   background-color: var(--color-primary);
   background-image: url(../images/backgroundlog.png);
   background-size: cover;
+  padding-top: 24px;
 }
 main{
     margin: auto;
+    max-width: 100%;
 }
 
 .textclass, .form__div{
@@ -223,17 +230,3 @@ form:hover {
 
 
 
-
-@media screen and (max-width: 480px) {
-
-
-}
-
-
-@media screen and (max-width: 600px) {
-
-}
-
-@media screen and (min-width: 992px) {
-
-}
