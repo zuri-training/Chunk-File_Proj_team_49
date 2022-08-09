@@ -133,7 +133,7 @@ align-items: center;
     text-align: justify;
     justify-content: space-between;
     padding: 3rem 0 5rem 0;
-    box-shadow:1px 5px 10px #353534;
+    box-shadow:0px 0px 8px #848481;
 }
 .main-content{
     width: 48%;
@@ -164,6 +164,13 @@ align-items: center;
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+.footer-list{
+    width:60%;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:  120px;
+    row-gap: 40px;
 }
 .footer .first-section{
     width: 100%;

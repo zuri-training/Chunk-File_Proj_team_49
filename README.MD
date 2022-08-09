@@ -1,6 +1,8 @@
+# chunk49 
+A platform for splitting large json and csv files
 ## Appendix
-
-> - Chunk49 
+>- Logo
+>- Chunk49 
 >- About Us
 >- Features
 >- Run Locally
@@ -17,11 +19,13 @@
 >- Contribution
 >- Authors
 
+## Logo
+![Logo](https://i.im.ge/2022/08/09/FKfg0C.Group25.png)
+​
 
 ## Chunk49
-
 >Chunk49 is a platform that accepts large json and csv files and splits them into smaller bits.
-​ Our team, though, there are various chunking platforms, provides users with high quality output files with less the size of the original file in a zipped format. Our well-designed platform also affords users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
+​ The product provides users with high quality output files with less the size of the original file in a zipped format. Our well-designed platform also affords users irrespective of technological knowledge an easy to navigate structure with an aesthetically appealing view.
 
 ## About Us
 >We're a fast growing team of designers and developers who's aim is providing top-notch service that's second to none.
@@ -247,11 +251,6 @@ Save your chunked file on or server for up to 24hours to before downloading
 ​
 ​
 
-
-##Logo
-![Logo](https://i.im.ge/2022/08/09/FKfg0C.Group25.png)
-​
-
 ## Support
 
 >For support, you can reach us on chunk49@yahoo.com or send us a message on Chunk49 "Contact us" page.
@@ -260,7 +259,6 @@ Save your chunked file on or server for up to 24hours to before downloading
 ## Badges
 
 ​
-[![Github Issues](https://img.shields.io/github/issues/zuri-training/Chunk-File_Proj_team_49)]
 
 [![Github Stars](https://img.shields.io/github/stars/zuri-training/Chunk-File_Proj_team_49)]
 
