@@ -39,9 +39,18 @@ li {
     list-style-type: none;
 }
 
-.active,
+
+/* .active,
 li a.list:visited,
 li a.list:active {
+    background: #F55353;
+    border-radius: 2px;
+    font-size: 18px!important;
+    text-decoration: none!important;
+    color: #ffffff;
+} */
+
+.list[aria-current="page"] {
     background: #F55353;
     border-radius: 2px;
     font-size: 18px!important;

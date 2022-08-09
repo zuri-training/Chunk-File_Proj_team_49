@@ -3,17 +3,9 @@
 
 
 <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
-<form action="" method="post"  enctype="multipart/form-data">{% csrf_token %}
-<table>
-{{ wizard.management_form }}
-{% if wizard.form.forms %}
-    {{ wizard.form.management_form }}
-    {% for form in wizard.form.forms %}
-        {{ form}}
-    {% endfor %}
-{% else %}
-    {{ wizard.form }}
-{% endif %}
-</table>
-<input type="submit" value="{% trans "submit" %}"/>
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <table>
+        {{ wizard.management_form }} {% if wizard.form.forms %} {{ wizard.form.management_form }} {% for form in wizard.form.forms %} {{ form}} {% endfor %} {% else %} {{ wizard.form }} {% endif %}
+    </table>
+    <input type="submit" value="{% trans 'submit' %}" />
 </form>

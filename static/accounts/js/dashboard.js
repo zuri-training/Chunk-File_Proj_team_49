@@ -61,18 +61,6 @@ function validateInputNumber() {
     }
 }
 
-
-// setting link active
-function clickLinkA(li) {
-    items = document.querySelectorAll('.list.active');
-
-    if (items.length > 0) {
-        items[0].classList.remove('active');
-    }
-
-    li.classList.add('list', 'active');
-}
-
 // dashboard sidebar toggle
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar')
