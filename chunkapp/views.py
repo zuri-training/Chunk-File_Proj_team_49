@@ -9,6 +9,10 @@ import os
 from django.conf import settings
 import pathlib
 import threading
+from django.contrib.auth.decorators import login_required
+import json
+from django.http import HttpResponse
+from django.contrib import messages
 
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
@@ -19,18 +23,36 @@ MEDIA_DIR = settings.MEDIA_ROOT
 #landing page view
 def index(request):
     return render(request,'chunkapp/index.html')
+
 #frequently asked questions view
 def faq(request):
     return render(request,'chunkapp/faq.html')
-#dashboard view
-# def dashBoard(request):
-#     # this views primary function is too render a template
-#     # and then pass a form as the context
-#     # form= FileUploadForm()
-#     # context = {"form": form}
-#     return render(request,'chunkapp/dashboard.html')
 
-#dashboard upload wizard
+#terms an conditions view
+def termsAndConditions(request):
+    return render(request ,'chunkapp/toc.html')    
+
+#how to use view
+def howTouse(request):
+    return render (request,'chunkapp/howtouse.html')
+
+#account settings view   
+@login_required(login_url='accounts:login')
+def accountSettings(request):
+    return render(request,'chunkapp/accsettings.html')
+#contact us view    
+def contactUs(request):
+    return render(request,'chunkapp/contact.html')    
+
+#list recent chunks view
+def listRecentChunks(request):
+    recent_chunks=ChunkOrder.objects.filter(custom_user = request.user)
+    context={
+        'recent_chunks':recent_chunks
+    }          
+    return render(request,'chunkapp/recent.html',context)
+
+#dashboard upload wizard view
 class UploadWizard(LoginRequiredMixin,SessionWizardView):
     login_url = "accounts:login"
     def get_template_names(self):
@@ -39,14 +61,23 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
     form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     def done(self,form_list,form_dict, **kwargs):
-         form_data, file, chunk_size =process_form(form_list)
-         chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
-         chunkOrder.save()
-         identifier = str(chunkOrder.zip_link).split("/")[2]
-         print(identifier)
-         return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
+         try:
+             form_data, file, chunk_size =process_form(form_list)
+         except:
+            messages.error(self.request, 'error:your file seems to be unstructured.') 
+            return redirect('chunkapp:dashboard')   
+         else:   
+            chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+            chunkOrder.save()
+            identifier = str(chunkOrder.zip_link).split("/")[2]
+            print(identifier)
+            return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
 
 def process_form(form_list):
+    """
+    this function takes the files and the parameter for splitting and calls the respective 
+    splitting function depending on the file extension
+    """
     form_data =[form.cleaned_data for form in form_list]
     file=form_data[0]['file'].name
     chunk_size=form_data[1]['chunk_size']
@@ -60,7 +91,10 @@ def process_form(form_list):
 
 
 def download_zip(request, link):
-    # this view will download the file and delete the file from the database
+    """
+    this function would delete the automatically saved files ,if the
+    user chooses to only download the file
+    """
     download = '/media/' +link
     chunk_order = ChunkOrder.objects.filter(custom_user = request.user).get(zip_link = download)
     def delete():
@@ -70,6 +104,9 @@ def download_zip(request, link):
         delete_thread = threading.Timer(delay, delete)
         delete_thread.start()
     return redirect("chunkapp:recent")
+
+
+
 
 # def uploadFile(request):
 #     if request.method == 'POST':
@@ -116,17 +153,14 @@ def download_zip(request, link):
 #             # this else case shows that chunk order request was invalid
 #             # it then redirects the user back to the dashboard
 #             redirect("dashboard")
-#list recent chunks view
-def listRecentChunks(request):
-    recent_chunks=ChunkOrder.objects.filter(custom_user = request.user)
-    context={
-        'recent_chunks':recent_chunks
-    }          
-    return render(request,'chunkapp/recent.html',context)
-#terms an conditions view
-def termsAndConditions(request):
-    return render(request ,'chunkapp/toc.html')    
-#how to use view
-def howTouse(request):
-    return render (request,'chunkapp/howtouse.html')
+
+#dashboard view
+# def dashBoard(request):
+#     # this views primary function is too render a template
+#     # and then pass a form as the context
+#     # form= FileUploadForm()
+#     # context = {"form": form}
+#     return render(request,'chunkapp/dashboard.html')
+
+#dashboard upload wizard
 

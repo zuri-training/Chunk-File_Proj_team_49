@@ -26,6 +26,9 @@ body {
   background-image: url(../images/backgroundlog.png);
   background-size: cover;
 }
+main{
+    margin: auto;
+}
 
 .textclass, .form__div{
     justify-content: center;
@@ -218,3 +221,18 @@ form:hover {
     margin-right: 40px;
 }
 
+
+
+
+@media screen and (max-width: 480px) {
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 992px) {
+
+}

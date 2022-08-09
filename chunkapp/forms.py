@@ -20,6 +20,7 @@ class FileUploadForm(ModelForm):
         self.fields['file'].widget.attrs.update({ 
             'id':'file', 
             'type':'file',  
+            "onchange":"validateUploadedFile(event)"
             })
     class Meta:
         model=ChunkOrder
@@ -34,6 +35,9 @@ class ChunkSizeForm(ModelForm):
             'type':'number',  
             "class":"ps-4 pe-3",
              "placeholder":"01",
+             "min":"500" ,
+             "max":"500000", 
+             "onchange":"validateInputNumber()",
             })
     class Meta:
         model=ChunkOrder

@@ -1,14 +1,46 @@
-<html>
-<head>
-    <title>List of all users</title>
-</head>
-<body>
-    <h1>List of all users</h1>
+{% extends 'dashboard-base.html' %}
+{% block content%}
+{% load static %} {% load i18n %} {% block head %} {{ wizard.form.media }} {% endblock %}
 
-    {% for user in recent_chunks %}
-        <div class='user'> {{ user.zip_link }} </div>
-    {% endfor %}
+    <link rel="stylesheet" href="{% static 'accounts/css/recent_chunk.css' %}">
 
-</body>
+            <div class="main-container mx-auto">
 
-</html>
+                <h3 class="text-left  my-5">Recently Chunked files </h3>
+            </div>
+            {% for user in recent_chunks %}
+             
+        
+            <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
+                <div class="d-flex chunked-files justify-content-around align-items-center me-2">
+                    <div class="file-name">
+                        <p class="">Chunk_49_split_csv_0108220224_1.csv</p>
+                        <span>Just now</span>
+                    </div>
+                    <div class="file-type">
+                        <p>.Csv file</p>
+                        <span>56mb</span>
+                    </div>
+                </div>
+                <div class="">
+                    <button class="btn download-btn p-2" onclick=" window.location.href= '{{ user.zip_link }}'" >
+                            <span class="white-text d-none d-md-block">Download File</span>
+                            <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
+                        </button>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="pagination d-flex justify-content-end align-items-center">
+                <button>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                <div class="mx-2">1</div>
+                <button>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+            </div>
+            <div class=" how-to-use d-flex justify-content-end ">
+                <a href="#" class="links">How to use</a>
+            </div> -->
+    </div>
+ {%endblock%}

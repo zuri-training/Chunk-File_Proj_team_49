@@ -31,12 +31,8 @@ def validateFile(UploadedFile):
 def chunkJson(file_path, obj_count):
   #opens uploaded file
   with open(file_path,'r') as file:
-    #validates it
-    try:
-        #stores the object in a list
-        json_obj_list = json.load(file)
-    except:
-       print("Not working could not load json file")
+    #stores the object in a list
+    json_obj_list = json.load(file)
     #set prefixes for each individual file  
     index=0
     #gets the media folder

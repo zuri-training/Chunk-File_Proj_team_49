@@ -1,61 +1,65 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Manrope', sans-serif;
 }
-body{
+
+body {
     max-width: 100%;
     overflow-x: hidden;
 }
-.container-fluid{
+
+.container-fluid {
     min-height: 100vh;
 }
-h2.title{
+
+h2.title {
     color: #ffffff;
     font-size: 20px;
     font-weight: 700;
     line-height: 27px;
 }
-a.links{
+
+a.links {
     color: #ffffff;
     text-decoration: none;
     font-style: 500;
     font-size: 18px;
 }
-a.links:hover{
+
+a.links:hover {
     font-size: 20px!important;
 }
-nav {
-    height: 100vh;
-}
-li{
+
+li {
     list-style-type: none;
 }
-.wrapper{
-    background: #372092;
-    height: 100vh;
-    width: 20%;
+
+.active,
+li a.list:visited,
+li a.list:active {
+    background: #F55353;
+    border-radius: 2px;
+    font-size: 18px!important;
+    text-decoration: none!important;
+    color: #ffffff;
 }
-main {
-    width: 80%;
-    height: 100vh;
+
+.form-container {
+    width: 65%;
 }
-h3{
-color: #353534;
-font-size: 32px;
-font-weight: 700;
-line-height: 44px;
-}
-.content{
+
+.content {
     height: 350px;
-    border: 1px solid #372092 ;
+    border: 1px solid #372092;
     border-radius: 25px;
-    /* padding: 25% 30%; */
 }
-.upload-container{
+
+.upload-container {
     height: 80vh;
 }
-.custom-input{
+
+.custom-input {
     position: relative;
 }
 
@@ -67,29 +71,31 @@ input[type=number] {
     background-color: #ffffff;
     outline: none;
 }
-input[type=number]:hover{
+
+input[type=number]:hover {
     border: 3px solid #372092;
 }
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-opacity: 0;
+    opacity: 0;
 }
-.arrow-up{
+
+.arrow-up {
     position: absolute;
-    right:60px;
-    top: 53px; 
-    
+    right: 60px;
+    top: 53px;
 }
-.arrow-down{
+
+.arrow-down {
     position: absolute;
-    right: 60px ;
+    right: 60px;
     top: 78px;
 }
 
-on.btn{
+button.btn {
     color: #ffffff;
     border: 1px solid #372092;
-    /* padding: 8px 25px; */
     border-radius: 8px;
     background-color: #372092;
     font-size: 16px;
@@ -97,22 +103,125 @@ on.btn{
     line-height: 22px;
     text-decoration: none;
 }
-p#no-of-lines{
+
+button.btn:hover {
+    background-color: #5d32bc!important;
+    color: #ffffff!important;
+    outline: none;
+}
+
+p#no-of-lines {
     font-size: 26px;
     font-weight: 500;
     line-height: 74px;
     color: #353534;
-
-
 }
-ul{
+
+ul {
     padding-left: 0!important;
 }
 
-li:active{
+li:active {
     background: #F55353;
     border-radius: 2px;
 }
-a:hover{
+
+a:hover {
     color: #ffffff!important;
+}
+
+@keyframes sidebarAnimation {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100;
+    }
+}
+
+aside {
+    height: 100vh;
+}
+
+.wrapper {
+    background: #372092;
+    height: 100vh;
+    width: 18%;
+    z-index: 7;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+}
+
+.sidebar-toggler {
+    padding: 10px 22px;
+    border-radius: 5px;
+    background-color: #dedede;
+    border: none;
+    color: #474745;
+}
+
+.main-container {
+    width: 75%;
+}
+
+@media screen and (max-width: 992px) {
+    .wrapper {
+        position: fixed;
+        width: 25%;
+        animation-name: sidebarAnimation;
+        animation-duration: .3s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .form-container {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .wrapper {
+        position: fixed;
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .form-container {
+        width: 85%;
+    }
+    h3 {
+        font-size: 1.2rem !important;
+    }
+    p#no-of-lines {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .wrapper {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .wrapper {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 349px) {
+    .form-container {
+        width: 88%;
+    }
+    h3 {
+        font-size: 1rem !important;
+    }
+    p#no-of-lines {
+        font-size: 16px;
+    }
 }

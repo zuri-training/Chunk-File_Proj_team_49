@@ -1,15 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
+main{
   background-color: #ffffff;
   color: #353534;
+  margin: auto;
   font-family: "Manrope";
-  padding: 7.5rem;
-  width: 100%;
 }
 
 h2,
@@ -27,7 +20,6 @@ h2 {
   font-weight: 700;
   line-height: 57px;
 }
-
 h3 {
   margin-top: 31px;
   padding: 10px;

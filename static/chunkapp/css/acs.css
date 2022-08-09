@@ -1,0 +1,34 @@
+
+.acc{
+    border: 1px solid #372092;
+    border-radius: 25px;
+    padding: 3rem 5rem;
+    text-align: center;
+    font-size: 22px;
+    width: 50%;
+    margin: auto;
+    height: fit-content;
+}
+.acc-form{
+   display: flex;
+   flex-direction: column;
+   text-align: left;
+   margin-top: 1.5rem;
+}
+.acc-form input[type=text], .acc-form input[type=email]{
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+    text-indent:0.5rem;
+    border:none;
+}
+.acc-form a{
+    color: #372092;
+    text-decoration: none;
+}
+.acc-form a:hover{
+    color: #372092!important;
+}
+

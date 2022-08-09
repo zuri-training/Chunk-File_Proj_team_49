@@ -12,13 +12,7 @@
       rel="stylesheet"
     />
   </head>
-  {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-      <li class="{{ message.tags }}">{{ message }}</li>
-    {% endfor %}
-  </ul>
-{% endif %}
+ 
   <body>
     <main>
         <section class="card">
@@ -27,7 +21,11 @@
                 <h1>Welcome Back!</h1>
                 <p>We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
                 </p>
-            </div>
+            </div>   {% if messages %}
+            {% for message in messages %}
+              <span class="{{ message.tags }}" style="color:red;width: 100%;margin-left: 10%;margin-bottom: 3%;" >{{ message }}</span>
+            {% endfor %}
+        {% endif %}
             <form class="form__div" id="form" action="." method="POST">
                 {% csrf_token %}
                 <div class="form">
