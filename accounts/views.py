@@ -1,3 +1,4 @@
+import email
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -20,10 +21,15 @@ def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST) 
         if form.is_valid():
-            print('valid form')
-            user = form.save()
-            auth_login(request, user)
-            return redirect('chunkapp:dashboard') 
+            email = form.cleaned_data['email']
+            if CustomUser.objects.filter(email=email).exists():
+                messages.info(
+                    request, 'User already exists! Try logging in.')
+                return render(request, 'accounts/register.html', {'form': form})
+            else:
+                user = form.save(commit=False)
+                auth_login(request, user)
+                return redirect('chunkapp:dashboard') 
         else:
             form = SignUpForm() 
             messages.error(request, 'user with this email already exist.') 
