@@ -27,7 +27,7 @@ def register(request):
                     request, 'User already exists! Try logging in.')
                 return render(request, 'accounts/register.html', {'form': form})
             else:
-                user = form.save(commit=False)
+                user = form.save()
                 auth_login(request, user)
                 return redirect('chunkapp:dashboard') 
         else:
