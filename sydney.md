@@ -7,3 +7,4 @@ project: CHUNK_49
 4. I created signals that delete the zipfile once a chunk order is deleted https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/128
 5. I wrote javascript code that routes the user to the zip file location on the server to start the download process, and the redirects the user to the recently chunked files view https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/129
 6. Generated the schema diagram for the project using pydot and graphviz https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/schema.png
+7. Working on the loading bar that shows the state of a file upload and the state of the chunking process
