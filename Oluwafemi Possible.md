@@ -1,7 +1,6 @@
 I was assigned to work on the Login Page & Foget password Page with a teammate.
 Here is a link to my issued task. 
-https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/15
-https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/15#issue-1319784272
+[my issues task](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/15) 
 
 I also worked on the change password Page.
 
