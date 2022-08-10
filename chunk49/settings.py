@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from email.policy import default
 from pathlib import Path
 from decouple import config
 import os
@@ -22,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY =config('DJANGO_SECRET_KEY',default= 'django-insecure-4=u4(@lcidxk01l_f+)ta=3zwn34r_+88rzeepu4l48%%denj4')
-SECRET_KEY =config('DJANGO_SECRET_KEY')
-USE_S3 = config('S3BUCKETS')
+SECRET_KEY =config('DJANGO_SECRET_KEY',default= 'django-insecure-4=u4(@lcidxk01l_f+)ta=3zwn34r_+88rzeepu4l48%%denj4')
+#SECRET_KEY =config('DJANGO_SECRET_KEY')
+USE_S3 = config('S3BUCKETS', default = False)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG',default=True,cast=bool)
 
