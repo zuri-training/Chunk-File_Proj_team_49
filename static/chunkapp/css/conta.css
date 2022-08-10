@@ -74,6 +74,7 @@ textarea{
     font-size: 18px;
     outline: none;
     padding-top: 1rem;
+    padding-left: 5%;
 }
 .email-path{
     display: flex;
