@@ -22,7 +22,7 @@ def register(request):
         form = SignUpForm(request.POST) 
         if form.is_valid():
             email = form.cleaned_data['email']
-            if CustomUser.objects.filter(email=email).exists():
+            if CustomUser.objects.get(email=email) is not None:
                 messages.info(
                     request, 'User already exists! Try logging in.')
                 return render(request, 'accounts/register.html', {'form': form})
