@@ -31,11 +31,11 @@
                             <a class="nav-link" href="{% url 'chunkapp:contact_us' %}">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">APIs</a>
+                            <a class="nav-link " href="{% url 'chunkapp:faq' %}">FAQs</a>
                         </li>
                         {% if user.is_authenticated %}
                         <div class="d-flex align-items-center">
-                            <a class="return" href="{% url 'chunkapp:dashboard' %}">Return to dashboard</a>
+                            <a class="return" href="{% url 'chunkapp:dashboard' %}">Dashboard</a>
                         </div>
                         {% else %}
                         <div class="d-flex justify-content-between gap-4 text-center">
