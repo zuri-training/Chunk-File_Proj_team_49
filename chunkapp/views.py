@@ -26,6 +26,11 @@ MEDIA_DIR = settings.MEDIA_ROOT
 def index(request):
     return render(request,'chunkapp/index.html')
 
+#about us view
+def about_us(request):
+    return render(request,'chunkapp/abt.html')
+
+
 #frequently asked questions view
 def faq(request):
     return render(request,'chunkapp/faq.html')

@@ -13,7 +13,7 @@ urlpatterns = [
     path('how_to_use',views.howTouse,name='howtouse'),#how to use url path
     path('account_settings/',views.accountSettings,name='account_settings'),#account settings url path
     path('contact_us/',views.contactUs,name='contact_us'),#contact us url path
-    # path('new/', views.UploadWizard.as_view()),
+    path('about_us/', views.about_us,name='about_us'),
     # path('chunksize/',views.setChunkSize,name='chunk'),
     # path('dashboard/uploadfile', views.uploadFile, name="uploadFile"),
 ]

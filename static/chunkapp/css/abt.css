@@ -12,6 +12,10 @@ font-family: 'Manrope', sans-serif;
 padding:2rem 3rem;
 
 }
+.blue{
+    background-color: #D7D2E9;
+}
+
 .top{
     border-bottom-left-radius: 700px;
     border-bottom-right-radius: 700px;
