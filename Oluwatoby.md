@@ -5,5 +5,5 @@ The task that i worked on in our team's project.
 4. User research 2: interviewing participant, creating emphaty map, User persona, user story.
 [Task link](https://www.figma.com/file/JiJZTqbYAI3J5FAa8coohr/chunk-file-49-emphathy-map?node-id=0%3A1) 
 
-3. worked on designing the saved files on the dashboard:
+3. i Also worked on designing the saved files section on the dashboard where user can see their recently chunked file:
 4.  [Task Link](https://www.figma.com/file/yEaA3KGEgJwKdTvJJLaVKg/Proj-team-49-work-board?node-id=31%3A4781)
