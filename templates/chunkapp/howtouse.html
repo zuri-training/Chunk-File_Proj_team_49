@@ -1,43 +1,37 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-  Chunk49
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %} Chunk49 {% endblock %} {% block content %}
 <link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
-    <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
-    <link rel="stylesheet" href="{% static 'chunkapp/css/howtouse.css'%}" />
-  
+<link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
+<link rel="stylesheet" href="{% static 'chunkapp/css/howtouse.css'%}" />
 
-    <main class="section">
-        <h1>How to use Chunk 49</h1>
-        <div class="content">
-            <div class="a">
-                <h3>Browse Your File to upload</h3>
-                <p>Click on the arrow icon and choose a JSON or CSV(Other file format options are currently unavailable) file from your device to be automatically uploaded and chunked.</p>
-            </div>
-            <img src="{% static 'chunkapp/htu-images/Screenshot (34) 2.png'%}" class="b" />
 
-            <img src="{% static 'chunkapp/htu-images/Screenshot (33) 1.png'%}" class="c" />
-            <div class="d">
-                <h3>Select split procedures for your file</h3>
-                <p>Choose number of lines you want per split for your CSV files and number of objects per split for your JSON files by clicking on the top-down arrow selector. After successful selection, click on “Chunk file” to begin the chunking process.</p>
-            </div>
-
-            <div class="e">
-                <h3>Success!</h3>
-                <p>Yeah! easy peasy.
-                    Now proceed to saving or downloading your chunked files.Undownloaded files are available on our server for 24 hours before they are deleted automatically.</p>
-            </div>
-            <img src="{% static 'chunkapp/htu-images/Screenshot (27) 1.png'%}" class="f" />
-
-            <img src="{% static 'chunkapp/htu-images/Screenshot (28) 1.png'%}" class="g" />
-            <div class="h">
-                <h3>View history</h3>
-                <p>You get to see old and new saved files on your dashboard</p>
-            </div>
+<main class="section ">
+    <h1>How to use Chunk 49</h1>
+    <div class="content container mx-auto">
+        <div class="a">
+            <h3>Browse Your File to upload</h3>
+            <p>Click on the arrow icon and choose a JSON or CSV(Other file format options are currently unavailable) file from your device to be automatically uploaded and chunked.</p>
         </div>
-        <button class="chunk-btn"><a href="{%url 'accounts:register'%}">Start Chunking</a></button>
-    </main>
-    <script src="{% static 'chunkapp/js/contact.js'%}"></script>
-    {% endblock %} 
+        <img src="{% static 'accounts/images/DASHBOARD HI FI.svg' %}" alt="" class="b">
+
+        <img src="{% static 'accounts/images/File type selection screen.svg' %}" alt="" class="c">
+        <div class="d">
+            <h3>Select split procedures for your file</h3>
+            <p>Choose number of lines you want per split for your CSV files and number of objects per split for your JSON files by clicking on the top-down arrow selector. After successful selection, click on “Chunk file” to begin the chunking process.</p>
+        </div>
+
+        <div class="e">
+            <h3>Success!</h3>
+            <p>Yeah! easy peasy. Now proceed to saving or downloading your chunked files.Undownloaded files are available on our server for 24 hours before they are deleted automatically.</p>
+        </div>
+        <img src="{% static 'accounts/images/File successful screen.svg' %}" alt="" class="f">
+
+        <img src="{% static 'accounts/images/Dashboard- saved page.svg' %}" alt="" class="g">
+        <div class="h">
+            <h3>View history</h3>
+            <p>You get to see old and new saved files on your dashboard</p>
+        </div>
+    </div>
+    <button class="chunk-btn"><a href="{%url 'accounts:register'%}">Start Chunking</a></button>
+</main>
+<script src="{% static 'chunkapp/js/contact.js'%}"></script>
+{% endblock %}

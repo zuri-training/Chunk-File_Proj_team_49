@@ -1,35 +1,29 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-Contact Us
+
+{% extends 'base.html' %} {% load static %} {% block title %} Contact Us {% endblock %} {% block content %}
+<link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
+<link rel="stylesheet" href="{% static 'chunkapp/css/contact.css' %}">
+<link rel="stylesheet" href="{% static 'accounts/css/password_change_forM.css'%}">
+
+
+<main class="container">
+    <div class="first-main">
+        <img src="{% static 'chunkapp/contact-img/img1.svg' %}" />
+        <p class="email-path">
+            <box-icon name='envelope'></box-icon>Email address: chunk49@yahoo.com</p>
+    </div>
+    <div class="main-content">
+        <h3>We are available everyday, 24/7.</h3>
+        <p>Have a question not answered in our F.A.Q? Or confused about something? Send us a message and we will reach out within 24 hours.</p>
+        <form>
+            <fieldset>
+                <legend>Email address:</legend>
+                <input type="email" placeholder="johndoe@gmail.com">
+            </fieldset>
+            <textarea placeholder="Enter your message" rows="10"></textarea><br>
+            <button class="form-btn"><a href="mailto:chunk49@yahoo.com">Send</a></button>
+        </form>
+    </div>
+</main>
+
+<script src="{% static 'chunkapp/js/contact.js' %}"></script>
 {% endblock %}
-{% block content %}
-    <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
-    <link rel="stylesheet" href="{% static 'chunkapp/css/conta.css' %}">
-    <link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
-
-
-      <main>
-        <div class="first-main">
-            <img src="{% static 'chunkapp/contact-img/img1.svg' %}"/>
-            <p class="email-path"><box-icon name='envelope' ></box-icon>Email address: chunk49@yahoo.com</p>
-        </div>
-        <div class="main-content">
-            <h3>We are available everyday, 24/7.</h3>
-            <p>Have a question not answered in our F.A.Q?  Or confused about something?  Send us a message and we will reach out within 24 hours.</p>
-            <form method="post">
-              {%csrf_token%}
-                <fieldset>
-                    <legend>Email address:</legend>
-                    <!-- <input type="email" placeholder="johndoe@gmail.com"> -->
-                    {{form.email}}
-                </fieldset>
-                <!-- <textarea placeholder="Enter your message" rows="10"></textarea><br> -->
-                {{form.message}}
-                <button class="form-btn">>Send</a></button>
-            </form>
-        </div>
-      </main>
-      
-    <script src="{% static 'chunkapp/js/contact.js' %}"></script>
-    {% endblock %} 
