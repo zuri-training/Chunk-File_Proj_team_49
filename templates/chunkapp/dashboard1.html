@@ -1,56 +1,74 @@
-{% extends 'dashboard-base.html' %}
-
-{% load static %} {% load i18n %} {% block head %} {{ wizard.form.media }} {% endblock %}
-{% block content%}
+{% extends 'dashboard-base.html' %} {% load static %} {% load i18n %} {% block head %} {{ wizard.form.media }} {% endblock %} {% block content%}
 <link rel="stylesheet" href="{% static 'accounts/css/dashboard1.css' %}">
-            <div class="main-container mx-auto">
-                <h3 class="text-center mt-5">Split your CSV/JSON files</h3>
-                <div id="file-error" class="error hide">File type should be either .csv or .json</div>
-                <div class="d-flex justify-content-center align-items-center upload-container">
-                    <div class="form-container mx-auto">
-                        <form id="form" class="form" action="#" method="post" enctype="multipart/form-data">
-                            <div class="content mb-4 d-flex align-items-center justify-content-center">
-                                <div>
-                                    {% csrf_token %}
-                                    {{ wizard.management_form }}
-                                    {% if wizard.form.forms %}
-                                        {{ wizard.form.management_form }}
-                                        {% for form in wizard.form.forms %}
-                                            {{ form}}
-                                        {% endfor %}
-                                    {% else %}
-                                        {% for field in wizard.form %}
-                                        <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
-                                        {{ field }}
-                                        <span class="message">{{ field.errors }}</span>
-                                    {% endfor %}
-                                    {% endif %}
-                                    {% if messages %}
-                                    <ul class="messages">
-                                      {% for message in messages %}
-                                        <li class="{{ message.tags }}">{{ message }}</li>
-                                      {% endfor %}
-                                    </ul>
-                                  {% endif %}
-                                    <!-- <input type="file"  id="file" onchange="validateUploadedFile(event)"> -->
-                                    <label for="file" class="d-block">
+<script defer src="{% static 'accounts/js/loading-bar.js' %}"></script>
+<script defer src="{% static 'accounts/js/loading-bar.min.js' %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/loading-bar.css' %}">
+<div class="main-container mx-auto">
+    <h3 class="text-center mt-5">Split your CSV/JSON files</h3>
+    <div id="file-error" class="error hide">File type should be either .csv or .json</div>
+    <div class="d-flex justify-content-center align-items-center upload-container">
+        <div class="form-container mx-auto">
+            <form id="form" class="form" action="#" method="post" enctype="multipart/form-data">
+                <div class="content mb-4 d-flex align-items-center justify-content-center">
+                    <div>
+                        {% csrf_token %} {{ wizard.management_form }} {% if wizard.form.forms %} {{ wizard.form.management_form }} {% for form in wizard.form.forms %} {{ form}} {% endfor %} {% else %} {% for field in wizard.form %}
+                        <!-- <label for="{{ field.id_for_label }}">{{ field.label }}</label> -->
+                        {{ field }}
+                        <span class="message">{{ field.errors }}</span> {% endfor %} {% endif %} {% if messages %}
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li class="{{ message.tags }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        <!-- <input type="file"  id="file" onchange="validateUploadedFile(event)"> -->
+                        <label for="file" class="d-block">
 
                                             <img src="{% static 'accounts/images/upload.svg' %}" alt="" class="browse-upload"><br>
                                             Browse <span id="browse-file">files here</span>
                                         </label>
-                                    <div id="file-name" class="text-center name mt-2"></div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <button class="btn confirm-btn upload-file" id="submit" type="submit" disabled>upload file <img src="{% static 'accounts/images/upload-file.svg' %}" alt=""> </button>
-                            </div>
-                        </form>
+                        <div id="file-name" class="text-center name mt-2"></div>
                     </div>
                 </div>
-                <div class=" how-to-use d-flex justify-content-end ">
-                    <a href="{%url 'chunkapp:howtouse'%}" class="links">How to use?</a>
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn confirm-btn upload-file" id="submit" type="submit" disabled>upload file <img src="{% static 'accounts/images/upload-file.svg' %}" alt=""> </button>
                 </div>
-            </div>
+            </form>
+        </div>
     </div>
-    <script src="{% static 'accounts/js/dashboard.js' %}" defer></script>
+    <div class=" how-to-use d-flex justify-content-end ">
+        <a href="{%url 'chunkapp:howtouse'%}" class="links">How to use?</a>
+    </div>
+</div>
+
+<div class="main-container mx-auto">
+    <div id="loader-content">
+        <h3 class="text-center mt-5">Preparing your files </h3>
+        <!-- <div class="d-flex justify-content-center align-items-center upload-container">
+            <div class="form-container mx-auto">
+                <div class="content mb-5 py-5 d-flex align-items-center justify-content-center">
+                    <div class="text-center">
+                        <p id="no-of-lines">Uploading file </p>
+                        <div id="progress-bar">
+                            <div class="loader-container">
+                                <div class="progress-bar"></div>
+                            </div>
+                        </div>
+                        </label>
+                    </div>
+                </div>
+    
+            </div>
+        </div> -->
+        <div id="progress-bar" class="ldBar" data-type="stroke" data-path="M10 10L90 10">
+        </div>
+    </div>
+    <div class="upload-successfully">
+        <h2>Uploaded Successfully</h2>
+    </div>
+</div>
+
+</div>
+<script src="{% static 'accounts/js/dashboard.js' %}" defer></script>
+<script src="{% static 'accounts/js/dashboard1.js' %}" defer></script>
 {%endblock%}
