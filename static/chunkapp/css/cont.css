@@ -58,10 +58,9 @@ form input[type=email]{
     text-indent: 15px;
     height: 25px;
     outline: none;
-    border: none;
-    border-radius: 10px;
     font-size: 18px;
     padding-bottom: 10px;
+    padding: 5%;
 }
 legend{
     margin: 15px;

@@ -1,44 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://kit.fontawesome.com/96498e0f73.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+{% block title %}
+Contact Us
+{% endblock %}
+{% block content %}
     <link rel="stylesheet" href="{% static 'chunkapp/css/faq.css' %}" />
-    <link rel="stylesheet" href="{% static 'chunkapp/css/contact.css' %}">
-    <title>Contact Us</title>
-</head>
-<body>
-  <div class="section">
-    <header>
-      <nav id="navbar">
-        <a href="#"
-          ><img src="{% static 'chunkapp/faq-images/Group 26.png' %}" class="logo" alt="chunk it"
-        /></a>
-        <div class="navigation">
-        <div class="nav-link">
-          <a href="#">How to Use</a>
-          <a href="#">Resources</a>
-          <a href="#">Support</a>
-          <a href="#">APIs</a>
-          <a href="#">About Us</a>
-          <a href="#" class="active">Contact Us</a>
-        </div>
-        </div>
-        <button class="ham-btn"><i class="fa-solid fa-bars"></i></button>
-        <button class="close-btn"><i class="fa-solid fa-x"></i></button>
-      </nav>
-      </header>
-      </div>
+    <link rel="stylesheet" href="{% static 'chunkapp/css/cont.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
+
 
       <main>
         <div class="first-main">
@@ -58,54 +27,6 @@
             </form>
         </div>
       </main>
-      <footer>
-        <div class="footer">
-          <div class="section">
-              <div class="first-section">
-            <div class="img">
-              <img src="{% static 'chunkapp/faq-images/Group 37.png' %}" alt="chunk it" />
-            </div>
-            <div class="footer-list">
-                <a href="#">Resources</a>
-                <a href="#">Support</a>
-                <a href="#">About Us</a>
-                <a href="#">Software</a>
-                <a href="#">Blog</a>
-                <a href="#">FAQs</a>
-                <a href="#">Jobs</a>
-                <a href="#">APIs</a>
-                <a href="#">Video Tutorials</a>
-                <a href="#">Contact Us</a>
-
-            </div>
-            </div>
-            <div class="second-section">
-          <div class="subscribe">
-            <input type="text" placeholder="Subscribe to Newsletter" />
-            <button>Subscribe</button>
-          </div>
-          <div class="social-icons">
-            <p style="margin-bottom: 0.5rem;">Follow Us</p>
-            <a href="#"><box-icon type='logo' name='facebook-circle'></box-icon></a>
-            <a href="#"><box-icon type='logo' name='github'></box-icon></a>
-            <a href="#"><box-icon name='linkedin' type='logo' ></box-icon></a>
-            <a href="#"><box-icon type='logo' name='twitter'></box-icon></a>
-          </div>
-          </div>
-          <hr>
-  <div class="third-section">
-  <div class="third-list">
-    <a href="#">Privacy</a>
-    <a href="#">Security</a>
-    <a href="#">Terms of Use</a>
-  </div>
-  <div>
-    <p>&copy; 2022 Chunk49, INC. PATENT PENDING</p>
-  </div>
-  </div>
-  
-        </div>
-      </footer>
+      
     <script src="{% static 'chunkapp/js/contact.js' %}"></script>
-</body>
-</html>
+    {% endblock %} 
