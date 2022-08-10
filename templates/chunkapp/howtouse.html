@@ -31,7 +31,7 @@
             <p>You get to see old and new saved files on your dashboard</p>
         </div>
     </div>
-    <button class="chunk-btn"><a href="{%url 'accounts:register'%}">Start Chunking</a></button>
+    <button class="chunk-btn" onclick="window.location.href=' {%url 'accounts:register'%}' "><a href="{%url 'accounts:register'%}">Start Chunking</a></button>
 </main>
 <script src="{% static 'chunkapp/js/contact.js'%}"></script>
 {% endblock %}
