@@ -43,3 +43,21 @@ class ChunkSizeForm(ModelForm):
         model=ChunkOrder
         fields=['chunk_size']
 
+
+class ContactForm(forms.Form):
+    email = forms.EmailField(label='Your email')
+    message = forms.CharField(widget=forms.Textarea)
+
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['email'].widget.attrs.update({ 
+            'type':'email',  
+            "placeholder":"johndoe@gmail.com",
+            })
+    def __init__(self, *args, **kwargs): 
+        super().__init__(*args, **kwargs) 
+        self.fields['message'].widget.attrs.update({ 
+            'type':'email', 
+            "rows":"10", 
+            "placeholder":"Enter your message",
+            })            
