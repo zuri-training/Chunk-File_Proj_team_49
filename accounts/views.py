@@ -21,15 +21,9 @@ def register(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST) 
         if form.is_valid():
-            email = form.cleaned_data['email']
-            if CustomUser.objects.get(email=email) is not None:
-                messages.info(
-                    request, 'User already exists! Try logging in.')
-                return render(request, 'accounts/register.html', {'form': form})
-            else:
-                user = form.save()
-                auth_login(request, user)
-                return redirect('chunkapp:dashboard') 
+            user = form.save()
+            auth_login(request, user)
+            return redirect('chunkapp:dashboard') 
         else:
             form = SignUpForm() 
             messages.error(request, 'user with this email already exist.') 
