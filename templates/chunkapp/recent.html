@@ -17,16 +17,16 @@
      <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
         <div class="d-flex chunked-files justify-content-around align-items-center me-2">
             <div class="file-name">
-                <p class="">Chunk_49_split_csv_0108220224_1.csv</p>
-                <span>Just now</span>
+                <p class="">{{chunk.file_name}}</p>
+                <span> {{chunk.created}} </span>
             </div>
             <div class="file-type">
-                <p>.Csv file</p>
-                <span>56mb</span>
+                <!-- <p>.Csv file</p> -->
+                <span> {{chunk.zip_link|filesizeformat}} </span>
             </div>
         </div>
         <div class="">
-            <button class="btn download-btn p-2" onclick=" window.location.href= '{{ user.zip_link }}'">
+            <button class="btn download-btn p-2" onclick=" window.location.href= '{{ chunk.zip_link }}'">
                                 <span class="white-text d-none d-md-block">Download File</span>
                                 <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                             </button>

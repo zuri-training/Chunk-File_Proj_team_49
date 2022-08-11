@@ -34,3 +34,4 @@ class ChunkOrder(models.Model):
 
     class Meta:
         app_label = 'chunkapp'
+        ordering = ['-created']
