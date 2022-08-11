@@ -3,3 +3,4 @@
 - I created the Documentation.md file which can be found on [DOCUMENTATION](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/DOCUMENTATION.MD).
 - The README.MD file which can be found on [README](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/README.MD).
 - I was assigned to add about us template on [#issue112](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/112)
+- My list of contribution [commits](https://github.com/zuri-training/Chunk-File_Proj_team_49/commits?author=Eruanga)
