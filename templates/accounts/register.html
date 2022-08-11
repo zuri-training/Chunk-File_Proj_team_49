@@ -85,9 +85,12 @@
               <small>Error message</small>
             </div>
             {% if messages %}
-            {% for message in messages %}
-            <span class="{{ message.tags }}" style="color:red;" >{{ message }}</span>
-          {% endfor %}
+            <ul>
+              {% for message in messages %}
+              <li class="{{ message.tags }}" style="color:red;" >{{ message|striptags }}</li>
+              {% endfor %}
+            </ul>
+        
       {% endif %}
             <div class="form-check d-grid align-content-center gap-3">
               <div>

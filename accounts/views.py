@@ -25,8 +25,15 @@ def register(request):
             auth_login(request, user)
             return redirect('chunkapp:dashboard') 
         else:
+            count = 0
+            for field, errors in form.errors.items():
+                count +=1
+                error_log = errors
+                print(error_log)
+                messages.error(request, error_log, extra_tags=str(count))
             form = SignUpForm() 
-            messages.error(request, 'user with this email already exist.') 
+            #messages.error(request, 'user with this email already exist.') 
+
             return render(request, 'accounts/register.html', {'form': form})   
 
     form = SignUpForm() 
