@@ -19,7 +19,7 @@
             <header>
                 <aside class="d-flex flex-column justify-content-between">
                     <div class="d-flex justify-content-start align-items-center mt-5 mx-auto w-75">
-                        <img src="{% static 'accounts/images/dashboard-logo.svg' %}" alt="" width="45">
+                        <div onclick="window.location.href='{% url 'chunkapp:index' %}'"> <img src="{% static 'accounts/images/dashboard-logo.svg' %}" alt="" width="45"></div>
                         <h2 class="title">chunk49</h2>
                     </div>
                     <ul class="w-100">
