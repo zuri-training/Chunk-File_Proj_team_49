@@ -8,10 +8,13 @@
 
         <h3 class="text-left  my-5">Recently Chunked files </h3>
     </div>
-    {% for user in recent_chunks %}
-
-
-    <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
+    {%if recent_chunks|length < 1 %}
+      <div>
+        You have no recent chunks
+      </div>
+   {%else%}
+    {% for chunk in recent_chunks %}
+     <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
         <div class="d-flex chunked-files justify-content-around align-items-center me-2">
             <div class="file-name">
                 <p class="">Chunk_49_split_csv_0108220224_1.csv</p>
@@ -30,6 +33,7 @@
         </div>
     </div>
     {% endfor %}
+    {%endif%}
     <!-- <div class="pagination d-flex justify-content-end align-items-center">
                     <button>
                             <i class="fa-solid fa-chevron-left"></i>
