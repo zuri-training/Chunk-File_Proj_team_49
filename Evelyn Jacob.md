@@ -23,9 +23,12 @@ processes and details on the processes and what the project entails.
 The link is below;
 https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/57
 
-5. I worked on the lofi of the screens on the dashboard showing the file chunking 
+5. I worked on the lofi and wireframe of the screens on the dashboard showing the file chunking 
 process, file upload and other screens. The link is below;
 https://www.figma.com/file/avaD8B1hOxxmzSQ1Qx5A0m/CHUNK_FILE?node-id=0%3A1
+
+6. We worked on the screener questions for the users we interviewed. The link is below;
+https://docs.google.com/document/d/1Z0SAxt5OWZIJORmobp63Zi0nax0HcjwyYljp3Ala60g/edit?usp=drivesdk
 
 
 
