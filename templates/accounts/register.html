@@ -14,59 +14,85 @@
 
 <body>
     <main class="row">
-        <div class="d-flex reg-use align-items-center col-lg-6">
-            <div class="p-5">
-                <p class="mx-4 p-2">
-                    Break down large csv and json files into smaller files, view and download, with Chunk49.
-                </p>
-            </div>
+      <div class="d-flex reg-use align-items-center col-lg-6">
+        <div class="p-5">
+          <p class="mx-4 p-2">
+            Break down large csv and json files into smaller files, view and
+            download, with Chunk49.
+          </p>
         </div>
-        <div class="d-flex reg-form align-items-center justify-content-center h-100 col-lg-6">
-            <div class="w-50">
-                <div class="logo d-flex justify-content-center">
-                    <img src="{% static 'accounts/images/logo.svg' %}" alt="logo" class="w-25 my-4" />
-                </div>
+      </div>
+      <div
+        class="d-flex reg-form align-items-center justify-content-center h-100 col-lg-6"
+      >
+        <div class="w-50">
+          <div class="logo d-flex justify-content-center">
+            <img
+              src="{% static 'accounts/images/logo.svg' %}"
+              alt="logo"
+              class="w-25 my-4"
+            />
+          </div>
+      
 
+          <form
+            id="form"
+            class="form needs-validation"
+            novalidate
+            action="."
+            method="POST"
+          >
+            {% csrf_token %}
+            <div class="input-control mb-4">
+              <label class="label">Full Name</label>
+              {{form.fullname}}
+              <!-- <input type="text"  id="username" name="fullname"> -->
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
 
-                <form id="form" class="form needs-validation" novalidate action="." method="POST">
-                    {% csrf_token %}
-                    <div class="input-control mb-4">
-                        <label class="label">Full Name</label> {{form.fullname}}
-                        <!-- <input type="text"  id="username" name="fullname"> -->
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
-                    </div>
-
-                    <div class="input-control">
-                        <label class="label">Email </label> {{form.email}}
-                        <!-- <input type="email"  id="email" name="email"> -->
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
-
-                        <ul class="messages">
-                    </div>
-                    <div class="input-control">
-                        <label class="label">Password</label> {{form.password1}}
-                        <!-- <input type="password"  id="password" name="password1"> -->
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
-                    </div>
-                    <div class="input-control">
-                        <label class="label">Confirm Password</label> {{form.password2}}
-                        <!-- <input type="password" id="password2" name="password2">-->
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>Error message</small>
-                    </div>
-                    {% if messages %} {% for message in messages %}
-                    <span class="{{ message.tags }}" style="color:red;">{{ message }}</span> {% endfor %} {% endif %}
-                    <div class="form-check d-grid align-content-center gap-3">
-                        <div>
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                            <label class="form-check-label" for="validationFormCheck">
+            <div class="input-control">
+              <label class="label">Email </label>
+              {{form.email}}
+              <!-- <input type="email"  id="email" name="email"> -->
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+              
+              <ul class="messages">
+            </div>
+            <div class="input-control">
+              <label class="label">Password</label>
+              {{form.password1}}
+              <!-- <input type="password"  id="password" name="password1"> -->
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            <div class="input-control">
+              <label class="label">Confirm Password</label>
+              {{form.password2}}
+              <!-- <input type="password" id="password2" name="password2">-->
+              <i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small>Error message</small>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            <span class="{{ message.tags }}" style="color:red;" >{{ message }}</span>
+          {% endfor %}
+      {% endif %}
+            <div class="form-check d-grid align-content-center gap-3">
+              <div>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="invalidCheck"
+                  required
+                />
+                <label class="form-check-label" for="validationFormCheck">
                   <a href="{%url 'chunkapp:termsandconditions'%}"
                     >I agree to Chunk49's terms & conditions</a
                   >
