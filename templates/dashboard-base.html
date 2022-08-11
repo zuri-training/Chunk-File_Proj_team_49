@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +24,7 @@
                     </div>
                     <ul class="w-100">
                         <div class="pb-5" id="list-container">
-                            <li class="py-2 mb-2 list active" onclick="clickLinkA(this)">
+                            <li class="py-2 mb-2 list">
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/element-3.svg' %}" alt="" width="30" height="30">
@@ -31,7 +32,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-2 mb-2 list" onclick="clickLinkA(this)">
+                            <li class="py-2 mb-2 list">
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/folder-cloud.svg' %}" alt="" width="30" height="30">
@@ -39,7 +40,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-2 mb-2 list" onclick="clickLinkA(this)">
+                            <li class="py-2 mb-2 list">
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{% static 'accounts/images/message-question.svg' %}" alt="" width="30" height="30">
@@ -51,7 +52,7 @@
                     </ul>
                     <div class="mt-5 mb-4" id="list-container">
                         <ul>
-                            <li class="py-2 list" onclick="clickLinkA(this)">
+                            <li class="py-2 list">
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2 ">
                                         <img src="{% static 'accounts/images/setting-2.svg' %}" alt="" width="30" height="30">
@@ -59,7 +60,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="py-2 list" onclick="clickLinkA(this)">
+                            <li class="py-2 list">
                                 <div class="mx-auto w-75">
                                     <div class="d-flex align-items-center gap-2 ">
                                         <img src="{% static 'accounts/images/logout.svg' %}" alt="" width="30" height="30">
@@ -78,11 +79,11 @@
                         <i class="fa-solid fa-bars"></i>
                     </button>
             </nav>
-                {% block content %} 
-                {% endblock %}
+            {% block content %} {% endblock %}
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="{% static 'accounts/js/dashboard-base.js' %}" defer></script>
     <script src="{% static 'accounts/js/dashboard.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/eca1febd0d.js" crossorigin="anonymous"></script>
 </body>

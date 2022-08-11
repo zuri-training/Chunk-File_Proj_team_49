@@ -1,0 +1,168 @@
+* {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.section {
+    padding: 3rem 5rem;
+}
+
+main {
+    background-image: url("../faq-images/bg-img.png");
+    color: #ffffff;
+    background-size: cover;
+}
+
+main h1 {
+    text-align: center;
+    padding: 1rem 0 4rem 0;
+}
+
+.content p {
+    font-weight: 500;
+    line-height: 35px;
+    width: 80%;
+    text-align: justify;
+}
+
+.content img {
+    width: 423px;
+    height: 301px;
+}
+
+.content {
+    width: 100%;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-areas: "a b" "c d" "e f" "g h";
+    row-gap: 30px;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.d h3,
+.h h3 {
+    width: 80%;
+}
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: b;
+    justify-self: end;
+}
+
+.c {
+    grid-area: c;
+}
+
+.d {
+    grid-area: d;
+}
+
+.d p,
+.d h3 {
+    float: right;
+}
+
+.e {
+    clear: both;
+    grid-area: e;
+}
+
+.f {
+    grid-area: f;
+    justify-self: end;
+}
+
+.g {
+    grid-area: g;
+}
+
+.h {
+    grid-area: h;
+}
+
+.h p,
+.h h3 {
+    float: right;
+    margin: auto;
+}
+
+.content h3 {
+    clear: both;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-list {
+    width: 50%;
+}
+
+.chunk-btn {
+    width: 250px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    align-self: flex-end;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.chunk-btn a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #251561;
+}
+
+.chunk-btn:hover {
+    background-color: inherit;
+    border: 2px solid #d5d4d4;
+}
+
+.chunk-btn a:hover {
+    color: inherit;
+}
+
+@media (max-width:768px) {
+    main h1 {
+        font-size: 22px;
+        padding: 1rem 0 2.5rem 0;
+    }
+    .content p {
+        line-height: 35px;
+        width: 100%;
+    }
+    .content {
+        grid-template-areas: "a" "b" "d" "c" "e" "f" "h" "g";
+    }
+    .h h3,
+    .d h3 {
+        width: 100%;
+    }
+    .first-section .img {
+        width: 40%;
+    }
+    .footer-list {
+        width: 50%;
+        margin: auto auto;
+    }
+    .subscribe button {
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+    }
+    .section {
+        padding: 2rem 2rem;
+    }
+    .chunk-btn {
+        width: 200px;
+    }
+}

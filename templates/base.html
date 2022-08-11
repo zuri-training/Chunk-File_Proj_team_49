@@ -22,23 +22,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex gap-4">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">How to use</a>
+                            <a class="nav-link" href="{% url 'chunkapp:howtouse' %}">How to use</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Resource</a>
+                            <a class="nav-link" href="{% url 'chunkapp:about_us' %}">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Support</a>
+                            <a class="nav-link" href="{% url 'chunkapp:contact_us' %}">Contact us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">APIs</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link " href="{% url 'chunkapp:faq' %}">FAQs</a>
                         </li>
                         {% if user.is_authenticated %}
                         <div class="d-flex align-items-center">
-                            <a class="return" href="{% url 'chunkapp:dashboard' %}">Return to dashboard</a>
+                            <a class="return" href="{% url 'chunkapp:dashboard' %}">Dashboard</a>
                         </div>
                         {% else %}
                         <div class="d-flex justify-content-between gap-4 text-center">
@@ -67,8 +64,8 @@
                 <div class="col-md-3 col-lg-2 my-3">
                     <h5>Resources</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="footer-links" href="#">Blog</a></li>
-                        <li><a class="footer-links" href="#">Video tutorials</a></li>
+                        <li><a class="footer-links disabled" href="#"></a></li>
+                        <li><a class="footer-links disabled" href="#"></a></li>
 
                     </ul>
                 </div>
@@ -76,19 +73,19 @@
                 <div class="col-md-3 col-lg-2 my-3">
                     <h5>Support</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="footer-links" href="#">FAQs</a></li>
-                        <li><a class="footer-links" href="#">Contact Us</a></li>
+                        <li><a class="footer-links" href="{% url 'chunkapp:faq' %}">FAQs</a></li>
+                        <li><a class="footer-links " href="{% url 'chunkapp:contact_us' %}">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-lg-2 my-3">
                     <h5>About us</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="footer-links" href="#">Jobs</a></li>
+                        <li><a class="footer-links disabled" href="#"></a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-lg-2 my-3">
                     <h5>Software</h5>
-                    <li><a class="footer-links" href="#">APIs</a></li>
+                    <li><a class="footer-links disabled" href="#"></a></li>
                 </div>
             </div>
 
@@ -107,7 +104,7 @@
                         <div>
                             <div class="standard_social_links">
                                 <div>
-                                    <li class="round-btn btn-facebook"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <li class="round-btn btn-facebook"><a href="#"><i class="fab fa-facebook-f disabled"></i></a>
                                     </li>
                                     <li class="round-btn btn-github"><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
                                     </li>

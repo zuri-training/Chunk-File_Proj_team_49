@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 import json
 from django.http import HttpResponse
 from django.contrib import messages
+from . forms import ContactForm
+from django.core.mail import send_mail,BadHeaderError
 
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
@@ -22,6 +24,11 @@ MEDIA_DIR = settings.MEDIA_ROOT
 #landing page view
 def index(request):
     return render(request,'chunkapp/index.html')
+
+#about us view
+def about_us(request):
+    return render(request,'chunkapp/abt.html')
+
 
 #frequently asked questions view
 def faq(request):
@@ -40,10 +47,11 @@ def howTouse(request):
 def accountSettings(request):
     return render(request,'chunkapp/accsettings.html')
 #contact us view    
-def contactUs(request):
-    return render(request,'chunkapp/contact.html')    
+# def contactUs(request):
+#     return render(request,'chunkapp/contact.html')    
 
 #list recent chunks view
+@login_required(login_url='accounts:login')
 def listRecentChunks(request):
     recent_chunks=ChunkOrder.objects.filter(custom_user = request.user)
     context={
@@ -99,10 +107,36 @@ def download_zip(request, link):
     def delete():
         chunk_order.delete()
     if chunk_order != None:
-        delay = 90
+        delay = 86400
         delete_thread = threading.Timer(delay, delete)
         delete_thread.start()
     return redirect("chunkapp:recent")
+
+
+def contactUs(request):
+    if request.method == 'GET':
+        form = ContactForm()
+    else:
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data['email']
+            from_email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            try:
+                send_mail(subject, message, from_email, ['juliusstan10@gmail.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+
+            return redirect('chunkapp:contact_us')
+    return render(request, "chunkapp/contact.html", {'form': form})
+
+
+
+
+
+
+
+
 
 
 

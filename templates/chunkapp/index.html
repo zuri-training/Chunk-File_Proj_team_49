@@ -1,138 +1,132 @@
-
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}
-  Chunk49
-{% endblock %}
-{% block content %}
+ {% extends 'base.html' %} {% load static %} {% block title %} Chunk49 {% endblock %} {% block content %}
 <link rel="stylesheet" type="text/css" href="{% static 'chunkapp/css/style.css' %}">
-<link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
+<link rel="stylesheet" href="{% static 'accounts/css/password_change_forM.css'%}">
 
-<div  class="container">
+<div class="container">
     <div class="two__columns" id="hero">
-       <div class="text__column" id="hero__div">
-          <h1>An online tool that helps you split your <span class="accent">Json</span>,<span class="accent">csv</span> and other files into smaller bits.
-          </h1>
-          <a href="#contact" class="btn2 btn-primary2">Get Started</a>
-      </div>
+        <div class="text__column" id="hero__div">
+            <h1>An online tool that helps you split your <span class="accent">Json</span>,<span class="accent">csv</span> and other files into smaller bits.
+            </h1>
+            <a class="btn2 btn-primary2" href="{% url 'chunkapp:howtouse' %}">Get Started</a>
+        </div>
 
-      <div class="img__column">
-          <div class="hero__right-image" id="heroimg">
-              <img src="{% static 'chunkapp/images/hero_image.png' %}" alt="right image" height="380px" width="auto">
-          </div>  
-      </div>
+        <div class="img__column">
+            <div class="hero__right-image" id="heroimg">
+                <img src="{% static 'chunkapp/images/hero_image.png' %}" alt="right image" height="380px" width="auto">
+            </div>
+        </div>
     </div>
 
 </div>
 
 
- <!-- Services section start -->
- <section class="services">
+<!-- Services section start -->
+<section class="services" >
     <h2 class="section_heading">Services we offer</h2>
- 
+
     <div class="container">
-       <div class="two__flexrev">
-          <div class="text__column">
-             <h2>Super fast computer power</h2>
-             <p>Let our servers go to work for you;  Most files will be processed in under a minute all in an  automate process.</p>
-          </div>
-          <div class="img__column">
-             <img src="{% static 'chunkapp/images/firstimg.png' %}" alt="illustration" height="300px" width="auto">
-          </div>
-       </div>
+        <div class="two__flexrev">
+            <div class="text__column">
+                <h2>Super fast computer power</h2>
+                <p>Let our servers go to work for you; Most files will be processed in under a minute all in an automate process.</p>
+            </div>
+            <div class="img__column">
+                <img src="{% static 'chunkapp/images/firstimg.png' %}" alt="illustration" height="300px" width="auto">
+            </div>
+        </div>
     </div>
- 
+
     <div class="container">
-       <div class="two__flex">
-          <div class="img__column">
-             <img src="{% static 'chunkapp/images/image2.png' %}" alt="illustration" height="300px" width="auto">
-          </div>
- 
-          <div class="text__column">
-             <h2>Instantly analyze large files</h2>
-             <p> No installation, database, or configuration required. Chunk49 gives you access to extraordinary big data insights in minutes, not hours.</p>
-          </div>
-       </div>
+        <div class="two__flex">
+            <div class="img__column">
+                <img src="{% static 'chunkapp/images/image2.png' %}" alt="illustration" height="300px" width="auto">
+            </div>
+
+            <div class="text__column">
+                <h2>Instantly analyze large files</h2>
+                <p> No installation, database, or configuration required. Chunk49 gives you access to extraordinary big data insights in minutes, not hours.</p>
+            </div>
+        </div>
     </div>
- 
+
     <div class="container">
-       <div class="two__flexrev">
-          <div class="text__column">
-             <h2>Cloud storage</h2>
-             <p>We let you store your files for 24 hours after splitting before deleting them from our servers.</p>
-          </div>
-          <div class="img__column">
-             <img src="{% static 'chunkapp/images/image3.png' %}" alt="illustration" height="300px" width="auto">
-          </div>
-       </div>
+        <div class="two__flexrev">
+            <div class="text__column">
+                <h2>Cloud storage</h2>
+                <p>We let you store your files for 24 hours after splitting before deleting them from our servers.</p>
+            </div>
+            <div class="img__column">
+                <img src="{% static 'chunkapp/images/image3.png' %}" alt="illustration" height="300px" width="auto">
+            </div>
+        </div>
     </div>
- 
+
     <div class="container">
-       <div class="two__flex">
-          <div class="img__column">
-             <img src="{% static 'chunkapp/images/image4.png' %}" alt="illustration" height="300px" width="auto">
-          </div>
- 
-          <div class="text__column">
-             <h2>Free data processing</h2>
-             <p> We make it easy to triage your server, firewall, and network logs. It's easy to search, pivot, and filter to quickly get a high-level overview of your IT environment alll for free.</p>
-          </div>
-       </div>
+        <div class="two__flex">
+            <div class="img__column">
+                <img src="{% static 'chunkapp/images/image4.png' %}" alt="illustration" height="300px" width="auto">
+            </div>
+
+            <div class="text__column">
+                <h2>Free data processing</h2>
+                <p> We make it easy to triage your server, firewall, and network logs. It's easy to search, pivot, and filter to quickly get a high-level overview of your IT environment alll for free.</p>
+            </div>
+        </div>
     </div>
- 
-  </section>
- 
-   <!-- Services section end -->
- 
-     <!-- Converters section start -->
-    <section>
-       <div class="container">
-          <h2 class="section_heading">Converters</h2>
-          <div class="scroll">
-             <a class="iso-marquee-linkwrap" href="">
+
+</section>
+
+<!-- Services section end -->
+
+<!-- Converters section start -->
+<section>
+    <div class="container">
+        <h2 class="section_heading">Converters</h2>
+        <div class="scroll">
+            <a class="iso-marquee-linkwrap" href="">
                 <div class="iso-marquee--long iso-marquee" style="--tw:38ch; --ad:9s;">
-                   <span>coming soon                                 </span>
+                    <span>coming soon                                 </span>
                 </div>
-             </a>
-          </div>
-          <div class="converters">
-             <div class="card">
+            </a>
+        </div>
+        <div class="converters">
+            <div class="card">
                 <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="" height="auto" width="70px">
                 <p>Pdf to CVS</p>
-             </div>
-             <div class="card">
+            </div>
+            <div class="card">
                 <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="" height="auto" width="70px">
                 <p>CVS to JSON</p>
-             </div>
-             <div class="card">
+            </div>
+            <div class="card">
                 <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="" height="auto" width="70px">
                 <p>CVS to Excel</p>
-             </div>
-             <div class="card">
+            </div>
+            <div class="card">
                 <img src="{% static 'chunkapp/images/iconimg.png' %}" alt="" height="auto" width="70px">
                 <p>JSON to XLM</p>
-             </div>
-          </div>
- 
-       </div>
-    </section>
- 
-    <!-- Services section end -->
-    <section>
-       <div class="howto__use">
-          <div class="container">
-             <div class="two__columns">
-                <div class="text__column">
-                   <h2>How to use Chunk49</h2>
-                   <p>Are you confused and do not know how to use this platform? Click on “learn” and make your file splitting easier.</p>
-                </div>
- 
-                <div class="text__column">
-                   <button class="secondary__btn" id="howBtn">Learn</button>
-                </div>
-             </div>
-          </div>
-       </div>
-    </section>
+            </div>
+        </div>
 
-{% endblock %} 
+    </div>
+</section>
+
+<!-- Services section end -->
+<section>
+    <div class="howto__use">
+        <div class="container">
+            <div class="two__columns">
+                <div class="text__column">
+                    <h2>How to use Chunk49</h2>
+                    <p>Are you confused and do not know how to use this platform? Click on “learn” and make your file splitting easier.</p>
+                </div>
+
+                <div class="text__column">
+                    <button class="secondary__btn" id="howBtn">Learn</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
