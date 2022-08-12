@@ -1,17 +1,21 @@
-{% extends 'dashboard-base.html' %}
-{% load static %}
-{%block content%}
-    <link rel="stylesheet" href="{% static 'chunkapp/css/acs.css'%}" />
-    <title>Account Settings</title>
-    <main class="acc">
-      <h2>Account Settings</h2>
-      <form class="acc-form">
-        <label for="name">Name:</label><br />
-       <p> {{user.fullname}}</p>
-        <label for="email">Email:</label><br />
-       <p> {{ user.email }}</p>
-        <p style="margin-top: 2rem"><a href="{%url 'accounts:password_change'%}">Change Password</a></p>
-      </form>
-    </main>
-    <script src="{% static 'chunkapp/js/acc.js'%}"></script>
+{% extends 'dashboard-base.html' %} {% load static %} {%block content%}
+<link rel="stylesheet" href="{% static 'chunkapp/css/acs.css'%}" />
+<title>Account Settings</title>
+<div class="d-flex p-2 justify-content-center">
+    <div class="account-settings my-5 p-5">
+
+        <div class="acc">
+            <h2 class="title">Account Settings</h2>
+            <form class="acc-form">
+                <label for="name">Name:</label><br />
+                <p> {{user.fullname}}</p>
+                <label for="email">Email:</label><br />
+                <p> {{ user.email }}</p>
+                <p class="my-2 change-password"><a href="{%url 'accounts:password_change'%}">Change Password</a></p>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script src="{% static 'chunkapp/js/acc.js'%}"></script>
 {%endblock%}
