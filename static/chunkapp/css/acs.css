@@ -1,34 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+}
 
-.acc{
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.account-settings {
     border: 1px solid #372092;
-    border-radius: 25px;
-    padding: 3rem 5rem;
-    text-align: center;
-    font-size: 22px;
-    width: 50%;
-    margin: auto;
-    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 98px 188px 85px rgba(0, 0, 0, 0.01), 55px 106px 71px rgba(0, 0, 0, 0.05), 24px 47px 53px rgba(0, 0, 0, 0.09), 6px 12px 29px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
-.acc-form{
-   display: flex;
-   flex-direction: column;
-   text-align: left;
-   margin-top: 1.5rem;
+
+h2.title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 44px;
+    color: #353534;
 }
-.acc-form input[type=text], .acc-form input[type=email]{
+
+.change-password {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: start;
+    color: #6a6a67;
+}
+
+.acc-form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.acc-form input[type=text],
+.acc-form input[type=email] {
     width: 100%;
-    padding: 0.5rem;
     font-size: 20px;
     border-radius: 10px;
     outline: none;
-    text-indent:0.5rem;
-    border:none;
+    border: none;
 }
-.acc-form a{
+
+label {
+    text-align: start!important;
+}
+
+.acc-form a {
     color: #372092;
     text-decoration: none;
 }
-.acc-form a:hover{
+
+.acc-form a:hover {
     color: #372092!important;
 }
 
+@media screen and (max-width: 430px) {
+    h2.title {
+        font-size: 15px;
+    }
+    .change-password {
+        font-size: 14px;
+    }
+}
