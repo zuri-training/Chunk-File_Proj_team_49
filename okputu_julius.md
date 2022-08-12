@@ -44,3 +44,7 @@ file i worked on [views](https://github.com/zuri-training/Chunk-File_Proj_team_4
 [issue](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/113)
 i configured the email sending view,and wrote scripts for error handling
 file i worked on [settings](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/chunk49/settings.py)
+
+## create contact us view and link to the frontend
+[issue](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/130)
+file i worked on [views](https://github.com/zuri-training/Chunk-File_Proj_team_49/blob/main/chunkapp/views.py)

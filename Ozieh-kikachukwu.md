@@ -11,7 +11,7 @@ User research 1:
 
 4. Conducting Interviews
 
-[view state of task](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/11)
+[view state of task](https://docs.google.com/document/d/1Z0SAxt5OWZlJORmobp63Zi0nax0HcjwyYljp3Ala60g/edit?usp=drivesdk)
 
 
 User research 2: 
@@ -25,13 +25,13 @@ User research 2:
 
 4. Come up with features for the Chunk_it web application.
 
-[view state of task](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/13)
+[view state of task](https://www.figma.com/file/JiJZTqbYAI3J5FAa8coohr/Chunk-file_proj_team_49?node-id=0%3A1)
 
 How to use page:
 
-I was assigned to create the how to use page using illustrations as discussed.
+I was assigned to work on the the how to use page using illustrations with a team member.
 
-[view state of task](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/61)
+[view state of task](https://www.figma.com/file/yEaA3KGEgJwKdTvJJLaVKg/Proj-team-49-work-board?node-id=17%3A14450)
 
 About us page: 
 
@@ -43,4 +43,4 @@ Kindly design the about us page.
 
 3. Detailed how to use page.
 
-[view state of task](https://github.com/zuri-training/Chunk-File_Proj_team_49/issues/91)
+[view state of task](https://www.figma.com/file/yEaA3KGEgJwKdTvJJLaVKg/Proj-team-49-work-board?node-id=17%3A16707)
