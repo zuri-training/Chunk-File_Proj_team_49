@@ -114,29 +114,22 @@ def download_zip(request, link):
 
 
 def contactUs(request):
-    if request.method == 'GET':
+        if request.method == 'POST':
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                subject = "Website Inquiry" 
+                from_email = form.cleaned_data['email']
+                message = form.cleaned_data['message'] 
+                try:
+                   send_mail(subject, message, from_email, ['juliusstan10@gmail.com'])
+                   print('works') 
+                except BadHeaderError: #add this
+                    return HttpResponse('Invalid header found.') #add this
+                else :
+                    messages.error(request, 'your mail has been sent succesfully.')
+                    return render(request, "chunkapp/contact.html", {'form': form})    
         form = ContactForm()
-    else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data['email']
-            from_email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            try:
-                send_mail(subject, message, from_email, ['juliusstan10@gmail.com'])
-            except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-
-            return redirect('chunkapp:contact_us')
-    return render(request, "chunkapp/contact.html", {'form': form})
-
-
-
-
-
-
-
-
+        return render(request, "chunkapp/contact.html", {'form':form})
 
 
 
