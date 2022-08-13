@@ -1,91 +1,88 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
 }
 
 html {
-    overflow-y: hidden;
+    overflow: hidden;
 }
-
 
 :root {
     --color-primary: #372092;
     --color-link: #2D5C7F;
     --color-white: #fff;
-    --color-text: #353534; 
+    --color-text: #353534;
     --color-text2: #6A6A67;
-    --color-border: #a6a6a6; 
+    --color-border: #a6a6a6;
 }
 
 body {
-  font-family: "Manrope", sans-serif;
-  height: auto; 
-  display: grid;
-  justify-content: center;
-  align-items: center; 
-  font-size: 1.2rem;
-  background-color: var(--color-primary);
-  background-image: url(../images/backgroundlog.png);
-  background-size: cover;
-  padding-top: 24px;
-}
-main{
-    margin: auto;
     max-width: 100%;
+    overflow-x: hidden;
 }
 
-.textclass, .form__div{
+main {
+    background-color: var(--color-primary);
+    background-image: url(../images/backgroundlog.png);
+    min-height: 100vh;
+    background-size: cover;
+}
+
+
+/* main {
+    margin: auto;
+    max-width: 100%;
+    max-height: 100vh;
+} */
+
+.textclass,
+.form__div {
     justify-content: center;
     text-align: center;
 }
 
-.textclass{
-    margin-bottom: 24px;
+.textclass {
+    margin-bottom: 20px;
 }
 
-.form__div .form{
-    margin-bottom: 24px;
+.form__div .form {
+    margin-bottom: 20px;
 }
 
-.card{
+.card-content {
     color: var(--color-text);
-    display: grid;
-    justify-items: center;
-    padding: 31px 50px 31px 50px;
-    width: 450px;
-    height: 580px;
     background-color: white;
     border-radius: 12px;
 }
 
-p{
+p {
     font-family: 'Manrope', sans-serif;
     font-size: 14px;
     color: var(--color-text2);
-    /* padding-bottom: 8px; */
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     font-family: 'Manrope', sans-serif;
-    font-size: 24px;
-    padding-bottom: 14px;
+    font-size: 20px;
+    padding-bottom: 8px;
 }
+
 
 /* Forms */
 
-
 .form {
-  position: relative;
-  width: 20rem;
-  height: 3rem;
-  }
+    position: relative;
+    width: 20rem;
+    height: 3rem;
+}
 
 .form__input {
     position: absolute;
@@ -99,10 +96,12 @@ h1{
     font-size: inherit;
     color: var(--color-text);
     outline: none;
-    padding: 1.25rem;
+    padding: 1rem;
     background: none;
-}    
-    /* Change border when input focus*/
+}
+
+
+/* Change border when input focus*/
 
 form:focus {
     border-color: white;
@@ -110,7 +109,7 @@ form:focus {
 
 form:hover {
     border-color: rgb(255, 255, 255);
-    }
+}
 
 .form__label {
     position: absolute;
@@ -125,35 +124,30 @@ form:hover {
     font-family: 'Manrope', sans-serif;
 }
 
-.form__input:focus ~ .form__label,
-.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+.form__input:focus~.form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus)~.form__label {
     top: -0.5rem;
     font-size: 0.8rem;
     left: 0.8rem;
 }
 
-
-.form small{
+.form small {
     visibility: hidden;
     border-radius: 3px;
     position: absolute;
     bottom: -17px;
     right: 0;
-    }
+}
 
-.form.error small{
+.form.error small {
     visibility: visible;
     padding: 0 6px;
     background-color: #e74e3c;
     color: #fff;
-    }
+}
 
 #forgotPass {
-    display: grid;
-    justify-content: right;
-    margin-top: -12px;
-    margin-bottom: 12px;
-    /* align-self: right; */
+    text-align: end;
 }
 
 #forgotPass a {
@@ -161,9 +155,10 @@ form:hover {
     color: var(--color-text);
 }
 
+
 /*  End Forms */
 
-.btn_submit{
+.btn_submit {
     margin: 16px 0 16px 0;
     background-color: var(--color-primary);
     color: var(--color-white);
@@ -177,56 +172,61 @@ form:hover {
     box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-.btn_submit:hover{
+.btn_submit:hover {
     background-color: #20125a;
     cursor: pointer;
 }
 
-.accountreg{
+.accountreg {
     font-size: 14px;
     font-weight: 500;
     font-family: inherit;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
-#or{
+#or {
     font-size: 12px;
     font-weight: 500;
     font-family: inherit;
 }
 
-#link{
+#link {
     color: var(--color-link);
 }
 
-#link:hover a{
- text-decoration: underline;
+#link:hover a {
+    text-decoration: underline;
 }
 
-.flexicon{
+.flexicon {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
-.divider{
+
+.divider {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 24px;
+    /* margin-bottom: 20px; */
 }
 
-.divider img:nth-child(1){
-    padding-right: 24px;
+.divider img:nth-child(1) {
+    padding-right: 20px;
 }
 
-.divider img:nth-child(3){
-    padding-left: 24px;
+.divider img:nth-child(3) {
+    padding-left: 20px;
 }
 
-.flexicon img:nth-child(1), .flexicon img:nth-child(2){
+.flexicon img:nth-child(1),
+.flexicon img:nth-child(2) {
     margin-right: 40px;
 }
 
-
-
+@media (max-width:370px) {
+    .form .btn_submit {
+        width: 15rem;
+    }
+}
