@@ -60,7 +60,7 @@ If you want to run locally, then you can use the following commands on your mach
 
 Clone the project
 ```
-  git clone git@github.com:zuri-training/Chunk-File_Proj_team_49.git
+  git clone https://github.com/zuri-training/Chunk-File_Proj_team_49.git
 ```
 ​
 Go to the project directory
