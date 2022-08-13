@@ -121,7 +121,7 @@ understanding our folder structure chunk49
 3. templates - contains our html pages for each application
 4. staticfiles contains all our static files
 5. requirements.txt contains all our dependencies needed for this project to work.
-6. 
+ 
 After cloning the project and downloading the dependencies create a .env file
 in the same directory as the settings.py -DIRECTORY: Chunk-File_Proj_team_49/chunk49/
 and then copy and paste the env configuration inside this file.Click on the link below to view the env configuration.
