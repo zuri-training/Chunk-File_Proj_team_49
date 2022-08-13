@@ -67,6 +67,7 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
     # template_name='chunkapp/dashboard.html'
     form_list = FORMS
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
+    #file_storage = FileSystemStorage()
     def done(self,form_list,form_dict, **kwargs):
          try:
              form_data, file, chunk_size =process_form(form_list)

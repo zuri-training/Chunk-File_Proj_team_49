@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'chunkapp.apps.ChunkappConfig',
 
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,12 +90,12 @@ WSGI_APPLICATION = 'chunk49.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -105,19 +106,19 @@ DATABASES = {
 #         'PORT': '',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'd47jqieqscri2d',
-#         'USER': 'ornkglrtbfcwdt',
-#         'PASSWORD': 'd09f33514462773d0481d887193630a551d8667daeda3317379a898bc308c9b6',
-#         'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-# import dj_database_url
-# database_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(database_from_env)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd47jqieqscri2d',
+        'USER': 'ornkglrtbfcwdt',
+        'PASSWORD': 'd09f33514462773d0481d887193630a551d8667daeda3317379a898bc308c9b6',
+        'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+import dj_database_url
+database_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(database_from_env)
 
 AUTH_USER_MODEL='accounts.CustomUser'
 # Password validation
@@ -160,9 +161,9 @@ USE_TZ = True
 
 if USE_S3:
     # aws settings
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
@@ -171,11 +172,13 @@ if USE_S3:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_LOCATION}/'
 
     # this automatically tells django to collect static files to s3 buckets
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'chunk49.storages_backend.StaticStorage'
+    #STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
     MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    DEFAULT_FILE_STORAGE = 'chunk49.storages_backend.PublicMediaStorage'
+    #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 else:
     STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
