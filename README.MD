@@ -124,8 +124,10 @@ understanding our folder structure chunk49
  
 After cloning the project and downloading the dependencies create a .env file
 in the same directory as the settings.py -DIRECTORY: Chunk-File_Proj_team_49/chunk49/
-and then copy and paste the env configuration inside this file.Click on the link below to view the env configuration.
-The username:mike password:chunk49
+and then copy and paste the env configuration inside this file. Click on the link below to view the env configuration.
+
+USERNAME: mike 
+PASSWORD: chunk49
 ```
 https://tinyurl.com/2ove2tjn
 ```
