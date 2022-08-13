@@ -14,6 +14,7 @@ urlpatterns = [
     path('account_settings/',views.accountSettings,name='account_settings'),#account settings url path
     path('contact_us/',views.contactUs,name='contact_us'),#contact us url path
     path('about_us/', views.about_us,name='about_us'),
+    path("recent/<int:id>/delete/", views.delete_view, name="delete_chunk"),
     # path('chunksize/',views.setChunkSize,name='chunk'),
     # path('dashboard/uploadfile', views.uploadFile, name="uploadFile"),
 ]

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404,HttpResponseRedirect
 from . utils import zipFunction,chunkCsv,TEMPLATES,FORMS, chunkJson
 from . models import ChunkOrder
 from formtools.wizard.views import SessionWizardView
@@ -14,6 +14,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from . forms import ContactForm
 from django.core.mail import send_mail,BadHeaderError
+
 
 MEDIA_DIR = settings.MEDIA_ROOT
 # the convention for creating a view is the view function 
@@ -132,6 +133,21 @@ def contactUs(request):
         form = ContactForm()
         return render(request, "chunkapp/contact.html", {'form':form})
 
+def delete_view(request,id):
+    # dictionary for initial data with
+    # field names as keys
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(ChunkOrder, pk = id)
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to
+        # home page
+        return redirect("chunkapp:recent")
+ 
+    return render(request, "chunkapp/delete_view.html", context)
 
 
 

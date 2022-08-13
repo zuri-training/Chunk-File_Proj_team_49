@@ -31,6 +31,11 @@
                                 <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                             </button>
         </div>
+        <div class="">
+            <button class="btn download-btn p-1"  onclick="window.location.href='{%url 'chunkapp:delete_chunk' chunk.id%}'" >
+                                <span class="white-text d-none d-md-block">Delete</span>
+             </button>
+        </div>
     </div>
     {% endfor %}
     {%endif%}
