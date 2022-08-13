@@ -78,7 +78,7 @@ def login(request):
 #logout view
 def logout(request):
     auth_logout(request)
-    return redirect ('accounts:login')
+    return redirect ('chunkapp:index')
 
 #password change view
 class PasswordChange(auth_views.PasswordChangeView):

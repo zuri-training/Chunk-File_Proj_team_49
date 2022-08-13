@@ -1,56 +1,53 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chunk it login page</title>
     <link rel="stylesheet" href="{% static 'accounts/css/login.css' %}" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
- 
-  <body>
-    <main>
-        <section class="card">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <main class=" d-flex justify-content-center align-items-center ">
+        <section class="card-content m-4 py-4">
             <div class="textclass">
                 <a href="{% url 'chunkapp:index' %}"><img src="{% static 'accounts/images/logo.png' %}" alt="Logo" height="40px" width="auto"></a>
                 <h1>Welcome Back!</h1>
-                <p>We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
+                <p class="text-center px-5">We are glad you are here, let's help you break down your Csv and Json files into smaller chunks.
                 </p>
-            </div>   {% if messages %}
-            {% for message in messages %}
-              <span class="{{ message.tags }}" style="color:red;width: 100%;margin-left: 10%;margin-bottom: 3%;" >{{ message }}</span>
-            {% endfor %}
-        {% endif %}
-            <form class="form__div" id="form" action="." method="POST">
-                {% csrf_token %}
-                <div class="form">
-                    {{form.email}}
-                    <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
-                    <label for="email" class="form__label">Email address</label>
-                    <small>Error message</small>
-                </div>
-                <div class="form">
-                    {{form.password}}
-                    <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
-                    <label for="password" class="form__label">Password</label>
-                    <small>Error message</small>
-                </div>
-                <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forget Password?</a></div>
-                <div class="form">
-                  <button class="btn_submit" id="submit" type="submit">log in</button>
-                </div>
-                              
-            </form>
+            </div> {% if messages %} {% for message in messages %}
+            <span class="{{ message.tags }}" style="color:red;width: 100%;margin-left: 10%;margin-bottom: 3%;">{{ message }}</span> {% endfor %} {% endif %}
+            <div class="d-flex justify-content-center px-3">
+                <form class="form__div" id="form" action="." method="POST">
+                    {% csrf_token %}
+                    <div class="form">
+                        {{form.email}}
+                        <!-- <input type="text" id="email" class="form__input" autocomplete="off" placeholder=" ">-->
+                        <label for="email" class="form__label">Email address</label>
+                        <small>Error message</small>
+                    </div>
+                    <div class="form">
+                        {{form.password}}
+                        <!--<input type="password" id="password" class="form__input" autocomplete="off" placeholder=" ">-->
+                        <label for="password" class="form__label">Password</label>
+                        <small>Error message</small>
+                    </div>
+                    <div id="forgotPass"><a href="{% url 'accounts:password_reset' %}">Forgot Password?</a></div>
+                    <div class="form">
+                        <button class="btn_submit" id="submit" type="submit">log in</button>
+                    </div>
 
-        <p class="accountreg">
-          Don’t Have an Account?
-          <span id="link"
-            ><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span
+                </form>
+            </div>
+
+            <p class="accountreg d-flex justify-content-center gap-2 align-items-center">
+                Don’t Have an Account?
+                <span id="link"><a href="{% url 'accounts:register' %}">Sign Up Here!</a></span
           >
         </p>
         <div class="divider">
@@ -93,5 +90,6 @@
         </div> -->
       </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>

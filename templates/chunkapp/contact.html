@@ -14,13 +14,19 @@
     <div class="main-content">
         <h3>We are available everyday, 24/7.</h3>
         <p>Have a question not answered in our F.A.Q? Or confused about something? Send us a message and we will reach out within 24 hours.</p>
-        <form>
+        <form  action="" method="post">
+            {% csrf_token %}
+            {% if messages %}
+            {% for message in messages %}
+              <span class="{{ message.tags }}" style="color:red;width: 100%;margin-left: 10%;margin-bottom: 3%;" >{{ message }}</span>
+            {% endfor %}
+        {% endif %}
             <fieldset>
                 <legend>Email address:</legend>
                 <input type="email" placeholder="johndoe@gmail.com">
             </fieldset>
             <textarea placeholder="Enter your message" rows="10"></textarea><br>
-            <button class="form-btn"><a href="mailto:chunk49@yahoo.com">Send</a></button>
+            <button class="form-btn">Send</button>
         </form>
     </div>
 </main>

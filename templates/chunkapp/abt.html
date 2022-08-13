@@ -1,33 +1,45 @@
 {% extends 'base.html' %} {% load static %} {% block title %} ABOUT US{% endblock %} {% block content %}
 <link rel="stylesheet" href="{% static 'accounts/css/password_change_form.css'%}">
-<link rel="stylesheet" href="{% static 'chunkapp/css/abt.css' %}">
-<section class="container">
+<link rel="stylesheet" href="{% static 'chunkapp/css/about.css' %}">
+<section>
     <div class="blue">
         <div class="title">
             <div class="title-item">
                 ABOUT CHUNK49
             </div>
         </div>
-        <div class="content-container">
-            <div class="main-content">
-                <p class="content-description ">
+        <div class="content-container container">
+            <div class="main-content container ">
+                <p class="content-description pb-5 ">
                     Chunk49 is a website that breaks down large CSV and JSON files into smaller chunks that can be easily viewed, saved for later or downloaded. CSV and JSON files can be uploaded by authenticated users on Chunk49 website and split into smaller sizes.
                     <br>
                 </p>
             </div>
-            <div class="f-tures">Features</div>
-            <div>
-                <p class="main-content-text">
-                    <img class="chck" src=" {% static 'chunkapp/abt-images/Check.png' %}">Break down large CSV and JSON files into smaller chunks
-                    <br>
-                    <img class="chck" src="{% static 'chunkapp/abt-images/Check.png' %}">Files that has been broken down can be saved to view later
-                    <br>
+            <div class="f-tures py-5">Features</div>
+            <div class="d-flex justify-content-center">
+                <div class="main-content-text mx-auto">
+                    <div class="d-flex  align-items-center">
+                        <img class="check" src=" {% static 'chunkapp/abt-images/Check.png' %}">
+                        <P>Break down large CSV and JSON files into smaller chunks</P>
+                    </div>
+                    <div class="d-flex  align-items-center">
+                        <img class="check" src=" {% static 'chunkapp/abt-images/Check.png' %}">
+                        <P>Files that has been broken down can be saved to view later</P>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="check" src=" {% static 'chunkapp/abt-images/Check.png' %}">
+                        <P>Chunked files can be downloaded into your device.</P>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img class="check" src=" {% static 'chunkapp/abt-images/Check.png' %}">
+                        <P>something will be added </P>
+                    </div>
                     <!-- <img class="chck" src="{% static 'chunkapp/abt-images/Check.png' %}">Chunked files can be downloaded into your device.
                   <br>
                   <img class="chck" src="{% static 'chunkapp/abt-images/Check.png' %}">Users have the liberty to split their files to their desired sizes..
                   <br>
                   <img class="chck" src="{% static 'chunkapp/abt-images/Check.png' %}">Chunked files can be saved or downloaded in the same format that was uploaded. -->
-                </p>
+                </div>
             </div>
         </div>
     </div>
@@ -38,7 +50,7 @@
     <div class="main-content">
         <div class="mai-cen">
             <div class="div-me-te">
-                <div class="me-te">
+                <div class="me-te pb-4">
                     <img src="{% static 'chunkapp/abt-images/Group 70 (1).png' %}">
                 </div>
             </div>
@@ -50,7 +62,7 @@
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 335.png' %}">
                 </div>
                 <div>
-                  <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 336.png' %}">
+                    <img class="img-photo sophy" src="{% static 'chunkapp/abt-images/Frame 336.png' %}">
                 </div>
                 <div>
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 354.png' %}">
@@ -59,10 +71,10 @@
 
             <div id="meet-flex">
                 <div>
-                  <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 338.png' %}">
+                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 338.png' %}">
                 </div>
                 <div>
-                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
+                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 339.png' %}">
                 </div>
                 <div>
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 340.png' %}">
@@ -82,7 +94,7 @@
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
                 </div>
                 <div>
-                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
+                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 345.png' %}">
                 </div>
             </div>
             <div id="meet-flex">
@@ -104,10 +116,10 @@
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 350.png' %}">
                 </div>
                 <div>
-                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
+                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 351.png' %}">
                 </div>
                 <div>
-                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
+                    <img class="img-photo" src="{% static 'chunkapp/abt-images/Frame 352.png' %}">
                 </div>
                 <div>
                     <img class="img-photo" src="{% static 'chunkapp/abt-images/Evelyn (1).png' %}">
