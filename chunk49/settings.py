@@ -89,12 +89,12 @@ WSGI_APPLICATION = 'chunk49.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -105,19 +105,19 @@ WSGI_APPLICATION = 'chunk49.wsgi.application'
 #         'PORT': '',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd47jqieqscri2d',
-        'USER': 'ornkglrtbfcwdt',
-        'PASSWORD': 'd09f33514462773d0481d887193630a551d8667daeda3317379a898bc308c9b6',
-        'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
-import dj_database_url
-database_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(database_from_env)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'd47jqieqscri2d',
+#         'USER': 'ornkglrtbfcwdt',
+#         'PASSWORD': 'd09f33514462773d0481d887193630a551d8667daeda3317379a898bc308c9b6',
+#         'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+# import dj_database_url
+# database_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(database_from_env)
 
 AUTH_USER_MODEL='accounts.CustomUser'
 # Password validation
