@@ -82,7 +82,7 @@ main {
 }
 
 .chunked-files {
-    width: 80%;
+    width: 70%;
 }
 
 p {
@@ -93,14 +93,14 @@ p {
 }
 
 span {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 22px;
     color: #838380;
 }
 
 .btn {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 22px;
     background: #372092!important;

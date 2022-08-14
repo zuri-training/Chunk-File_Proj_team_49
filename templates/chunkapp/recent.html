@@ -25,16 +25,15 @@
                 <span> {{chunk.zip_link|filesize|filesizeformat}} </span>
             </div>
         </div>
-        <div class="">
-            <button class="btn download-btn p-2" onclick=" window.location.href= '{{ chunk.zip_link }}'">
+        <div class="d-flex gap-2 align-items-center">
+                            <button class="btn download-btn d-flex align-items-center gap-1 p-2" onclick=" window.location.href= '{{ chunk.zip_link }}'">
                                 <span class="white-text d-none d-md-block">Download File</span>
                                 <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                             </button>
-        </div>
-        <div class="">
-            <button class="btn download-btn p-1"  onclick="window.location.href='{%url 'chunkapp:delete_chunk' chunk.id%}'" >
+                            <button class="btn download-btn d-flex align-items-center gap-1 p-2">
                                 <span class="white-text d-none d-md-block">Delete</span>
-             </button>
+                                <img src="{% static 'accounts/images/trash.svg' %}" alt="" class="file-image">
+                            </button>
         </div>
     </div>
     {% endfor %}
