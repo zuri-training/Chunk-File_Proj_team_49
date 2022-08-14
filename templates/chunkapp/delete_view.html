@@ -19,7 +19,7 @@
                             {% csrf_token %}
                             Are you want to delete this item ?
                             <input type="submit" value="Yes" />
-                            <a href="/" class="link">Cancel </a>
+                            <a href="{%url 'chunkapp:recent'%}" class="link">Cancel </a>
                         </form>
                     </div>    
         </div>
@@ -27,3 +27,4 @@
     <script src="https://kit.fontawesome.com/eca1febd0d.js" crossorigin="anonymous"></script>
 </body>
 </html>
+

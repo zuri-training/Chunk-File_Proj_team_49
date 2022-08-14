@@ -80,3 +80,49 @@
 //     }); // end ajax
 // });
 
+const uploadForm = document.getElementById('form');
+        const input_file = document.getElementById('file');
+        const progress_bar = document.getElementById('progress');
+        
+        $("#form").submit(function(e){
+            $form = $(this)
+            var formData = new FormData(this);
+            const media_data = input_file.files[0];
+            if(media_data != null){
+                console.log(media_data);
+                progress_bar.classList.remove("not-visible");
+            }
+
+            $.ajax({
+                type: 'POST',
+                url:'/',
+                data: formData,
+                dataType: 'json',
+                beforeSend: function(){
+                    $('#submit').prop('disabled', true);
+                },
+                xhr:function(){
+                    const xhr = new window.XMLHttpRequest();
+                    xhr.upload.addEventListener('progress', e=>{
+                        if(e.lengthComputable){
+                            const percentProgress = (e.loaded/e.total)*100;
+                            console.log(percentProgress);
+                            progress_bar.innerHTML = `<div class="progress-bar progress-bar-striped bg-success" 
+                    role="progressbar" style="width: ${percentProgress}%" aria-valuenow="${percentProgress}" aria-valuemin="0" 
+                    aria-valuemax="100"></div>`
+                        }
+                    });
+                    return xhr
+                },
+                success: function(response){
+                    uploadForm.reset()
+                    progress_bar.classList.add('not-visible')
+                },
+                error: function(err){
+                    console.log(err);
+                },
+                cache: false,
+                contentType: false,
+                processData: false,
+            });
+        });
