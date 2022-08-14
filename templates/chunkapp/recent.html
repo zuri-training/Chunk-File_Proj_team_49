@@ -17,7 +17,7 @@
      <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
         <div class="d-flex chunked-files justify-content-around align-items-center me-2">
             <div class="file-name">
-                <p class="">{{chunk.file_name}}</p>
+                <p class="">{{chunk.zip_link|cut:"/media/"}}</p>
                 <span> {{chunk.created}} </span>
             </div>
             <div class="file-type">
