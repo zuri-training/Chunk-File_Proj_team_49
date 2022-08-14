@@ -30,7 +30,7 @@
                                 <span class="white-text d-none d-md-block">Download File</span>
                                 <img src="{% static 'accounts/images/download-file.svg' %}" alt="" class="file-image">
                             </button>
-                            <button class="btn download-btn d-flex align-items-center gap-1 p-2">
+                            <button class="btn download-btn d-flex align-items-center gap-1 p-2" onclick="window.location.href='{%url 'chunkapp:delete_chunk' chunk.id%}'">
                                 <span class="white-text d-none d-md-block">Delete</span>
                                 <img src="{% static 'accounts/images/trash.svg' %}" alt="" class="file-image">
                             </button>

@@ -1,5 +1,5 @@
 {% extends 'dashboard-base.html' %} {% block content%} {% load static %} {% load i18n %} {% block head %} {{ wizard.form.media }} {% endblock %}
-
+{% load chunk_extras %}
     <link rel="stylesheet" href="{% static 'accounts/css/dashboard5.css' %}">
 
         
@@ -12,7 +12,7 @@
                             <p id="p1">Chunking Successful</p>
                             <p id="p2">Your file has successfully been splitted</p>
                             <p id="file-name" class="p3">File Name :{{id}}</p>
-                            <p id="file-size" class="p3">Size: {{id.size}}</p>
+                            <p id="file-size" class="p3">Size: {{download|filesize|filesizeformat}}</p>
                         </div>
                         <div class="d-flex justify-content-between text-center gap-4 w-100 pb-5">
                             <button type="button" class="btn savefile-btn" onclick="saveFile()">

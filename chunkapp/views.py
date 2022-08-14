@@ -73,7 +73,7 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
          try:
              form_data, file, chunk_size =process_form(form_list)
          except:
-            messages.error(self.request, 'error:your file seems to be unstructured.') 
+            messages.error(self.request, 'Error:something unexpected occured.') 
             return redirect('chunkapp:dashboard')   
          else:   
             chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
