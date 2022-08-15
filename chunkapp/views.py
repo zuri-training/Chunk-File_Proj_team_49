@@ -105,6 +105,8 @@ def download_zip(request, link):
     user chooses to only download the file
     """
     download = '/media/' +link
+    file = open(download, "rb")
+    print(file.name)
     chunk_order = ChunkOrder.objects.filter(custom_user = request.user).get(zip_link = download)
     def delete():
         chunk_order.delete()

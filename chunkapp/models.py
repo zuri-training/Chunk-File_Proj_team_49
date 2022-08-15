@@ -35,3 +35,8 @@ class ChunkOrder(models.Model):
     class Meta:
         app_label = 'chunkapp'
         ordering = ['-created']
+
+
+# from chunk49.storages_backend import PublicMediaStorage
+# class zipModel(models.Model):
+#     object = models.FileField(storage=PublicMediaStorage)

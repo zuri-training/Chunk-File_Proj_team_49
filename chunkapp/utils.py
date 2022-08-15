@@ -7,6 +7,7 @@ import shutil
 from zipfile import ZipFile, ZIP_DEFLATED
 from django.forms import ValidationError
 from django.conf import settings
+from decouple import config
 import uuid
 import pandas as pd
 from .forms import FileUploadForm,ChunkSizeForm
@@ -133,3 +134,26 @@ def chunkCsv(csv_file, no_of_rows):
 #         for chunk in f.chunks():
 #             destination.write(chunk)
 #     return destination
+
+
+import boto3
+
+#Creating Session With Boto3.
+session = boto3.Session(
+aws_access_key_id=config('AWS_ACCESS_KEY_ID'),
+aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY')
+)
+
+#Creating S3 Resource From the Session.
+s3 = session.resource('s3')
+
+object = s3.Object(config('AWS_STORAGE_BUCKET_NAME'), 'file_name.txt')
+
+result = object.put(Body=open('E:/temp/testfile.txt', 'rb'))
+
+res = result.get('ResponseMetadata')
+
+if res.get('HTTPStatusCode') == 200:
+    print('File Uploaded Successfully')
+else:
+    print('File Not Uploaded')

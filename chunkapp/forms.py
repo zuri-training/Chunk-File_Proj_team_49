@@ -61,3 +61,12 @@ class ContactForm(forms.Form):
             "rows":"10", 
             "placeholder":"Enter your message",
             })            
+
+
+# class Upload(ModelForm):
+#     def __init__(self, *args, **kwargs): 
+#         super().__init__(*args, **kwargs) 
+#         #self.fields['chunk_size'].widget.attrs.update
+#     class Meta:
+#         model=zipModel
+#         fields=['object']
