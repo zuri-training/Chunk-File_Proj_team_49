@@ -92,7 +92,7 @@ input[type="file"] {
     font-weight: 900;
 }
 
-.hide .error-hide {
+.hide, .error.hide {
     display: none;
 }
 
