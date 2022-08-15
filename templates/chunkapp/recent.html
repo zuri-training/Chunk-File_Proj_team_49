@@ -1,5 +1,5 @@
 {% extends 'dashboard-base.html' %} {% block content%} {% load static %} {% load i18n %} {% block head %} {{ wizard.form.media }} {% endblock %}
-{% load chunk_extras %}
+<!-- {% load chunk_extras %} -->
 <link rel="stylesheet" href="{% static 'accounts/css/recent_chunk.css' %}">
 
 
@@ -17,12 +17,11 @@
      <div class="d-flex mx-auto align-items-center my-2 justify-content-between chunked-files-container">
         <div class="d-flex chunked-files justify-content-around align-items-center me-2">
             <div class="file-name">
-                <p class="">{{chunk.zip_link|cut:"/media/"}}</p>
+                <p class="">{{chunk.zip_link|cut:"https://chunk-it.s3.eu-west-3.amazonaws.com/media/"}}</p>
                 <span> {{chunk.created}} </span>
             </div>
             <div class="file-type">
-                <!-- <p>.Csv file</p> -->
-                <span> {{chunk.zip_link|filesize|filesizeformat}} </span>
+                <span> {{chunk.file_size|filesizeformat}} </span>
             </div>
         </div>
         <div class="d-flex gap-2 align-items-center">

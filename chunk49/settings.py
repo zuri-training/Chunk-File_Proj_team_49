@@ -27,8 +27,8 @@ SECRET_KEY =config('DJANGO_SECRET_KEY',default= 'django-insecure-4=u4(@lcidxk01l
 #SECRET_KEY =config('DJANGO_SECRET_KEY')
 USE_S3 = config('S3BUCKETS', default = True)
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DJANGO_DEBUG',default=True,cast=bool)
-
+#DEBUG = config('DJANGO_DEBUG',default=True,cast=bool)
+DEBUG=True
 ALLOWED_HOSTS = ['*']
 
 

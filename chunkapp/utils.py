@@ -72,10 +72,9 @@ def zipFunction(directory):
         #   # this code is responsible for deleting the initial uploaded file
           test_path = Path(__file__).resolve().parent.parent / "media"
           test = test_path / zip_file_name
+          file_size=os.path.getsize(test)
         #   file_path.unlink() # remove file
-          
-          print(test)
-
+        
           session = boto3.Session(
               aws_access_key_id=config('AWS_ACCESS_KEY_ID'),
               aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'),
@@ -85,9 +84,9 @@ def zipFunction(directory):
           # Bucket - Bucket to upload to (the top level directory under AWS S3)
           # Key - S3 object name (can contain subdirectories). If not specified then file_name is used
           path_name_l = str(test)
-          s3.meta.client.upload_file(Filename=path_name_l, Bucket='chunk-it', Key='media/'+zip_file_name)
-
-          return "/media/" + zip_file_name
+          s3.meta.client.upload_file(Filename=path_name_l, Bucket='chunk-it', Key='media/'+zip_file_name, ExtraArgs={'ACL':'public-read'})
+          bucket='https://chunk-it.s3.eu-west-3.amazonaws.com/media/'
+          return bucket + zip_file_name,file_size
 
 def generateRandomName(file_name = ""):
     return str(uuid.uuid4()) + file_name

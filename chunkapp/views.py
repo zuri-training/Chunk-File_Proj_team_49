@@ -71,23 +71,22 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
     #file_storage = FileSystemStorage()
     def done(self,form_list,form_dict, **kwargs):
         
-         #  try:
-            form_data, file, chunk_size =process_form(form_list)
-            chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
-            chunkOrder.save()
-            identifier = str(chunkOrder.zip_link).split("/")[2]
-            print(identifier)
-            return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
-        #  except:
-        #     print("exception")
-            # messages.error(self.request, 'Error:something unexpected occured.') 
-            # return redirect('chunkapp:dashboard')   
-        #else:   
-            # chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+        try:
+            form_data,file_size, file, chunk_size =process_form(form_list)
+            # chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size,file_size=size)
             # chunkOrder.save()
             # identifier = str(chunkOrder.zip_link).split("/")[2]
             # print(identifier)
             # return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
+        except:
+            messages.error(self.request, 'Error:something unexpected occured.') 
+            return redirect('chunkapp:dashboard')   
+        
+        chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size,file_size=file_size)
+        chunkOrder.save()
+        identifier = str(chunkOrder.zip_link)
+        identifier=identifier.replace('https://chunk-it.s3.eu-west-3.amazonaws.com/media/','')
+        return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier, 'chunk_size':chunkOrder.file_size})
 
 def process_form(form_list):
     """
@@ -101,8 +100,9 @@ def process_form(form_list):
     if file.endswith('.json'):
         dir=chunkJson(path, chunk_size)  
     elif file.endswith('.csv'):
-        dir= chunkCsv(path,chunk_size)    
-    return zipFunction(dir), file, chunk_size
+        dir= chunkCsv(path,chunk_size)  
+    ziplink,file_size=zipFunction(dir)      
+    return ziplink,file_size,file, chunk_size
 
 
 
@@ -111,9 +111,7 @@ def download_zip(request, link):
     this function would delete the automatically saved files ,if the
     user chooses to only download the file
     """
-    download = '/media/' +link
-    file = open(download, "rb")
-    print(file.name)
+    download = 'https://chunk-it.s3.eu-west-3.amazonaws.com/media/' +link
     chunk_order = ChunkOrder.objects.filter(custom_user = request.user).get(zip_link = download)
     def delete():
         chunk_order.delete()
