@@ -120,13 +120,15 @@ const uploadForm = document.getElementById('form');
                 },
                 error: function(err){
                     console.log(err);
-                    if (err) {
+                    seterror();
+                   
+                },
+                seterror() {
                         const doc = document.getElementById("upload-fileerr")
                         doc.classList.toggle("error-hide")
                         setTimeout(() => {
                             doc.classList.toggle("error-hide")
                         }, 4000);
-                    } 
                 },
                 cache: false,
                 contentType: false,
