@@ -8,6 +8,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from django.forms import ValidationError
 from django.conf import settings
 from decouple import config
+import boto3
 import uuid
 import pandas as pd
 from .forms import FileUploadForm,ChunkSizeForm
@@ -69,9 +70,23 @@ def zipFunction(directory):
             archive.close()
           shutil.rmtree(directory)
         #   # this code is responsible for deleting the initial uploaded file
-        #   dir_path = Path(__file__).resolve().parent / "media"
-        #   file_path = dir_path / f.name
+          test_path = Path(__file__).resolve().parent.parent / "media"
+          test = test_path / zip_file_name
         #   file_path.unlink() # remove file
+          
+          print(test)
+
+          session = boto3.Session(
+              aws_access_key_id=config('AWS_ACCESS_KEY_ID'),
+              aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'),
+          )
+          s3 = session.resource('s3')
+          # Filename - File to upload
+          # Bucket - Bucket to upload to (the top level directory under AWS S3)
+          # Key - S3 object name (can contain subdirectories). If not specified then file_name is used
+          path_name_l = str(test)
+          s3.meta.client.upload_file(Filename=path_name_l, Bucket='chunk-it', Key='media/'+zip_file_name)
+
           return "/media/" + zip_file_name
 
 def generateRandomName(file_name = ""):
@@ -136,24 +151,3 @@ def chunkCsv(csv_file, no_of_rows):
 #     return destination
 
 
-import boto3
-
-#Creating Session With Boto3.
-session = boto3.Session(
-aws_access_key_id=config('AWS_ACCESS_KEY_ID'),
-aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY')
-)
-
-#Creating S3 Resource From the Session.
-s3 = session.resource('s3')
-
-object = s3.Object(config('AWS_STORAGE_BUCKET_NAME'), 'file_name.txt')
-
-result = object.put(Body=open('E:/temp/testfile.txt', 'rb'))
-
-res = result.get('ResponseMetadata')
-
-if res.get('HTTPStatusCode') == 200:
-    print('File Uploaded Successfully')
-else:
-    print('File Not Uploaded')

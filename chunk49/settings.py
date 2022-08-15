@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY =config('DJANGO_SECRET_KEY',default= 'django-insecure-4=u4(@lcidxk01l_f+)ta=3zwn34r_+88rzeepu4l48%%denj4')
 #SECRET_KEY =config('DJANGO_SECRET_KEY')
-USE_S3 = config('S3BUCKETS', default = False)
+USE_S3 = config('S3BUCKETS', default = True)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG',default=True,cast=bool)
 

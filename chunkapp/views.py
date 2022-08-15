@@ -70,17 +70,24 @@ class UploadWizard(LoginRequiredMixin,SessionWizardView):
     file_storage = FileSystemStorage(location=os.path.join(settings.MEDIA_ROOT, 'largefile'))
     #file_storage = FileSystemStorage()
     def done(self,form_list,form_dict, **kwargs):
-         try:
-             form_data, file, chunk_size =process_form(form_list)
-         except:
-            messages.error(self.request, 'Error:something unexpected occured.') 
-            return redirect('chunkapp:dashboard')   
-         else:   
+        
+         #  try:
+            form_data, file, chunk_size =process_form(form_list)
             chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
             chunkOrder.save()
             identifier = str(chunkOrder.zip_link).split("/")[2]
             print(identifier)
             return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
+        #  except:
+        #     print("exception")
+            # messages.error(self.request, 'Error:something unexpected occured.') 
+            # return redirect('chunkapp:dashboard')   
+        #else:   
+            # chunkOrder = ChunkOrder.objects.create(custom_user = self.request.user, zip_link = form_data, file_name = file, chunk_size = chunk_size)
+            # chunkOrder.save()
+            # identifier = str(chunkOrder.zip_link).split("/")[2]
+            # print(identifier)
+            # return render(self.request, 'chunkapp/dashboard5.html', {'form_data':form_data, 'download': chunkOrder.zip_link, "id": identifier})
 
 def process_form(form_list):
     """
