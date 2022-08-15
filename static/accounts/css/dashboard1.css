@@ -92,9 +92,10 @@ input[type="file"] {
     font-weight: 900;
 }
 
-.hide {
+.hide .error-hide {
     display: none;
 }
+
 
 label {
     color: #f55353;
