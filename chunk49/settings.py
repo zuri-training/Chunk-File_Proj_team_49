@@ -109,11 +109,11 @@ WSGI_APPLICATION = 'chunk49.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd47jqieqscri2d',
-        'USER': 'ornkglrtbfcwdt',
-        'PASSWORD': 'd09f33514462773d0481d887193630a551d8667daeda3317379a898bc308c9b6',
-        'HOST': 'ec2-54-85-56-210.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'MnaCnXClxt3XJpmxkyQO',
+        'HOST': 'containers-us-west-40.railway.app',
+        'PORT': '7204',
     }
 }
 import dj_database_url
