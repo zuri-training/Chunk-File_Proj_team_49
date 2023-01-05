@@ -52,7 +52,7 @@ You can find out more about us on our website's "About us" page.
 >- Forgot password
 >- Frequently asked questions available in the FAQ section.
 ​
-## Run locally
+## Contribute or Run locally
 ​
 If you want to run locally, then you can use the following commands on your machine:
 ​
@@ -83,21 +83,6 @@ Install Dependencies
   pip install -r requirements.txt
 ```
 ​
-make migrations
-```
-python manage.py makemigrations
-```
-​
-Migrate the database
-```
-python manage.py migrate
-```
-​
-create superuser 
-```
-python manage.py createsuperuser
-```
-​
 Create a new branch to work with
 ```
 git branch <new-branch>
@@ -112,34 +97,6 @@ Finally, Start The Server.
 ```
 python manage.py runserver
 ```
-## AIDED DEPLOYMENT FOR CHUNK 49
-understanding our folder structure chunk49
-1. We have two custom built django applications
-	Accounts application for auth
-	chunkapp which contains our business logic and major routing
-2. media\largefile - this is for local deployment our files,
-3. templates - contains our html pages for each application
-4. staticfiles contains all our static files
-5. requirements.txt contains all our dependencies needed for this project to work.
- 
-After cloning the project and downloading the dependencies create a .env file
-in the same directory as the settings.py -DIRECTORY: Chunk-File_Proj_team_49/chunk49/
-and then copy and paste the env configuration inside this file. Click on the link below to view the env configuration.
-
-USERNAME: mike 
-PASSWORD: chunk49
-```
-https://tinyurl.com/2ove2tjn
-```
-there is a one time access to that link after the first login, the link becomes useless
-if you face this issue, please contact 
-@Syntexh
-or
-@Okputu Julius
-or
-@Evelyn Jacobs
-on slack
-this is a security measure.
 
 ## Documentation
 >Access our documentations on:
@@ -245,7 +202,7 @@ Save your chunked file on or server for up to 24hours to before downloading
 >[Github](https://github.com/zuri-training/Chunk-File_Proj_team_49)
 ​
 >
->[HeroKuapp](https://chunk-it.herokuapp.com/)
+>[Chunkit](https://chunkit.up.railway.app/)
 ## FAQ
 
 #### What is chunking and why should i chunk my file
@@ -301,3 +258,4 @@ Save your chunked file on or server for up to 24hours to before downloading
 
 >- [@Eruanga](https://www.github.com/Eruanga)
 >- [@Eva-Jacobs](https://www.github.com/Eva-jacobs)
+>- [@Julius Okputu](https://www.github.com/jujucoder)
